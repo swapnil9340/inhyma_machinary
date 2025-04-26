@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
   return (
     <Box sx={layoutStyles.wrapper}>
       <Header />
-      <Box component="main" sx={layoutStyles.main  } >
+      <Box component="main" sx={layoutStyles.main} >
         {children}
       </Box>
       {/* <Footer /> */}
