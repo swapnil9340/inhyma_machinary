@@ -23,7 +23,7 @@ const GlobalPresenceSection = () => {
 
                 <div style={{ marginTop: "40px", display: "flex", gap: "32%" }}>
                     <div style={{ fontSize: "18px", fontWeight: "500", color: "#555", display: "flex", alignItems: "center", justifyContent: "center", gap: "10px", marginBottom: "20px" }}>
-                        <img src="/vector (1).png" alt="serving icon" style={{ width: "30px", height: "30px" }} />
+                        <Image height={30} width={30} src="/vector (1).png" alt="serving icon" style={{ width: "30px", height: "30px" }} />
 
                         <span style={{ fontSize: "20px", fontWeight: "500" }}> Serving</span>
                     </div>
@@ -54,7 +54,7 @@ const GlobalPresenceSection = () => {
 
                 <div style={{ marginTop: "10px", display: "flex", gap: "21%" }}>
                     <div style={{ fontSize: "18px", fontWeight: "500", color: "#555", display: "flex", alignItems: "center", justifyContent: "center", gap: "10px", marginBottom: "20px" }}>
-                        <img src="/Group 229.png" alt="serving icon" style={{ width: "30px", height: "30px" }} />
+                    <Image height={30} width={30} src="/Group 229.png" alt="serving icon" style={{ width: "30px", height: "30px" }} />
 
                         <span style={{ fontSize: "20px", fontWeight: "500" }}> Offices & Warehouses</span>
                     </div>

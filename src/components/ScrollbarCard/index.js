@@ -2,6 +2,7 @@ import { Box, Typography, Card, CardContent, IconButton } from "@mui/material";
 import { useRef, useState } from "react";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import Image from "next/image";
 
 const categories = [
     { label: "Vacuum Machine", value: "vacuum", icon: "/Group.png" },
@@ -93,7 +94,7 @@ export default function CategoryCarousel() {
                             }}
                         >
                             <CardContent sx={{ bgcolor: selected === cat.value ? "#216ACC" : " #E7F4FF", color: selected === cat.value && "white", display: 'flex', alignItems: 'center', gap: "20px", paddingBottom: '10px !important' }}>
-                                <img src={cat.icon} alt={cat.label} height={50} width={50} style={{ width: "50px", height: "50px" }} />
+                                <Image src={cat.icon} alt={cat.label} height={50} width={50} style={{ width: "50px", height: "50px" }} />
                                 <Typography fontWeight={500} fontSize={"14px"}>{cat.label}</Typography>
                             </CardContent>
                         </Card>

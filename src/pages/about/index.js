@@ -1,4 +1,4 @@
-const { AboutUs } = require("@/components/About/AboutUs")
+import { AboutUs } from "@/components/About/AboutUs";
 
  const   AboutPage = ()=>{
      return (

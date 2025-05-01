@@ -20,12 +20,18 @@ import SearchBar from "./SearchBar";
 import AuthSection from "./AuthSection";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useRouter } from 'next/router';
+
+
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
+  const router = useRouter()
+   const handleNavigate = (navprops)=>{
+    router.push(navprops)
+  }
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
   };
@@ -54,6 +60,7 @@ const Header = () => {
                 height={40}
                 width={140}
                 style={{ objectFit: "contain" }}
+                onClick={()=>handleNavigate("/")}
               />
             </Box>
 

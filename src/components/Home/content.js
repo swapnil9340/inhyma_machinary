@@ -1,6 +1,10 @@
 import { Box, Typography, Button, Container } from '@mui/material';
-
+import { useRouter } from 'next/router';
 const Content = () => {
+  const router = useRouter()
+  const handleNavigate = (navprops) => {
+    router.push(navprops)
+  }
   return (
     <Box
       sx={{
@@ -62,6 +66,7 @@ const Content = () => {
               bgcolor: 'primary.dark',
             },
           }}
+          onClick={()=>handleNavigate("/about")} 
         >
           About Us
         </Button>

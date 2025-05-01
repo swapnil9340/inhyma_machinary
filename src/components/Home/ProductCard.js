@@ -101,7 +101,7 @@ const ProductCard = () => {
                     }}
                 >
                     {products.map((item, i) => (
-                     <Box sx={{ display: "flex" }}>
+                     <Box  key={i}sx={{ display: "flex" }}>
                      <Card
                        key={i}
                        elevation={0}
