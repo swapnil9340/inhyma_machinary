@@ -101,6 +101,10 @@ export default function Address() {
             boxSizing: "content-box",
             padding: "5px",
             borderRadius: "50%",
+            ':hover':{
+                background : "#1955A6",
+                opacity:"0.9"
+            }
           }}
         >
           <LiaFacebookF color="#fff" />
@@ -111,6 +115,10 @@ export default function Address() {
             boxSizing: "content-box",
             padding: "5px",
             borderRadius: "50%",
+            ':hover':{
+                background : "#1955A6",
+                opacity:"0.9"
+            }
           }}
         >
           <Twitter sx={{ color: "#fff" }} />
@@ -121,6 +129,10 @@ export default function Address() {
             boxSizing: "content-box",
             padding: "5px",
             borderRadius: "50%",
+            ':hover':{
+                background : "#1955A6",
+                opacity:"0.9"
+            }
           }}
         >
           <Instagram sx={{ color: "#fff" }} />
@@ -131,6 +143,10 @@ export default function Address() {
             boxSizing: "content-box",
             padding: "5px",
             borderRadius: "50%",
+            ':hover':{
+                background : "#1955A6",
+                opacity:"0.9"
+            }
           }}
         >
           <YouTube sx={{ color: "#fff" }} />
