@@ -106,7 +106,7 @@ const NavbarWithDropdownTabs = () => {
           anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
           transformOrigin={{ vertical: 'top', horizontal: 'left' }}
         >
-          <MenuItem onClick={handleClose}>Blog</MenuItem>
+          <MenuItem onClick={()=>handleNavigate("/blog")}>Blog</MenuItem>
           <MenuItem onClick={handleClose}>Guides</MenuItem>
           <MenuItem onClick={handleClose}>Help Center</MenuItem>
         </Menu>

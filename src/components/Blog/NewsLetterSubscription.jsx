@@ -71,6 +71,7 @@ export default function NewsletterSubscription() {
               backgroundColor: '#2157a4',
               whiteSpace: 'nowrap',
               height : {xs:"10vmin" , md:"4vmin"},
+              minWidth : "fit-content"
             }}
           >
             Subscribe
