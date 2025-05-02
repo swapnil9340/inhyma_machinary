@@ -9,9 +9,11 @@ import {
   MenuItem,
 } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { useRouter } from 'next/router';
 
 const NavbarWithDropdownTabs = () => {
   const [value, setValue] = useState(0);
+  const router = useRouter()
   const [anchorElResources, setAnchorElResources] = useState(null);
   const [anchorElProducts, setAnchorElProducts] = useState(null);
 
@@ -32,6 +34,9 @@ const NavbarWithDropdownTabs = () => {
     setAnchorElProducts(null);
   };
 
+  const handleNavigate = (navprops)=>{
+    router.push(navprops)
+  }
   return (
     <AppBar
       position="static"
@@ -90,7 +95,7 @@ const NavbarWithDropdownTabs = () => {
             }
           />
 
-          <Tab label="Contact Us" />
+          <Tab label="Contact Us" onClick={()=>handleNavigate("/contact-us")} />
         </Tabs>
 
         {/* Resources Menu */}

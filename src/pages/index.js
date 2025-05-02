@@ -1,24 +1,22 @@
 
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from 'next/font/google';
 import HomePage from "@/components/Home/home";
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
 });
 
 
 export default function Home() {
   return (
     <>
+     <div className={inter.className}>
       <HomePage></HomePage>
+      </div>
     </>
   );
 }

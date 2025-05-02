@@ -36,7 +36,12 @@ const Banner = () => {
                         India’s Trusted Provider of Packaging Machinery and
                         Material Handling Equipment for Over 13 Years.
                         </Typography>
-                        <Box>
+                        <Box 
+                        sx={{
+                            display:"flex",
+                            gap:"10px"
+                        }}
+                        >
                         <Button
                             variant="contained"
                             color="primary"
