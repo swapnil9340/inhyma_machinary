@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
@@ -21,7 +22,7 @@ const GlobalPresenceSection = () => {
                     </span>
                 </h2>
 
-                <div style={{ marginTop: "40px", display: "flex", gap: "32%" }}>
+                <Box sx={{ marginTop: "40px", display: {xs:"block",md:"flex"}, gap: "32%" }}>
                     <div style={{ fontSize: "18px", fontWeight: "500", color: "#555", display: "flex", alignItems: "center", justifyContent: "center", gap: "10px", marginBottom: "20px" }}>
                         <Image height={30} width={30} src="/vector (1).png" alt="serving icon" style={{ width: "30px", height: "30px" }} />
 
@@ -50,9 +51,9 @@ const GlobalPresenceSection = () => {
                             </div>
                         ))}
                     </div>
-                </div>
+                </Box>
 
-                <div style={{ marginTop: "10px", display: "flex", gap: "21%" }}>
+                <Box sx={{ marginTop: "20px", display: {xs:"block",md:"flex"}, gap: "21%" }}>
                     <div style={{ fontSize: "18px", fontWeight: "500", color: "#555", display: "flex", alignItems: "center", justifyContent: "center", gap: "10px", marginBottom: "20px" }}>
                     <Image height={30} width={30} src="/Group 229.png" alt="serving icon" style={{ width: "30px", height: "30px" }} />
 
@@ -70,7 +71,7 @@ const GlobalPresenceSection = () => {
                             </div>
                         ))}
                     </div>
-                </div>
+                </Box>
             </div>
 
         </section>

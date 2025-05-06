@@ -11,6 +11,12 @@ const categories = [
     { label: "Box Taper", value: "box", icon: "/Group.png" },
     { label: "Cartoner", value: "cartoner", icon: "/Group.png" },
     { label: "Pouch Filler", value: "pouch", icon: "/Group.png" },
+    { label: "Vacuum Machine", value: "vacuum", icon: "/Group.png" },
+    { label: "Sealing Machine", value: "sealing", icon: "/Group.png" },
+    { label: "Induction Sealing Machine", value: "induction", icon: "/Group.png" },
+    { label: "Box Taper", value: "box", icon: "/Group.png" },
+    { label: "Cartoner", value: "cartoner", icon: "/Group.png" },
+    { label: "Pouch Filler", value: "pouch", icon: "/Group.png" },
 ];
 
 export default function CategoryCarousel() {

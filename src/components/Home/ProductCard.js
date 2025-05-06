@@ -27,6 +27,12 @@ const allProducts = {
         { name: "Portable Induction Sealer", img: "/image 13.png" },
         { name: "Continuous Induction Sealer", img: "/image 13.png" },
         { name: "Portable Induction Sealer", img: "/image 13.png" },
+        { name: "Portable Induction Sealer", img: "/image 13.png" },
+        { name: "Continuous Induction Sealer", img: "/image 13.png" },
+        { name: "Portable Induction Sealer", img: "/image 13.png" },
+        { name: "Portable Induction Sealer", img: "/image 13.png" },
+        { name: "Continuous Induction Sealer", img: "/image 13.png" },
+        { name: "Portable Induction Sealer", img: "/image 13.png" },
     ],
 };
 
@@ -51,7 +57,7 @@ const ProductCard = () => {
         <Box sx={{ backgroundColor: "#E7F4FF", py: 6 }}>
             <Typography variant="h5" fontWeight={600} textAlign="center">
                 <Box component="span" sx={{ borderLeft: "4px solid #f44336", pl: 1 }}>
-                    Product Categories
+                Top Performing Machines
                 </Box>
             </Typography>
 

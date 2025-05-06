@@ -1,4 +1,4 @@
-import { Box, Typography, Card, CardContent, Grid, CardMedia, Button } from "@mui/material";
+import { Box, Typography, Card, CardContent, Grid, CardMedia, Button, Container } from "@mui/material";
 import { useState } from "react";
 import ScrollBarCard from "../ScrollbarCard"
 import Image from "next/image";
@@ -17,6 +17,7 @@ const allProducts = {
         { name: "Portable Induction Sealer", img: "image 13.png" },
         { name: "Continuous Induction Sealer", img: "/product2.png" },
         { name: "Portable Induction Sealer", img: "image 13.png" },
+        { name: "Portable Induction Sealer", img: "image 13.png" },
     ],
 };
 
@@ -28,15 +29,16 @@ const ProductCategoriesSection = () => {
     return (
         <Box sx={{ backgroundColor: "#E7F4FF", py: 5 }}>
             <ScrollBarCard></ScrollBarCard>
+            <Container maxWidth="xl">
             <Grid container spacing={2} justifyContent="center">
                 {products.map((product, i) => (
-                    <Grid item xs={12} sm={6} md={3} key={i}>
+                    <Grid item size={{xs:6 ,md : 2}} key={i}>
                         <Card
                             sx={{
                                 maxWidth: 250,
                                 backgroundColor: '#fff',
                                 boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                                padding: 2,
+                                padding: 1,
                                 textAlign: 'center',
                                 display: 'flex',
                                 flexDirection: 'column',
@@ -46,18 +48,19 @@ const ProductCategoriesSection = () => {
                             }}
                         >
                             <CardContent sx={{ paddingBottom: '16px !important' ,justifyItems:"baseline" }}>
-                                <Typography variant="subtitle1" fontWeight={500} mb={2} style={{width:"150px" , fontSize:"14px" ,lineHeight:"17px" ,  textAlign:"left"}}>
-                                    Portable Induction Sealer Portable Induction Sealer
+                                <Typography variant="subtitle1" fontWeight={500} mb={2} sx={{width:"150px" , fontSize:{xs:"18px" ,md:"16px"} ,lineHeight:"17px" ,  textAlign:"left" ,color :"#606872"}}>
+                                    {product.name}
                                 </Typography>
 
                                 <Button
                                     variant="contained"
                                     sx={{
-                                        backgroundColor: '#0d47a1',
+                                        backgroundColor: '#1955A6',
                                         color: '#fff',
                                         fontSize: '0.75rem',
                                         padding: '6px 12px',
                                         textTransform: 'none',
+                                        borderRadius :0,
                                         mb: 2,
                                         '&:hover': {
                                             backgroundColor: '#08306b',
@@ -88,6 +91,7 @@ const ProductCategoriesSection = () => {
                     </Grid>
                 ))}
             </Grid>
+            </Container>
         </Box>
     );
 };
