@@ -32,7 +32,7 @@ const trustPoints = [
 const WhyTrustSection = () => {
   return (
     <Box sx={{ py: 5, backgroundColor: "#f5faff" , justifyContent:"center",display:"flex" }}>
-      <Grid container spacing={4} alignItems="center">
+      <Grid container spacing={4} alignItems="center" justifyContent={"center"}>
         <Grid item xs={12} md={6}>
           <Box sx={{ textAlign: "center" }}>
             <Image

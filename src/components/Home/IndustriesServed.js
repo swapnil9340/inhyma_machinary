@@ -18,10 +18,13 @@ const industries = [
     },
     {
         title: "Logistics & E-Commerce",
-        icon: <svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M14.3314 0V5.87035H9.16198V0H0.174805V17H23.3186V0H14.3314Z" fill="#3C8FFF" />
+        icon: <svg width="86" height="64" viewBox="0 0 86 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M74.3008 9V43.6025H0.918945V55.7103H8.01558C7.77257 56.3731 7.63967 57.0891 7.63967 57.8358C7.63967 61.2348 10.3902 64 13.771 64C17.1519 64 19.9024 61.2348 19.9024 57.8358C19.9024 57.0891 19.7695 56.3731 19.5265 55.7103H60.7146C60.4716 56.3731 60.3387 57.0891 60.3387 57.8358C60.3387 61.2348 63.0892 64 66.4701 64C69.8511 64 72.6016 61.2348 72.6016 57.8358C72.6016 57.0891 72.4687 56.3731 72.2257 55.7103H79.3223V14.0482H85.4439V9H74.3008Z" fill="#3C8FFF"/>
+        <path d="M28.5474 22V27.8703H23.6027V22H15.0063V39H37.1438V22H28.5474Z" fill="#3C8FFF"/>
+        <path d="M56.3314 22V27.8703H51.162V22H42.1748V39H65.3186V22H56.3314Z" fill="#3C8FFF"/>
+        <path d="M42.6348 0V5.87051H37.6902V0H29.0938V17H37.6902H42.6348H51.2313V0H42.6348Z" fill="#3C8FFF"/>
         </svg>
-        ,
+        
     },
     // Add more if needed
 ];
@@ -29,11 +32,11 @@ const industries = [
 const IndustriesServed = () => {
     return (
         <Box sx={{ py: 2 }}>
-            <Box maxWidth="lg" mx="auto" px={2} sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Box maxWidth="lg" mx="auto" px={2} sx={{ display: "flex", justifyContent: "space-between" ,alignItems :"center" }}>
                 <Typography
                     variant="h5"
                     fontWeight={600}
-                    sx={{ mb: 4, display: "flex", alignItems: "center" }}
+                    sx={{ mb: 4, display: "flex", alignItems: "center" ,color : "#606872" }}
                 >
                     <Box
                         component="span"
@@ -45,7 +48,7 @@ const IndustriesServed = () => {
 
                 <Grid container spacing={3} sx={{ width: "75%" }}>
                     {industries.map((industry, index) => (
-                        <Grid item xs={12} sm={6} md={4} key={index}>
+                        <Grid item size={{xs:12 , md:4}} key={index}>
                             <Card
                                 elevation={0}
                                 sx={{

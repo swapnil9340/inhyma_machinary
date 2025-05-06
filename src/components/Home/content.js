@@ -22,6 +22,7 @@ const Content = () => {
             fontWeight: 'bold',
             mb: 2,
             color: 'text.primary',
+            fontSize :{ xs:"5vmin" ,md:"3vmin"} ,
           }}
         >
           <Box component="span" sx={{ color: 'red', mr: 1 }}>|</Box>
@@ -56,12 +57,12 @@ const Content = () => {
         <Button
           variant="contained"
           sx={{
-            bgcolor: 'primary.main',
+            bgcolor: "#1955A6",
             px: 4,
             py: 1.5,
             fontWeight: 600,
-            borderRadius: '8px',
             textTransform: 'none',
+            borderRadius :"0",
             '&:hover': {
               bgcolor: 'primary.dark',
             },
