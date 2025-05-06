@@ -6,12 +6,11 @@ import IndustriesServed from "./IndustriesServed"
 import WhyTrustSection from "./infoacard"
 import ProductCard from "./ProductCard"
 import ProductCategories from "./productCategory"
-import Tabs from "./tabs"
+// import Tabs from "./tabs"
 import TestimonialCard from "./TestimonialCard"
 
 const Home = () => {
     return <>
-        <Tabs></Tabs>
         <Banner></Banner>
         <Content></Content>
         <ProductCategories></ProductCategories>
