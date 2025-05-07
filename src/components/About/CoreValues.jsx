@@ -26,10 +26,10 @@ const listData = [
 
 const CoreValues = () => {
   return (
-        <Box sx={{background :"#E7F4FF" ,display:'grid' ,placeContent:'center', padding : "60px", gap:"30px" , marginTop :"120px"}}>
+        <Box sx={{background :"#E7F4FF" ,display:'grid' ,placeContent:'center', padding : {xs:"30px" ,md:"60px"}, gap:"30px" , marginTop :{xs:"40px" ,md:"120px"}}}>
             <Box sx={{textAlign:'center'}}>
-                <Typography sx={{fontSize :"30px" , color:"#606872"}}>Our Core Values</Typography>
-                <Typography sx={{color :"#243E60", fontSize :"42px"}}>Buit on Integrity, Sustained by Excellence</Typography>
+                <Typography sx={{fontSize :{xs:"24px" ,md:"30px"} , color:"#606872"}}>Our Core Values</Typography>
+                <Typography sx={{color :"#243E60", fontSize :{xs:"24px" ,md:"42px"}}}>Buit on Integrity, Sustained by Excellence</Typography>
             </Box>
             <Box 
               sx={{
@@ -41,7 +41,7 @@ const CoreValues = () => {
 
                 {
                     listData.map((item)=>{
-                      return  <Typography component={"li"} sx={{fontSize:"32px" , color : "#606872"}}><span style={{color :"#1955A6"}}>{item.heading}:</span> {item.description}</Typography> 
+                      return  <Typography component={"li"} sx={{fontSize:{xs:"20px" ,md:"32px"} , color : "#606872"}}><span style={{color :"#1955A6"}}>{item.heading}:</span> {item.description}</Typography> 
                     })
                 }
             </Box>

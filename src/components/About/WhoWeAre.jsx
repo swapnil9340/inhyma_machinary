@@ -4,7 +4,7 @@ import React from 'react'
 const WhoWeAre = () => {
     return (
         <Box
-            sx={{ display: "flex", justifyContent: "center", mt:10}}
+            sx={{ display: "flex", justifyContent: "center", mt:{xs:5,md:10}}}
         >
             <Grid
                 container
@@ -12,21 +12,28 @@ const WhoWeAre = () => {
                 gap={4}
             >
 
-                <Grid size={{xs:6}} >
+                <Grid size={{xs:12 ,md:6}} >
+                <Typography
+                        variant="h2"
+                        sx={{ color: "#243E60", fontSize: "32px", marginBottom: "20px" ,textAlign :"center" ,display :{xs:"block" ,md:"none"} }}
+                    >
+                        Who We Are
+                    </Typography>
                 <Box
                     sx={{
                         backgroundImage: `url('/About_1.png')`,
                         backgroundRepeat: "no-repeat",
-                        height: "285px",
+                        height: {xs:"185px" ,md:"285px"},
                         width: "100%",
+                        backgroundSize :"cover"
                     }}
                 ></Box>
                </Grid>
 
-               <Grid size={{xs:5}} >
+               <Grid size={{xs:12 ,md:5}} >
                     <Typography
                         variant="h2"
-                        sx={{ color: "#243E60", fontSize: "48px", marginBottom: "50px" }}
+                        sx={{ color: "#243E60", fontSize: "48px", marginBottom: "50px" ,display :{xs:"none" ,md:"block"} }}
                     >
                         Who We Are
                     </Typography>

@@ -8,7 +8,7 @@ const Headline = () => {
     <Container disableGutters sx={{marginTop :"20px"}}>
         <Box sx={{display : "flex",alignItems : 'center' ,justifyContent : 'center' ,gap :"10px"}}>
             <Image src={tickImg} style={{height : "auto" , width :"30px"}} />
-            <Typography sx={{color :"#606872" ,fontSize :  "36px"}}>Driven by Purpose. Inspired by Innovation.
+            <Typography sx={{color :"#606872" ,fontSize :  {xs:"20px" ,md:"36px"}}}>Driven by Purpose. Inspired by Innovation.
             </Typography>
         </Box>
     </Container>

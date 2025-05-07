@@ -13,16 +13,16 @@ const logos = [
 
 const Quality = () => {
   return (
-    <Box sx={{display : "grid" ,placeItems :"center" ,mt:10 }}>
+    <Box sx={{display : "grid" ,placeItems :"center" ,mt:{md:10} }}>
     <Box sx={{ py: 5, px: 2, width:"90%" }}>
-      <Typography variant="h5" sx={{fontSize :"48px" , color :"#243E60"}}  gutterBottom>
+      <Typography variant="h5" sx={{fontSize: {xs:"28px"  , md:"48px"} , color :"#243E60" ,textAlign :{xs:"center" ,md:"left"}}}  gutterBottom>
         Quality You Can Rely On
       </Typography>
 
-      <Grid container spacing={5} alignItems="center">
+      <Grid container spacing={5} alignItems="center" justifyContent={{xs:"center" ,md:"left"}}>
         {logos.map((src, index) => (
-          <Grid item xs={6} sm={4} md={2.4} key={index}>
-              <Image src={defaultImg} style={{ width : "300px" }} />
+          <Grid item xs={12} sm={4} md={2.4} key={index}>
+              <Image src={defaultImg} />
           </Grid>
         ))}
       </Grid>

@@ -20,18 +20,18 @@ export const Vision = () => {
     return (
         <>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
-                <Grid container spacing={10} marginTop={10} sx={{ width: "90%" }}>
+                <Grid container spacing={{xs:5 ,md:10}} marginTop={10} sx={{ width: "90%" }}>
 
                     {
                         cardDetails.map((card) => {
                             return (
-                                <Grid item size={{ xs: 6 }} sx={{ background: "#E7F4FF" }}>
+                                <Grid item size={{ xs: 12 ,md:6 }} sx={{ background: "#E7F4FF" }}>
                                     <Box
                                         sx={{
                                             display: "flex",
                                             alignItems: "center",
                                             justifyContent: "center",
-                                            padding: "40px",
+                                            padding: {xs:"20px" ,md:"40px"},
                                             gap: "20px",
                                         }}
                                     >
@@ -39,11 +39,11 @@ export const Vision = () => {
                                         <Box>
                                             <Typography
                                                 variant="h2"
-                                                sx={{ color: "#243E60", fontSize: "48px" ,marginBottom : "20px" }}
+                                                sx={{ color: "#243E60", fontSize: {xs:"32px" ,md:"48px"} ,marginBottom : {xs:"10px" ,md:"20px"} }}
                                             >
                                                 {card.title}
                                             </Typography>
-                                            <Typography sx={{ fontSize: "16px" , color : "#000000" }}>
+                                            <Typography sx={{ fontSize: "16px" , color : "#000000" ,textAlign :"justify" ,lineHeight :{xs:"20px" ,md:"26px"} }}>
                                                 {card.description}
                                             </Typography>
                                         </Box>

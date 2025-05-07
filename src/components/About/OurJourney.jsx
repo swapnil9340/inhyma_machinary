@@ -11,20 +11,20 @@ const milestones = [
 
 export default function OurJourney() {
   return (
-    <Box sx={{ backgroundColor: '#eaf4fc', py: 6, px: 4,mt:10, display: "grid", placeItems: "center" }}>
+    <Box sx={{ backgroundColor: '#eaf4fc', py: 6, px:{xs : 2 , md: 4} ,mt:10, display: "grid", placeItems: "center" }}>
 
       <Grid container spacing={4} alignItems="center" justifyContent={"space-between"} sx={{ width: "90%" }}>
-        <Grid item xs={12} md={6} >
-          <Typography variant="h6" color="text.primary" sx={{ fontSize: "48px" }}>
+        <Grid item  size={{xs:12 , md:6}} sx={{textAlign :{xs:"center" ,md:"left"}}}  >
+          <Typography variant="h6" color="text.primary" sx={{ fontSize: {xs:"26px"  , md:"48px"} }}>
             From Darsh Enterprise to
           </Typography>
-          <Typography variant="h5" fontWeight="bold" color="primary" sx={{ fontSize: "48px" }}>
+          <Typography variant="h5" fontWeight="bold" color="primary" sx={{ fontSize: {xs:"26px"  , md:"48px"} }}>
             INHYMA – Our Journey
           </Typography>
         </Grid>
 
-        <Grid item xs={12} md={6}>
-          <Typography sx={{ color: "#243E60", fontSize: "32px" }} mb={2}>
+        <Grid item size={{xs:12 , md:6}}>
+          <Typography sx={{ color: "#243E60", fontSize: {xs:"22px"  , md:"32px"} }} mb={2}>
             Use a horizontal timeline or animated cards:
           </Typography>
           <Box
@@ -35,7 +35,7 @@ export default function OurJourney() {
             }}
           >
             {milestones.map((item, index) => {
-              return <Typography component={"li"} sx={{ fontSize: "32px", color: "#606872" }}><span style={{fontWeight:600}}>{item.year}:</span> {item.detail}</Typography>
+              return <Typography component={"li"} sx={{ fontSize: {xs : "24px" , md:"32px"}, color: "#606872" }}><span style={{fontWeight:600}}>{item.year}:</span> {item.detail}</Typography>
 
             })}
           </Box>
