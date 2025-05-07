@@ -1,4 +1,4 @@
-const { default: CommonBanner } = require("@/CommonComponents/CommonBanner")
+import CommonBanner from "@/CommonComponents/CommonBanner";
 import blogBanner from "../../../public/blogBanner.png"
 
 

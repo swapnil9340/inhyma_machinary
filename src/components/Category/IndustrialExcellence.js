@@ -15,7 +15,7 @@ export default function IndustrialExcellence() {
           <Typography variant="body1" sx={{color : "#000000"}}>
             INHYMA Solutions LLP offers a comprehensive range of vacuum packaging machines engineered for both
             small-scale and large-scale operations. Our systems are ideal for food preservation, medical equipment,
-            electronic components, and chemical packaging. Whether you're looking for tabletop models or
+            electronic components, and chemical packaging. Whether you are looking for tabletop models or
             double-chamber industrial-grade machines, we provide reliable solutions tailored to your production needs.
           </Typography>
         </Grid>

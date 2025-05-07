@@ -65,7 +65,7 @@ export default function TrustedClients() {
             "Spare Parts Available",
             "CE / ISO Compliance",
           ].map((item, index) => (
-            <Typography component={"li"} sx={{ fontSize: "18px" }}>
+            <Typography key={index} component={"li"} sx={{ fontSize: "18px" }}>
               <span style={{ color: "#606872" }}>{item}</span>
             </Typography>
           ))}

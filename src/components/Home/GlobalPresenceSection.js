@@ -47,6 +47,7 @@ const GlobalPresenceSection = () => {
                                         backgroundRepeat: "no-repeat",
                                         backgroundPosition: "center",
                                     }}
+                                    alt="country icon"
                                 ></Image>
                             </div>
                         ))}
