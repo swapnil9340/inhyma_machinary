@@ -54,7 +54,7 @@ const CommonBanner = ({ bannerContent }) => {
                return <Button
                 key={btn}
                 variant="contained"
-                sx={{ bgcolor: "#1955A6", color: "#fff", px: 4 }}
+                sx={{ bgcolor: "#1955A6", color: "#fff", px: 4 ,borderRadius : 0, textTransform : "capitalize" }}
               >
                 {btn.btnName }
               </Button>

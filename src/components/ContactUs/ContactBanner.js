@@ -1,4 +1,5 @@
 import CommonBanner from "@/CommonComponents/CommonBanner";
+import bannerImg from "../../../public/contactUs.svg"
 
 const bannerContent = {
   heading1: "Let’s Connect – We’re Here to Help",
@@ -11,6 +12,7 @@ const bannerContent = {
       btnName: "Send An Enquiry",
     },
   ],
+  backgroundImg : bannerImg
 };
 
 const ContactBanner = () => {
