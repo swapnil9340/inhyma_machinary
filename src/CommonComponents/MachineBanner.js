@@ -1,7 +1,8 @@
 import React from 'react';
 import Image from 'next/image'; 
 
-const MachineBanner = () => {
+const MachineBanner = ({bannerContent}) => {
+  const {  heading1  ,heading2,img1 ,img2} = bannerContent;
   return (
     <div
       className="relative bg-cover bg-center rounded-lg overflow-hidden border border-blue-300 shadow"
@@ -13,7 +14,7 @@ const MachineBanner = () => {
         {/* Left Machine Image */}
         <div className="w-full md:w-1/5 flex justify-center">
           <Image
-            src="/Untitled design (7) 1.png"
+            src={img1}
             alt="Left Machine"
             width={150}
             height={100}
@@ -24,19 +25,18 @@ const MachineBanner = () => {
         {/* Center Text */}
         <div className="text-center md:text-left md:w-3/5">
           <h2 className="text-xl md:text-2xl font-semibold text-gray-800">
-            Explore Our Full Range of Packaging & <br />
-            <span className="text-blue-700">Material Handling Machines</span>
+           {heading1.subHeading1} <br />
+            <span className="text-blue-700">{heading1.subHeading2}</span>
           </h2>
           <p className="text-gray-600 mt-2 text-sm md:text-base">
-            Browse through 150+ machines across 13 categories—from vacuum sealers to labeling systems.
-            Trusted solutions for automation, efficiency, and precision.
+          {heading2}
           </p>
         </div>
 
         {/* Right Machine Image */}
         <div className="w-full md:w-1/5 flex justify-center">
           <Image
-            src="/Untitled design (8) 1.png"
+            src={img2}
             alt="Right Machine"
             width={150}
             height={100}

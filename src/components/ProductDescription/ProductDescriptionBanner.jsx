@@ -1,8 +1,8 @@
+import MachineBanner from '@/CommonComponents/MachineBanner'
+import React from 'react'
 
-import MachineBanner from "@/CommonComponents/MachineBanner";
-import machine1 from "../../../public/cat_1.png"
-import machine2 from "../../../public/cat_2.png"
-
+import machine1 from "../../../public/pd1.png"
+import machine2 from "../../../public/pd2.png"
 
 const bannerContent = {
   heading1 : { subHeading1 : "Vacuum Packaging Machines for Freshness," ,subHeading2 : "Hygiene & Longevity"},
@@ -11,10 +11,10 @@ const bannerContent = {
   img2 : machine2
 }
 
-const CategoryBanner = () => {
+const ProductDescriptionBanner = () => {
   return (
-     <MachineBanner bannerContent={bannerContent}/>
-  );
-};
+    <MachineBanner bannerContent={bannerContent}/>
+  )
+}
 
-export default CategoryBanner;
+export default ProductDescriptionBanner

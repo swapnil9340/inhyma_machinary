@@ -35,12 +35,12 @@ export default function ApplicationsTable() {
                 sx={{
                   color: "white",
                   borderRight: "1px solid white",
-                  fontSize:"24px" 
+                  fontSize:{xs:"20px" ,md:"24px"}
                 }}
               >
                 Sector
               </TableCell>
-              <TableCell sx={{ color: "white", fontSize:"24px" ,borderRight: "1px solid white",  }}>
+              <TableCell sx={{ color: "white", fontSize:{xs:"20px" ,md:"24px"} ,borderRight: "1px solid white",  }}>
                 Use Case
               </TableCell>
             </TableRow>
@@ -70,7 +70,7 @@ export default function ApplicationsTable() {
                     border: "1px solid #1955A6",
                     fontWeight :"bold",
                     color:"#606872",
-                    fontSize:"20px"
+                    fontSize:{xs:"16" ,md:"20px"}
                   }}
                 >
                   {row.sector}
@@ -79,7 +79,7 @@ export default function ApplicationsTable() {
                   sx={{
                     border: "1px solid #1955A6",
                     color :"#606872",
-                    fontSize :"20px"
+                    fontSize:{xs:"16" ,md:"20px"}
                   }}
                 >
                   {row.useCase}

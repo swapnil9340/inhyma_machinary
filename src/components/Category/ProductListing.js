@@ -27,7 +27,7 @@ export default function ProductListing() {
             VACUUM MACHINE
           </Typography>
         </Grid>
-        <Grid item size={{ xs: 12, md: 6 }} >
+        <Grid item size={{ xs: 12, md: 6 }} sx={{display : {xs:'none' ,md:"block"}}} >
           <Typography
             variant="subtitle1"
             fontWeight="bold"
@@ -75,6 +75,19 @@ export default function ProductListing() {
         </Grid>
 
         {/* Right Side: Specifications */}
+        <Grid item container size={12} spacing={0}  sx={{ background: "#2157a4", p: 1 ,display:{md:"none"} }}>
+        <Grid item size={{ xs: 12, md: 6 }} >
+          <Typography
+            variant="subtitle1"
+            fontWeight="bold"
+            color="white"
+            textAlign="center"
+          >
+            Specifications
+          </Typography>
+        </Grid>
+        </Grid>
+
         <Grid item size={{ xs: 12, md: 6 }} sx={{ placeItems: "center" }}>
           <Box sx={{display:"flex" ,flexDirection:"column" , gap :"10px"}}>
             <Typography variant="body1" color="text.secondary" mb={1}>

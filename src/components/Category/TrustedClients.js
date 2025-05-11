@@ -16,7 +16,7 @@ export default function TrustedClients() {
           <Box>
           <Typography
             variant="h5"
-            sx={{ color: "#53657D", fontWeight: "bold", mb: 3 ,fontSize:"3.5vmin" }}
+            sx={{ color: "#53657D", fontWeight: "bold", mb: 3 ,fontSize : {xs:"25px" ,md:"35px"} }}
           >
             Trusted by 500+ Clients <br /> in 6+ Countries
           </Typography>
@@ -29,7 +29,8 @@ export default function TrustedClients() {
               fontSize: "14px",
               px: 4,
               py: 1,
-              mt: 2,
+              mt: {md:2},
+              borderRadius :0,
               "&:hover": {
                 backgroundColor: "#19417f",
               },
