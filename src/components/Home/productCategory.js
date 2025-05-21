@@ -28,7 +28,7 @@ const ProductCategoriesSection = ({ allProducts, allCategories}) => {
 
 
     const filterProducts = ()=>{
-         const result =  allProducts.filter((product)=>product.category === selected.name )
+         const result =  allProducts.filter((product)=>product?.category === selected?.name )
          setProducts(result)
     }
 
@@ -71,7 +71,7 @@ const ProductCategoriesSection = ({ allProducts, allCategories}) => {
                         >
                             <CardContent sx={{ paddingBottom: '16px !important' ,justifyItems:"baseline" }}>
                                 <Typography variant="subtitle1" fontWeight={500} mb={2} sx={{width:"150px" , fontSize:{xs:"18px" ,md:"16px"} ,lineHeight:"17px" ,  textAlign:"left" ,color :"#606872"}}>
-                                    {product.name}
+                                    {product?.name}
                                 </Typography>
 
                                 <Button
@@ -101,7 +101,7 @@ const ProductCategoriesSection = ({ allProducts, allCategories}) => {
                                     }}
                                 >
                                     <Image
-                                        src={product.images[0].url} // 👈 Replace with your actual image
+                                        src={product?.images?.[0]?.url} // 👈 Replace with your actual image
                                         alt="Portable Induction Sealer"
                                         width={100}
                                         height={100}

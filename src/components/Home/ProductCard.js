@@ -98,7 +98,7 @@ const ProductCard = ({allProducts}) => {
                      >
                        <Box sx={{ display: "flex", justifyContent: "center", pt: 2 }}>
                          <Image
-                           src={item.images[0].url}
+                           src={item?.images?.[0]?.url}
                            alt={item.name}
                            width={180}
                            height={140}
