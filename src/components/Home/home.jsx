@@ -18,8 +18,8 @@ const Home = () => {
     const getAllCategory = async () => {
         try {
             const [categoryRes, productRes] = await Promise.all([
-                axios.get("http://localhost:3000/api/category"),
-                axios.get("http://localhost:3000/api/getProducts") // <- change this to your actual second API
+                axios.get("https://inhyma-machinary-git-master-swapnil9340s-projects.vercel.app/api/category"),
+                axios.get("https://inhyma-machinary-git-master-swapnil9340s-projects.vercel.app/api/getProducts") // <- change this to your actual second API
             ]);
             setAllCategories(categoryRes?.data)
             setAllProducts(productRes?.data)
