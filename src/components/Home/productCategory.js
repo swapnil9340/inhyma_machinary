@@ -1,34 +1,56 @@
 import { Box, Typography, Card, CardContent, Grid, CardMedia, Button, Container } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ScrollBarCard from "../ScrollbarCard"
 import Image from "next/image";
 
 
-const allProducts = {
-    vacuum: [
-        { name: "Vacuum Sealer A", img: "image 13.png" },
-        { name: "Vacuum Sealer B", img: "/product2.png" },
-    ],
-    sealing: [
-        { name: "Sealing Machine A", img: "image 13.png" },
-        { name: "Sealing Machine B", img: "/product2.png" },
-    ],
-    induction: [
-        { name: "Portable Induction Sealer", img: "image 13.png" },
-        { name: "Continuous Induction Sealer", img: "/product2.png" },
-        { name: "Portable Induction Sealer", img: "image 13.png" },
-        { name: "Portable Induction Sealer", img: "image 13.png" },
-    ],
-};
+// const allProducts = {
+//     vacuum: [
+//         { name: "Vacuum Sealer A", img: "image 13.png" },
+//         { name: "Vacuum Sealer B", img: "/product2.png" },
+//     ],
+//     sealing: [
+//         { name: "Sealing Machine A", img: "image 13.png" },
+//         { name: "Sealing Machine B", img: "/product2.png" },
+//     ],
+//     induction: [
+//         { name: "Portable Induction Sealer", img: "image 13.png" },
+//         { name: "Continuous Induction Sealer", img: "/product2.png" },
+//         { name: "Portable Induction Sealer", img: "image 13.png" },
+//         { name: "Portable Induction Sealer", img: "image 13.png" },
+//     ],
+// };
 
-const ProductCategoriesSection = () => {
-    const [selected, setSelected] = useState("induction");
+const ProductCategoriesSection = ({ allProducts, allCategories}) => {
+    const [selected, setSelected] = useState([]);
+    const [products , setProducts] = useState([]);
 
-    const products = allProducts[selected];
+
+
+    const filterProducts = ()=>{
+         const result =  allProducts.filter((product)=>product.category === selected.name )
+         setProducts(result)
+    }
+
+    useEffect(()=>{
+        setSelected(allCategories[0])
+        filterProducts();
+  },[JSON.stringify(allCategories)])
+
+
+
+  useEffect(()=>{
+        filterProducts();
+  } , [JSON.stringify(selected)])
+  console.log("filters" , products)
+
+
+  console.log("selected" ,selected)
+    // const products = allProducts[selected];
 
     return (
         <Box sx={{ backgroundColor: "#E7F4FF", py: 5 }}>
-            <ScrollBarCard></ScrollBarCard>
+            <ScrollBarCard selected={selected} setSelected={setSelected} categories={allCategories}></ScrollBarCard>
             <Container maxWidth="xl">
             <Grid container spacing={2} justifyContent="center">
                 {products.map((product, i) => (
@@ -76,11 +98,10 @@ const ProductCategoriesSection = () => {
                                         display: 'flex',
                                         justifyContent: 'right',
                                         alignItems: 'center',
-                                        
                                     }}
                                 >
                                     <Image
-                                        src="/image 13.png" // 👈 Replace with your actual image
+                                        src={product.images[0].url} // 👈 Replace with your actual image
                                         alt="Portable Induction Sealer"
                                         width={100}
                                         height={100}

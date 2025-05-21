@@ -6,38 +6,12 @@ import {
     Button,
     IconButton,
 } from "@mui/material";
-import { useState, useRef } from "react";
+import {  useRef } from "react";
 import Image from "next/image";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-const allProducts = {
-    vacuum: [
-        { name: "Vacuum Sealer A", img: "/image 13.png" },
-        { name: "Vacuum Sealer B", img: "/product2.png" },
-    ],
-    sealing: [
-        { name: "Sealing Machine A", img: "/image 13.png" },
-        { name: "Sealing Machine B", img: "/product2.png" },
-    ],
-    induction: [
-        { name: "Portable Induction Sealer", img: "/image 13.png" },
-        { name: "Continuous Induction Sealer", img: "/image 13.png" },
-        { name: "Portable Induction Sealer", img: "/image 13.png" },
-        { name: "Portable Induction Sealer", img: "/image 13.png" },
-        { name: "Continuous Induction Sealer", img: "/image 13.png" },
-        { name: "Portable Induction Sealer", img: "/image 13.png" },
-        { name: "Portable Induction Sealer", img: "/image 13.png" },
-        { name: "Continuous Induction Sealer", img: "/image 13.png" },
-        { name: "Portable Induction Sealer", img: "/image 13.png" },
-        { name: "Portable Induction Sealer", img: "/image 13.png" },
-        { name: "Continuous Induction Sealer", img: "/image 13.png" },
-        { name: "Portable Induction Sealer", img: "/image 13.png" },
-    ],
-};
-
-const ProductCard = () => {
-    const [selected, setSelected] = useState("induction");
+const ProductCard = ({allProducts}) => {
     const scrollRef = useRef(null);
 
     const scroll = (direction) => {
@@ -51,8 +25,7 @@ const ProductCard = () => {
         }
     };
 
-    const products = allProducts[selected];
-
+   
     return (
         <Box sx={{ backgroundColor: "#E7F4FF", py: 6 }}>
             <Typography variant="h5" fontWeight={600} textAlign="center">
@@ -106,7 +79,7 @@ const ProductCard = () => {
                         pb: 1,
                     }}
                 >
-                    {products.map((item, i) => (
+                    {allProducts.slice(0 ,10).map((item, i) => (
                      <Box  key={i}sx={{ display: "flex" }}>
                      <Card
                        key={i}
@@ -125,7 +98,7 @@ const ProductCard = () => {
                      >
                        <Box sx={{ display: "flex", justifyContent: "center", pt: 2 }}>
                          <Image
-                           src={item.img}
+                           src={item.images[0].url}
                            alt={item.name}
                            width={180}
                            height={140}
@@ -139,7 +112,7 @@ const ProductCard = () => {
                            fontWeight={500}
                            sx={{ color: "#0C4DA2", fontSize: "16px", mb: 1 }}
                          >
-                           {item.name}
+                           {item?.name}
                          </Typography>
                          <Typography
                            variant="body2"
@@ -149,7 +122,7 @@ const ProductCard = () => {
                            securing products with a tight, professional shrink film finish.
                          </Typography>
                    
-                         {/* Button aligned to bottom */}
+                         
                          <Box sx={{ mt: "auto" }}>
                            <Button
                              variant="contained"

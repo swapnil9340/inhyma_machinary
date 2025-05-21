@@ -1,26 +1,10 @@
 import { Box, Typography, Card, CardContent, IconButton } from "@mui/material";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Image from "next/image";
 
-const categories = [
-    { label: "Vacuum Machine", value: "vacuum", icon: "/Group.png" },
-    { label: "Sealing Machine", value: "sealing", icon: "/Group.png" },
-    { label: "Induction Sealing Machine", value: "induction", icon: "/Group.png" },
-    { label: "Box Taper", value: "box", icon: "/Group.png" },
-    { label: "Cartoner", value: "cartoner", icon: "/Group.png" },
-    { label: "Pouch Filler", value: "pouch", icon: "/Group.png" },
-    { label: "Vacuum Machine", value: "vacuum", icon: "/Group.png" },
-    { label: "Sealing Machine", value: "sealing", icon: "/Group.png" },
-    { label: "Induction Sealing Machine", value: "induction", icon: "/Group.png" },
-    { label: "Box Taper", value: "box", icon: "/Group.png" },
-    { label: "Cartoner", value: "cartoner", icon: "/Group.png" },
-    { label: "Pouch Filler", value: "pouch", icon: "/Group.png" },
-];
-
-export default function CategoryCarousel() {
-    const [selected, setSelected] = useState("induction");
+export default function CategoryCarousel({ selected , setSelected, categories}) {
     const scrollRef = useRef(null);
 
     const scroll = (direction) => {
@@ -88,20 +72,20 @@ export default function CategoryCarousel() {
                         <Card
                         elevation={0}
                             key={cat.value}
-                            onClick={() => setSelected(cat.value)}
+                            onClick={() => setSelected(cat)}
                             sx={{
                                 minWidth: 200,
                                 flexShrink: 0,
                                 cursor: "pointer",
                                 textAlign: "center",
-                                //   bgcolor: selected === cat.value && "#216ACC" : " #E7F4FF",
-                                //   boxShadow: selected === cat.value ? 4 : 1,
+                                  bgcolor: selected?.name === cat?.name ? "#216ACC" : " #E7F4FF",
+                                //   boxShadow: selected === cat?.name ? 4 : 1,
                                 transition: "0.3s",
                             }}
                         >
-                            <CardContent sx={{ bgcolor: selected === cat.value ? "#216ACC" : " #E7F4FF", color: selected === cat.value && "white", display: 'flex', alignItems: 'center', gap: "20px", paddingBottom: '10px !important' }}>
-                                <Image src={cat.icon} alt={cat.label} height={50} width={50} style={{ width: "50px", height: "50px" }} />
-                                <Typography fontWeight={500} fontSize={"14px"}>{cat.label}</Typography>
+                            <CardContent sx={{ bgcolor: selected?.name === cat?.name ? "#216ACC" : " #E7F4FF", color: selected?.name === cat?.name && "white", display: 'flex', alignItems: 'center', gap: "20px", paddingBottom: '10px !important' }}>
+                                <Image src={cat?.image} alt={cat.label} height={50} width={50} style={{ width: "50px", height: "50px" }} />
+                                <Typography fontWeight={500} fontSize={"14px"}>{cat?.name}</Typography>
                             </CardContent>
                         </Card>
                     ))}
