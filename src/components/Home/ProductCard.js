@@ -10,9 +10,11 @@ import {  useRef } from "react";
 import Image from "next/image";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { useRouter } from "next/router";
 
 const ProductCard = ({allProducts}) => {
     const scrollRef = useRef(null);
+    const router = useRouter()
 
     const scroll = (direction) => {
         const container = scrollRef.current;
@@ -25,6 +27,13 @@ const ProductCard = ({allProducts}) => {
         }
     };
 
+
+    const handleNavigate = (item)=>{
+      router.push(`/product_description/${item._id}`)
+    }
+
+
+   
    
     return (
         <Box sx={{ backgroundColor: "#E7F4FF", py: 6 }}>
@@ -128,6 +137,7 @@ const ProductCard = ({allProducts}) => {
                              variant="contained"
                              fullWidth
                              sx={{ backgroundColor: "#0C4DA2", textTransform: "none", fontSize: "14px" }}
+                             onClick={()=>handleNavigate(item)}
                            >
                              View Product
                            </Button>

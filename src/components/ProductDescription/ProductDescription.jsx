@@ -4,10 +4,13 @@ import ListingGrid from './ListingGrid'
 import IndustrialExcellence from './IndustrialExcellence'
 import SimilerProducts from './SimilerProducts'
 
-const ProductDescription = () => {
+const ProductDescription = ({details}) => {
+
+
+
   return (
     <>
-      <ProductDescriptionBanner/>
+      <ProductDescriptionBanner details={details}/>
       <ListingGrid/>
       <IndustrialExcellence/>
       <SimilerProducts/>

@@ -1,4 +1,4 @@
-import axios from "axios"
+import axiosInstance from "@/utils/axiosInstance"
 import Banner from "./banner"
 import Content from "./content"
 import CTASection from "./ctasection"
@@ -18,8 +18,8 @@ const Home = () => {
     const getAllCategory = async () => {
         try {
             const [categoryRes, productRes] = await Promise.all([
-                axios.get("https://inhyma-machinary-git-master-swapnil9340s-projects.vercel.app/api/category"),
-                axios.get("https://inhyma-machinary-git-master-swapnil9340s-projects.vercel.app/api/getProducts") // <- change this to your actual second API
+                axiosInstance.get("/category"),
+                axiosInstance.get("/getProducts") // <- change this to your actual second API
             ]);
             setAllCategories(categoryRes?.data)
             setAllProducts(productRes?.data)
