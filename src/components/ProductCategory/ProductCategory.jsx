@@ -4,11 +4,11 @@ import ProductCategoryBanner from "./ProductCategoryBanner";
 import SelectCategory from "./SelectCategory";
 
 
-const ProductCategory = () => {
+const ProductCategory = ({allCategories ,allProducts}) => {
   return (
     <>
       <ProductCategoryBanner />
-      <SelectCategory/>
+      <SelectCategory allProducts={allProducts} allCategories={allCategories}/>
       <MachineDemand/>
       <MachinesInfoSection/>
     </>

@@ -79,18 +79,20 @@ const NavbarWithDropdownTabs = () => {
 
           {/* Resources dropdown */}
           <Tab
+            onClick={()=>handleNavigate("/blog")}
             label={
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }} onClick={handleResourcesClick}>
-                Resources <KeyboardArrowDownIcon sx={{ fontSize: 16 }} />
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}  >
+                Blogs
               </Box>
             }
           />
 
           {/* Product Categories dropdown */}
           <Tab
+          onClick={()=>handleNavigate("/product_category")}
             label={
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }} onClick={handleProductsClick}>
-                Product Categories <KeyboardArrowDownIcon sx={{ fontSize: 16 }} />
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }} >
+                Product Categories
               </Box>
             }
           />

@@ -9,16 +9,20 @@ import {
 } from "@mui/material";
 import { GoSearch } from "react-icons/go";
 
-const ChooseCategory = () => {
-  const categories = [
-    "Food & Beverage",
-    "Pharmaceuticals",
-    "Cosmetics",
-    "Logistics & E-commerce",
-    "General Industrial",
-  ];
+const ChooseCategory = ({selectedCategory ,setSelectedCategory ,allCategories}) => {
+  console.log("selectedCategory" ,selectedCategory)
+
+  const handleSelect = (status , category)=>{
+    console.log("status" ,status)
+        setSelectedCategory((prev)=>{
+          return {
+             ...prev ,
+             [category] : status
+          }
+        })
+  }
   return (
-    <Box  sx={{height :{xs:"fit-content" ,md:"50vmin"} ,maxHeight : {xs:"50dvh" ,md:"50vmin"}}}>
+    <Box  sx={{height :{xs:"fit-content" ,md:"50vh"} }}>
       <Grid container spacing={3}  sx={{height :"100%"}} >
         {/* Sidebar */}
           <Box sx={{ p: 2, bgcolor: "#EBF4FF", borderRadius: 2 ,width :"100%" ,height :"100%" }}>
@@ -47,14 +51,18 @@ const ChooseCategory = () => {
                 />
               }
             />
-            {categories.map((cat, i) => (
-              <FormControlLabel
+            <Box sx={{height : "80%" ,overflowY : "scroll"}}>
+            {allCategories.map((cat, i) => {
+            //  console.log("selectedCategory.includes(cat?.name)" ,selectedCategory.includes(cat?.name))
+           return    <FormControlLabel
                 key={i}
-                control={<Checkbox defaultChecked={i === 1} />}
-                label={cat}
+                control={<Checkbox checked={selectedCategory[cat?.name] === true} />}
+                label={cat?.name}
+                onChange={(e)=> handleSelect(e.target.checked ,cat?.name)}
                 sx={{ display: "block", color: "#2157a4", mb: 1 }}
               />
-            ))}
+            })}
+            </Box>
           </Box>
       </Grid>
     </Box>
