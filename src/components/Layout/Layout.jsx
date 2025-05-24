@@ -4,8 +4,8 @@ import Header from "../Header/header";
 import { layoutStyles } from "./Layout.styles";
 import Footer from "../Footer/footer";
 import NavbarWithDropdownTabs from "../Home/tabs";
-import "../../pages/index.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import { Inter } from 'next/font/google';
 
