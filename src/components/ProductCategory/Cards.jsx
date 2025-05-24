@@ -6,8 +6,14 @@ import 'swiper/css/navigation';
 import { FaCircleChevronRight } from "react-icons/fa6";
 import { FaCircleChevronLeft } from "react-icons/fa6";
 import React from 'react'
+import { useRouter } from 'next/router';
 
 const Cards = ({ filteredCards }) => {
+  const router = useRouter()
+
+  const handleNavigate = (item)=>{
+      router.push(`/product_description/${item._id}`)
+    }
 
   return (
     <Grid sx={{ height: { xs: "500px", md: "500px" } }} alignContent={'center'} container spacing={1} >
@@ -19,8 +25,6 @@ const Cards = ({ filteredCards }) => {
             slidesPerGroup={1}
             slidesPerView={3}
             spaceBetween={40}
-            // autoplay={{ delay: 2000 }}
-            // navigation={true}
             loop={true}
             modules={[Navigation, Autoplay]}
             centeredSlides={true}
@@ -46,7 +50,9 @@ const Cards = ({ filteredCards }) => {
                     <Typography variant="body2" color="text.secondary" sx={{ my: 1, WebkitLineClamp: 3, display: '-webkit-box', WebkitBoxOrient: 'vertical', overflow: 'hidden', textOverflow: 'ellipsis', fontSize: "14px" }}>
                       {prod?.description}
                     </Typography>
-                    <Button size="small" variant="contained" sx={{ backgroundColor: '#2157a4', width: "fit-content", borderRadius: 0, textTransform: "capitalize", fontSize: "16px " }}>
+                    <Button size="small" variant="contained" sx={{ backgroundColor: '#2157a4', width: "fit-content", borderRadius: 0, textTransform: "capitalize", fontSize: "16px " }}
+                     onClick={()=>{handleNavigate(prod)}}
+                    >
                       View Products
                     </Button>
                   </CardContent>
