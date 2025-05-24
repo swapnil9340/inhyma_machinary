@@ -4,6 +4,7 @@ import { Container, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import { set } from "mongoose";
 
+
 const SelectCategory = ({allProducts ,allCategories}) => {
   const [selectedCategory , setSelectedCategory ] = useState({});
   const [filteredCards , setFilteredCards] = useState([]);
@@ -11,7 +12,7 @@ const SelectCategory = ({allProducts ,allCategories}) => {
 
   useEffect(()=>{
     if(allCategories.length){
-      setSelectedCategory({[allCategories[0]?.name] : true})
+      setSelectedCategory({["Carton Sealer"] : true})
     }
   } , [JSON.stringify(allCategories)])
 

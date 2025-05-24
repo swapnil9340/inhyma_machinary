@@ -75,7 +75,7 @@ const NavbarWithDropdownTabs = () => {
             },
           }}
         >
-          <Tab label="Home" />
+          <Tab label="Home" onClick={()=>handleNavigate("/")} />
 
           {/* Resources dropdown */}
           <Tab
