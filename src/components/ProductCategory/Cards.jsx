@@ -22,21 +22,19 @@ const Cards = ({ filteredCards }) => {
         filteredCards.length > 0 ?
           <Swiper
             speed={1100}
-            slidesPerGroup={1}
             slidesPerView={3}
             spaceBetween={40}
             loop={true}
             modules={[Navigation, Autoplay]}
-            centeredSlides={true}
-            className="mySwiper mobSwiper"
+            className="mySwiper"
             navigation={{
               nextEl: ".custom-next",
               prevEl: ".custom-prev",
             }}
           >
             {filteredCards.map((prod, index) => (
-              <SwiperSlide>
-                <Card sx={{ background: { xs: "#fff", md: "none" }, display: "flex", flexDirection: "column", height: "100%", border: { xs: "1px solid #C9C9C9", md: "none" } }} elevation={0}>
+              <SwiperSlide >
+                <Card sx={{ background: { xs: "#fff", md: "none" } , display: "flex", flexDirection: "column", height: "100%", border: { xs: "1px solid #C9C9C9", md: "none" } }} elevation={0}>
                   <CardMedia
                     component="img"
                     image={prod?.images?.[0]?.url}
