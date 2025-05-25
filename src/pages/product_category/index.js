@@ -4,12 +4,13 @@ import axiosInstance from '@/utils/axiosInstance';
 import React, { useEffect, useState } from 'react'
 
 const ProductCategoryPage = () => {
-
+    const [loading , setLoading] = useState(false);
     const [allCategories, setAllCategories] = useState([]);
     const [allProducts, setAllProducts] = useState([]);
 
     const getAllCategory = async () => {
         try {
+            setLoading(true);
             const [categoryRes, productRes] = await Promise.all([
                 axiosInstance.get("/category"),
                 axiosInstance.get("/getProducts")
@@ -18,6 +19,8 @@ const ProductCategoryPage = () => {
             setAllProducts(productRes?.data)
         } catch (error) {
             console.log(error)
+        }finally{
+            setLoading(false);
         }
     }
 
@@ -26,7 +29,7 @@ const ProductCategoryPage = () => {
     }, [])
 
     return (
-        <ProductCategory allCategories={allCategories} allProducts={allProducts} />
+        <ProductCategory allCategories={allCategories} allProducts={allProducts} loading={loading} />
     )
 }
 
