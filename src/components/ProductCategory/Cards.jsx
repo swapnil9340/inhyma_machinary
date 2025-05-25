@@ -8,7 +8,7 @@ import { FaCircleChevronLeft } from "react-icons/fa6";
 import React from 'react'
 import { useRouter } from 'next/router';
 
-const Cards = ({ filteredCards }) => {
+const Cards = ({ filteredCards ,loading }) => {
   const router = useRouter()
 
   const handleNavigate = (item)=>{
@@ -18,8 +18,8 @@ const Cards = ({ filteredCards }) => {
   return (
     <Grid sx={{ height: { xs: "500px", md: "500px" } }} alignContent={'center'} container spacing={1} >
 
-      {
-        filteredCards.length > 0 ?
+      { !loading ? (
+                    filteredCards.length > 0 ?
           <Swiper
             speed={1100}
             slidesPerView={3}
@@ -27,7 +27,7 @@ const Cards = ({ filteredCards }) => {
             loop={true}
             modules={[Navigation, Autoplay]}
             className="mySwiper"
-            navigation={{
+            navigation={{ 
               nextEl: ".custom-next",
               prevEl: ".custom-prev",
             }}
@@ -91,7 +91,15 @@ const Cards = ({ filteredCards }) => {
           <Box sx={{ width: "100%" }} >
             <Typography sx={{ textAlign: "center" }}>
               No Product Found
-            </Typography></Box>
+            </Typography>
+          </Box>
+      ) : (
+         <Box sx={{ width: "100%" }} >
+            <Typography sx={{ textAlign: "center" }}>
+              Loading Products...
+            </Typography>
+          </Box>
+      )
       }
 
     </Grid>

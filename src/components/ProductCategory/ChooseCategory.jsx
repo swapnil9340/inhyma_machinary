@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { GoSearch } from "react-icons/go";
 
-const ChooseCategory = ({ selectedCategory, setSelectedCategory, allCategories }) => {
+const ChooseCategory = ({ selectedCategory, setSelectedCategory, allCategories ,loading }) => {
   console.log("selectedCategory", selectedCategory)
 
   const handleSelect = (status, category) => {
@@ -52,8 +52,10 @@ const ChooseCategory = ({ selectedCategory, setSelectedCategory, allCategories }
               />
             }
           />
-          <Box sx={{ height: "80%", overflowY: "scroll" }}>
-            {allCategories.map((cat, i) => {
+          <Box sx={{ height: "80%", overflowY: "auto" }}>
+            {
+              !loading  ? (
+                allCategories.map((cat, i) => {
              
               return <Box sx={{ display: "flex", alignItems: "flex-start" }} >
                 <Checkbox
@@ -62,7 +64,11 @@ const ChooseCategory = ({ selectedCategory, setSelectedCategory, allCategories }
                   onChange={(e) => handleSelect(e.target.checked, cat?.name)} />
                 <Typography component={'span'} sx={{ fontSize: "14px", color: "#2157a4" }}>{cat?.name}</Typography>
               </Box>
-            })}
+                }
+              )) : (
+                   <Typography component={'span'} sx={{ fontSize: "14px", color: "#2157a4" }}>Loading...</Typography>
+              )
+            }
           </Box>
         </Box>
       </Grid>

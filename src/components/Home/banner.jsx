@@ -2,8 +2,14 @@ import React from 'react';
 import { Box, Grid, Typography, Button } from '@mui/material';
 import Image from 'next/image';
 import rightArrow from "../../../public/rightArrow.svg"
+import { useRouter } from 'next/router';
 
 const Banner = () => {
+    const router = useRouter()
+    
+      const handleNavigate = ()=>{
+          router.push(`/product_category`)
+        }
     return (
         <Box
             sx={{
@@ -79,6 +85,7 @@ const Banner = () => {
                                     bgcolor: 'primary.dark',
                                 },
                             }}
+                            onClick={handleNavigate}
                         >
                             Explore Product
                         </Button>
