@@ -34,12 +34,12 @@ const Cards = ({ filteredCards ,loading }) => {
           >
             {filteredCards.map((prod, index) => (
               <SwiperSlide >
-                <Card sx={{ backgroundColor: { xs: "#fff", md: "inherit" } , display: "flex", flexDirection: "column", height: "100%", border: { xs: "1px solid #C9C9C9", md: "none" } }} elevation={0}>
+                <Card sx={{ backgroundColor: { xs: "#fff", md: "#f9f9f9" } , display: "flex", flexDirection: "column", height: "100%", border: { xs: "1px solid #C9C9C9", md: "none" } }} elevation={0}>
                   <CardMedia
                     component="img"
                     image={prod?.images?.[0]?.url}
                     alt={prod?.images?.[0]?.alt}
-                    sx={{ objectFit: 'contain', p: 2, border: { xs: "none", md: "2px solid #C9C9C9" }, height: { xs: "150px", md: "200px" } }}
+                    sx={{ objectFit: 'contain', p: 2, border: { xs: "none", md: "2px solid #C9C9C9" }, height: { xs: "150px", md: "200px" } , mixBlendMode :"darken" }}
                   />
                   <CardContent sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between", flex: "auto" }}>
                     <Typography fontWeight={600} sx={{ WebkitLineClamp: 2, display: '-webkit-box', WebkitBoxOrient: 'vertical', overflow: 'hidden', textOverflow: 'ellipsis', color: "#606872", fontSize: "18px" }}>
