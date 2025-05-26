@@ -26,3 +26,32 @@
   .swiper {
   width: 100%;
 }
+
+.mySwiperDesk {
+  display: block !important;
+}
+
+.mySwiperMob{
+  display: none !important;
+}
+
+
+@media screen and (max-width: 600px){
+  .mySwiperDesk {
+    display: none !important;
+  }
+
+  .mySwiperMob{
+    display: block !important;
+
+    & .swiper-slide{
+        display: flex;
+        justify-content: center;
+
+        &>div{
+          width: 80%;
+        }
+    }
+  }
+
+}
