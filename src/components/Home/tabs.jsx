@@ -10,15 +10,16 @@ import {
 } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 const NavbarWithDropdownTabs = () => {
   const [value, setValue] = useState(0);
+  const pathname = usePathname();
   const router = useRouter()
   const [anchorElResources, setAnchorElResources] = useState(null);
   const [anchorElProducts, setAnchorElProducts] = useState(null);
 
   const handleTabChange = (event, newValue) => {
-    console.log("newVal", newValue)
     setValue(newValue);
   };
 
@@ -41,12 +42,7 @@ const NavbarWithDropdownTabs = () => {
 
 
   useEffect(() => {
-    const isWndow = typeof window !== "undefined";
-    if (!isWndow) return;
-
-    const url = window.location.pathname
-
-    console.log("url", url)
+    const url = pathname
 
     if (url.includes("product_category")) setValue(2)
     else if (url.includes("contact-us")) setValue(3)
@@ -54,7 +50,7 @@ const NavbarWithDropdownTabs = () => {
     else setValue(0)
 
 
-  }, []);
+  }, [pathname]);
 
   return (
     <AppBar
