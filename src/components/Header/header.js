@@ -59,7 +59,7 @@ const Header = () => {
                 alt="Inhyma Logo"
                 height={40}
                 width={140}
-                style={{ objectFit: "contain" }}
+                style={{ objectFit: "contain" , cursor :"pointer" }}
                 onClick={()=>handleNavigate("/")}
               />
             </Box>
