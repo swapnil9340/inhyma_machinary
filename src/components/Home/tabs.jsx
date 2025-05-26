@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   AppBar,
   Toolbar,
@@ -18,6 +18,7 @@ const NavbarWithDropdownTabs = () => {
   const [anchorElProducts, setAnchorElProducts] = useState(null);
 
   const handleTabChange = (event, newValue) => {
+    console.log("newVal", newValue)
     setValue(newValue);
   };
 
@@ -34,16 +35,34 @@ const NavbarWithDropdownTabs = () => {
     setAnchorElProducts(null);
   };
 
-  const handleNavigate = (navprops)=>{
+  const handleNavigate = (navprops) => {
     router.push(navprops)
   }
+
+
+  useEffect(() => {
+    const isWndow = typeof window !== "undefined";
+    if (!isWndow) return;
+
+    const url = window.location.pathname
+
+    console.log("url", url)
+
+    if (url.includes("product_category")) setValue(2)
+    else if (url.includes("contact-us")) setValue(3)
+    else if (url.includes("blog")) setValue(1)
+    else setValue(0)
+
+
+  }, []);
+
   return (
     <AppBar
       position="static"
       color="default"
       elevation={0}
       sx={{
-        minHeight:"50px",
+        minHeight: "50px",
         backgroundColor: '#fff',
         borderBottom: '1px solid #e0e0e0',
       }}
@@ -75,11 +94,11 @@ const NavbarWithDropdownTabs = () => {
             },
           }}
         >
-          <Tab label="Home" onClick={()=>handleNavigate("/")} />
+          <Tab label="Home" onClick={() => handleNavigate("/")} />
 
           {/* Resources dropdown */}
           <Tab
-            onClick={()=>handleNavigate("/blog")}
+            onClick={() => handleNavigate("/blog")}
             label={
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}  >
                 Blogs
@@ -89,7 +108,7 @@ const NavbarWithDropdownTabs = () => {
 
           {/* Product Categories dropdown */}
           <Tab
-          onClick={()=>handleNavigate("/product_category")}
+            onClick={() => handleNavigate("/product_category")}
             label={
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }} >
                 Product Categories
@@ -97,7 +116,7 @@ const NavbarWithDropdownTabs = () => {
             }
           />
 
-          <Tab label="Contact Us" onClick={()=>handleNavigate("/contact-us")} />
+          <Tab label="Contact Us" onClick={() => handleNavigate("/contact-us")} />
         </Tabs>
 
         {/* Resources Menu */}
@@ -108,7 +127,7 @@ const NavbarWithDropdownTabs = () => {
           anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
           transformOrigin={{ vertical: 'top', horizontal: 'left' }}
         >
-          <MenuItem onClick={()=>handleNavigate("/blog")}>Blog</MenuItem>
+          <MenuItem onClick={() => handleNavigate("/blog")}>Blog</MenuItem>
           <MenuItem onClick={handleClose}>Guides</MenuItem>
           <MenuItem onClick={handleClose}>Help Center</MenuItem>
         </Menu>
@@ -121,7 +140,7 @@ const NavbarWithDropdownTabs = () => {
           anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
           transformOrigin={{ vertical: 'top', horizontal: 'left' }}
         >
-          <MenuItem onClick={()=>handleNavigate("/product_category")}>Electronics</MenuItem>
+          <MenuItem onClick={() => handleNavigate("/product_category")}>Electronics</MenuItem>
           <MenuItem onClick={handleClose}>Industrial</MenuItem>
           <MenuItem onClick={handleClose}>Construction</MenuItem>
         </Menu>

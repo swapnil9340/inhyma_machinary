@@ -29,7 +29,7 @@ export default function MachineDemand({ allProducts, loading }) {
                                             component="img"
                                             image={machine?.images?.[0].url}
                                             alt={machine?.images?.[0].alt}
-                                            sx={{ height: { xs: 150, md: 200 }, objectFit: 'contain', p: 2 }}
+                                            sx={{ height: { xs: 150, md: 200 }, objectFit: 'contain', p: 2 , mixBlendMode : "darken" }}
                                         />
                                         <CardContent sx={{ paddingX: { xs: "8px" } }} >
                                             <Typography variant="subtitle1" fontWeight={600} sx={{ color: "#606872", fontSize: "18px" }}>
