@@ -5,6 +5,7 @@ import {
     CardContent,
     Button,
     IconButton,
+    Container,
 } from "@mui/material";
 import {  useRef } from "react";
 import Image from "next/image";
@@ -37,6 +38,7 @@ const ProductCard = ({allProducts}) => {
    
     return (
         <Box sx={{ backgroundColor: "#E7F4FF", py: 6 }}>
+           <Container maxWidth="xl">
             <Typography variant="h5" fontWeight={600} textAlign="center">
                 <Box component="span" sx={{ borderLeft: "4px solid #f44336", pl: 1 }}>
                 Top Performing Machines
@@ -50,7 +52,7 @@ const ProductCard = ({allProducts}) => {
                     sx={{
                         position: "absolute",
                         top: "50%",
-                        left: 0,
+                        left: "-2%",
                         transform: "translateY(-50%)",
                         zIndex: 1,
                         bgcolor: "#fff",
@@ -65,7 +67,7 @@ const ProductCard = ({allProducts}) => {
                     sx={{
                         position: "absolute",
                         top: "50%",
-                        right: 0,
+                        right: "-2%",
                         transform: "translateY(-50%)",
                         zIndex: 1,
                         bgcolor: "#fff",
@@ -149,6 +151,7 @@ const ProductCard = ({allProducts}) => {
                     ))}
                 </Box>
             </Box>
+            </Container>
         </Box>
     );
 };

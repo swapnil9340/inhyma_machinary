@@ -22,7 +22,7 @@ const Content = () => {
             fontWeight: 'bold',
             mb: 2,
             color: 'text.primary',
-            fontSize :{ xs:"5vmin" ,md:"3vmin"} ,
+            fontSize : "1.4rem" ,
           }}
         >
           <Box component="span" sx={{ color: 'red', mr: 1 }}>|</Box>

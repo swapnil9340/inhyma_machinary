@@ -12,7 +12,7 @@ export default function CategoryCarousel({ selected , setSelected, categories}) 
         const scrollAmount = 220; // depends on card width
         if (scrollContainer) {
             scrollContainer.scrollBy({
-                left: direction === "left" ? scrollAmount : -scrollAmount,
+                left: direction === "right" ? scrollAmount : -scrollAmount,
                 behavior: "smooth",
             });
         }
@@ -21,7 +21,7 @@ export default function CategoryCarousel({ selected , setSelected, categories}) 
     return (
         <Box>
             <Typography variant="h5" fontWeight={600} textAlign="center" >
-                <Box component="span" sx={{ borderLeft: "4px solid #f44336", pl: 1 }}>
+                <Box component="span" sx={{ borderLeft: "4px solid #f44336", pl: 1 ,fontSize:"1.4rem" }}>
                     Product Categories
                 </Box>
             </Typography>
@@ -63,7 +63,7 @@ export default function CategoryCarousel({ selected , setSelected, categories}) 
                         display: "flex",
                         overflowX: "auto",
                         gap: 2,
-                        px: 4,
+                        mx: 4,
                         scrollbarWidth: "none",
                         "&::-webkit-scrollbar": { display: "none" },
                     }}

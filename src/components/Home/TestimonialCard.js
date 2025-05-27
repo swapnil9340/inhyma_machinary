@@ -5,6 +5,7 @@ import {
     useTheme,
     useMediaQuery,
     Avatar,
+    Container,
 } from "@mui/material";
 import { useState, useRef } from "react";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
@@ -29,6 +30,7 @@ const TestimonialCard = () => {
 
     return (
         <Box sx={{ py: 6 }}>
+            <Container maxWidth="xl">
             <Typography variant="h5" fontWeight={600} textAlign="center">
                 <Box component="span" sx={{ borderLeft: "4px solid #f44336", pl: 1 }}>
                     Testimonials
@@ -42,7 +44,7 @@ const TestimonialCard = () => {
                     sx={{
                         position: "absolute",
                         top: "50%",
-                        left: 0,
+                        left: "-1%",
                         transform: "translateY(-50%)",
                         bgcolor: "#fff",
                         boxShadow: 1,
@@ -58,7 +60,7 @@ const TestimonialCard = () => {
                     sx={{
                         position: "absolute",
                         top: "50%",
-                        right: 0,
+                        right:"-1%",
                         transform: "translateY(-50%)",
                         bgcolor: "#fff",
                         boxShadow: 1,
@@ -168,6 +170,7 @@ const TestimonialCard = () => {
                     ))}
                 </Box>
             </Box>
+            </Container>
         </Box>
     );
 };

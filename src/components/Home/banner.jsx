@@ -31,14 +31,14 @@ const Banner = () => {
                     <Box sx={{ display:"grid", textAlign: { xs: 'center', md: 'left' } ,marginLeft:{md:"100px"} }}>
                         <Box sx={{display :"flex" ,alignItems :"center" ,justifyContent :'space-between'}}>
                           <Box textAlign={'left'}>
-                        <Typography variant="h4" sx={{ fontWeight: 'bold', color:"#243E60" ,fontSize : {xs:"10vmin",md:"7vmin"}}}>
+                        <Typography variant="h4" sx={{ fontWeight: 'bold', color:"#243E60" ,fontSize : {xs:"36px",md:"48px"}}}>
                             Innovate<span style={{color:"red"}}>.</span>
                         </Typography>
-                        <Typography variant="h4" sx={{ fontWeight: 'bold', color:"#243E60" ,fontSize : {xs:"10vmin",md:"7vmin"}}}>
+                        <Typography variant="h4" sx={{ fontWeight: 'bold', color:"#243E60" ,fontSize : {xs:"36px",md:"48px"}}}>
                             Automate<span style={{color:"red"}}>.</span>
                         </Typography>
 
-                        <Typography variant="h4" sx={{ fontWeight: 'bold', color:"#243E60" ,fontSize : {xs:"10vmin",md:"7vmin"}}}>
+                        <Typography variant="h4" sx={{ fontWeight: 'bold', color:"#243E60" ,fontSize : {xs:"36px",md:"48px"}}}>
                             Elevate<span style={{color:"red"}}>.</span> 
                         </Typography>
                         </Box>
@@ -59,7 +59,7 @@ const Banner = () => {
                         </Box>
                         </Box>
 
-                        <Typography variant="p" sx={{  color:"#53657D" ,fontSize : {xs:"3.5vmin" ,md:"2.5vmin"} , margin :"10px 0px"}} >
+                        <Typography variant="p" sx={{  color:"#53657D" ,fontSize : {xs:"14px" ,md:"18px"} , margin :"10px 0px"}} >
                         India’s Trusted Provider of Packaging Machinery and
                         Material Handling Equipment for Over 13 Years.
                         </Typography>

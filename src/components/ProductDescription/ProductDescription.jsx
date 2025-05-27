@@ -4,16 +4,18 @@ import ListingGrid from './ListingGrid'
 import IndustrialExcellence from './IndustrialExcellence'
 import SimilerProducts from './SimilerProducts'
 
-const ProductDescription = ({details}) => {
+const ProductDescription = ({details ,products}) => {
 
+   const randomFour = [...products].sort(() => 0.5 - Math.random()).slice(0, 4);
 
+   console.log("details" ,details)
 
   return (
     <>
       <ProductDescriptionBanner details={details}/>
       <ListingGrid/>
       <IndustrialExcellence/>
-      <SimilerProducts/>
+      <SimilerProducts productsData={randomFour}/>
       </>
   )
 }

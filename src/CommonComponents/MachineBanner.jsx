@@ -23,10 +23,9 @@ const MachineBanner = ({bannerContent}) => {
         </div>
 
         {/* Center Text */}
-        <div className="text-center md:text-left md:w-3/5">
-          <h2 className="text-xl md:text-2xl font-semibold text-gray-800">
-           {heading1.subHeading1} <br />
-            <span className="text-blue-700">{heading1.subHeading2}</span>
+        <div className="text-center md:text-left md:w-3/5 text-blue-700">
+          <h2 className="text-blue-700 text-xl md:text-2xl font-semibold ">
+           {heading1.subHeading1}
           </h2>
           <p className="text-gray-600 mt-2 text-sm md:text-base">
           {heading2}

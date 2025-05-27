@@ -50,9 +50,10 @@ const ProductCategoriesSection = ({ allProducts, allCategories}) => {
 
     return (
         <Box sx={{ backgroundColor: "#E7F4FF", py: 5 }}>
+             <Container maxWidth="xl">
             <ScrollBarCard selected={selected} setSelected={setSelected} categories={allCategories}></ScrollBarCard>
-            <Container maxWidth="xl">
-            <Grid container spacing={2} justifyContent="center">
+           
+            <Grid container spacing={2} justifyContent="flex-start">
                 {products.map((product, i) => (
                     <Grid item size={{xs:6 ,md : 2}} key={i}>
                         <Card

@@ -44,9 +44,9 @@ const NavbarWithDropdownTabs = () => {
   useEffect(() => {
     const url = pathname
 
-    if (url.includes("product_category")) setValue(2)
-    else if (url.includes("contact-us")) setValue(3)
-    else if (url.includes("blog")) setValue(1)
+    if (url?.includes("product_category")) setValue(2)
+    else if (url?.includes("contact-us")) setValue(3)
+    else if (url?.includes("blog")) setValue(1)
     else setValue(0)
 
 

@@ -2,10 +2,13 @@ import ProductDescription from '@/components/ProductDescription/ProductDescripti
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import axiosInstance from '@/utils/axiosInstance'
+import { Box } from '@mui/material'
 
 const ProductDescriptionPage = () => {
   const [productDetails , setProductDetails] = useState(null)
-   const {query} = useRouter()
+  const [products , setProducts] = useState(null)
+  const [loading , setLoading] = useState(true)
+  const {query} = useRouter()
    
    const {id} = query;
    console.log("id" ,id)
@@ -13,12 +16,18 @@ const ProductDescriptionPage = () => {
 
    const getProductDetail = async()=>{
     try{
-      const res = await axiosInstance.get("/product" ,{params : {id}})
-      console.log("res" ,res)
-      setProductDetails(res.data)
+       setLoading(true);
+      const [productDetails, products] = await Promise.all([
+        axiosInstance.get("/product" ,{params : {id}}) ,
+        axiosInstance.get("/getProducts")
+    ]);
+      setProductDetails(productDetails.data)
+      setProducts(products.data)
     }catch{(error)=>{
           console.log("error in product detail")
-    }}
+    }}finally{
+      setLoading(false)
+    }
        
    }
 
@@ -28,10 +37,15 @@ const ProductDescriptionPage = () => {
       getProductDetail()
     }
    } , [id])
+
+
+   if(loading){
+    return <Box>Loading...</Box>
+   }
    
 
   return (
-    <ProductDescription details={productDetails}/>
+    <ProductDescription details={productDetails} products={products}/>
   )
 }
 

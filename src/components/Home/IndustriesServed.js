@@ -36,7 +36,7 @@ const IndustriesServed = () => {
                 <Typography
                     variant="h5"
                     fontWeight={600}
-                    sx={{ mb: 4, display: "flex", alignItems: "center" ,color : "#606872" }}
+                    sx={{ mb: {xs:4 , md : 0}, display: "flex", alignItems: "center" ,color : "#606872" }}
                 >
                     <Box
                         component="span"
