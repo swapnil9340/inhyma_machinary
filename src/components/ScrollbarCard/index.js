@@ -13,6 +13,7 @@ export default function CategoryCarousel({
   selected,
   setSelected,
   categories,
+  loading
 }) {
 
   return (
@@ -26,7 +27,9 @@ export default function CategoryCarousel({
         </Box>
       </Typography>
       <Box sx={{ position: "relative", px: 2, py: 4 }}>
-        <Box
+       {
+         !loading ? (
+          <Box
           sx={{
             display: "flex",
             gap: 2,
@@ -173,6 +176,10 @@ export default function CategoryCarousel({
             ))}
           </Swiper>
         </Box>
+         ) : (
+          <Box sx={{textAlign : 'center'}}>Loading...</Box>
+         )
+       }
       </Box>
     </Box>
   );

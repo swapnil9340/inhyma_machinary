@@ -14,6 +14,7 @@ const Home = () => {
 
     const [allCategories, setAllCategories] = useState([]);
     const [allProducts, setAllProducts] = useState([]);
+    const [loading , setLoading] = useState(true)
 
     const getAllCategory = async () => {
         try {
@@ -25,6 +26,8 @@ const Home = () => {
             setAllProducts(productRes?.data)
         } catch (error) {
             console.log(error)
+        }finally{
+            setLoading(false)
         }
     }
 
@@ -39,9 +42,9 @@ const Home = () => {
     return <>
         <Banner></Banner>
         <Content></Content>
-        <ProductCategories allProducts={allProducts} allCategories={allCategories}></ProductCategories>
+        <ProductCategories loading={loading}  allProducts={allProducts} allCategories={allCategories}></ProductCategories>
         <WhyTrustSection></WhyTrustSection>
-        <ProductCard allProducts={allProducts}></ProductCard>
+        <ProductCard loading={loading} allProducts={allProducts}></ProductCard>
         <IndustriesServed></IndustriesServed>
         <GlobalPresenceSection></GlobalPresenceSection>
         <TestimonialCard></TestimonialCard>

@@ -4,24 +4,7 @@ import ScrollBarCard from "../ScrollbarCard"
 import Image from "next/image";
 
 
-// const allProducts = {
-//     vacuum: [
-//         { name: "Vacuum Sealer A", img: "image 13.png" },
-//         { name: "Vacuum Sealer B", img: "/product2.png" },
-//     ],
-//     sealing: [
-//         { name: "Sealing Machine A", img: "image 13.png" },
-//         { name: "Sealing Machine B", img: "/product2.png" },
-//     ],
-//     induction: [
-//         { name: "Portable Induction Sealer", img: "image 13.png" },
-//         { name: "Continuous Induction Sealer", img: "/product2.png" },
-//         { name: "Portable Induction Sealer", img: "image 13.png" },
-//         { name: "Portable Induction Sealer", img: "image 13.png" },
-//     ],
-// };
-
-const ProductCategoriesSection = ({ allProducts, allCategories}) => {
+const ProductCategoriesSection = ({ allProducts, allCategories ,loading}) => {
     const [selected, setSelected] = useState([]);
     const [products , setProducts] = useState([]);
 
@@ -51,7 +34,7 @@ const ProductCategoriesSection = ({ allProducts, allCategories}) => {
     return (
         <Box sx={{ backgroundColor: "#E7F4FF", py: 5 }}>
              <Container maxWidth="xl">
-            <ScrollBarCard selected={selected} setSelected={setSelected} categories={allCategories}></ScrollBarCard>
+            <ScrollBarCard selected={selected} setSelected={setSelected} categories={allCategories} loading={loading}></ScrollBarCard>
            
             <Grid container spacing={2} justifyContent="flex-start">
                 {products.map((product, i) => (
