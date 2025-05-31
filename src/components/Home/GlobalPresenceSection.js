@@ -24,7 +24,7 @@ const GlobalPresenceSection = () => {
 
                 <Box sx={{ marginTop: "40px", display: {xs:"block",md:"flex"}, gap: "32%" }}>
                     <div style={{ fontSize: "18px", fontWeight: "500", color: "#555", display: "flex", alignItems: "center", justifyContent: "center", gap: "10px", marginBottom: "20px" }}>
-                        <Image height={30} width={30} src="/vector (1).png" alt="serving icon" style={{ width: "30px", height: "30px" }} />
+                        <Image height={30} width={30} src="/serving.png" alt="serving icon" style={{ width: "30px", height: "30px" }} />
 
                         <span style={{ fontSize: "20px", fontWeight: "500" }}> Serving</span>
                     </div>
