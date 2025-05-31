@@ -8,7 +8,6 @@ import {
   Menu,
   MenuItem,
 } from '@mui/material';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useRouter } from 'next/router';
 import { usePathname } from 'next/navigation';
 
@@ -63,13 +62,13 @@ const NavbarWithDropdownTabs = () => {
         borderBottom: '1px solid #e0e0e0',
       }}
     >
-      <Toolbar sx={{ justifyContent: 'center', minHeight: '50px', height: '50px' }}>
+      <Toolbar sx={{ justifyContent: 'center', minHeight: '50px', height: '50px' ,padding :0 }}>
         <Tabs
           value={value}
           onChange={handleTabChange}
           textColor="inherit"
           centered
-          TabIndicatorProps={{ style: { display: 'none' } }} // 👈 underline hata diya
+          TabIndicatorProps={{ style: { display: 'none' } }} 
           sx={{
             minHeight: '50px',
             height: '50px',
@@ -82,36 +81,17 @@ const NavbarWithDropdownTabs = () => {
               paddingX: 2,
               borderRadius: 1,
               '&.Mui-selected': {
-                backgroundColor: '#f0f0f0', // 👈 active tab background color
+                backgroundColor: '#f0f0f0', 
               },
               '&:hover': {
-                backgroundColor: '#f9f9f9', // 👈 hover pe halka grey
+                backgroundColor: '#f9f9f9', 
               },
             },
           }}
         >
           <Tab label="Home" onClick={() => handleNavigate("/")} />
-
-          {/* Resources dropdown */}
-          <Tab
-            onClick={() => handleNavigate("/blog")}
-            label={
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}  >
-                Blogs
-              </Box>
-            }
-          />
-
-          {/* Product Categories dropdown */}
-          <Tab
-            onClick={() => handleNavigate("/product_category")}
-            label={
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }} >
-                Product Categories
-              </Box>
-            }
-          />
-
+          <Tab label="Blogs" onClick={() => handleNavigate("/blog")}/>
+          <Tab label="Product Categories" onClick={() => handleNavigate("/product_category")}/>
           <Tab label="Contact Us" onClick={() => handleNavigate("/contact-us")} />
         </Tabs>
 
