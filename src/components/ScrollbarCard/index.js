@@ -7,14 +7,13 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css/navigation';
 import { FaCircleChevronRight } from "react-icons/fa6";
 import { FaCircleChevronLeft } from "react-icons/fa6";
-import { delay } from "framer-motion";
+
 
 export default function CategoryCarousel({
   selected,
   setSelected,
   categories,
 }) {
-  const scrollRef = useRef(null);
 
   return (
     <Box className="homeCategoryScroll">
@@ -28,7 +27,6 @@ export default function CategoryCarousel({
       </Typography>
       <Box sx={{ position: "relative", px: 2, py: 4 }}>
         <Box
-          ref={scrollRef}
           sx={{
             display: "flex",
             gap: 2,
@@ -38,7 +36,7 @@ export default function CategoryCarousel({
           }}
         >
           <div
-            className="custom-next"
+            className="custom-next-2"
             style={{
               position: "absolute",
               top: "40%",
@@ -51,7 +49,7 @@ export default function CategoryCarousel({
             <FaCircleChevronRight size={30} fill="#2157a4" />
           </div>
           <div
-            className="custom-prev"
+            className="custom-prev-2"
             style={{
               position: "absolute",
               top: "40%",
@@ -72,8 +70,8 @@ export default function CategoryCarousel({
             modules={[Navigation, Autoplay]}
             className="SwiperDesk"
             navigation={{
-              nextEl: ".custom-next",
-              prevEl: ".custom-prev",
+              nextEl: ".custom-next-2",
+              prevEl: ".custom-prev-2",
             }}
           >
             {categories.map((cat ,index) => (
@@ -128,8 +126,8 @@ export default function CategoryCarousel({
             modules={[Navigation, Autoplay]}
             className="SwiperMob"
             navigation={{
-              nextEl: ".custom-next",
-              prevEl: ".custom-prev",
+              nextEl: ".custom-next-2",
+              prevEl: ".custom-prev-2",
             }}
           >
             {categories.map((cat ,index) => (

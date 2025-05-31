@@ -44,6 +44,15 @@
   }
 }
 
+.topMachine{
+  .SwiperDesk{
+    display: block;
+  }
+  .SwiperMob{
+    display: none;
+  }
+}
+
 
 @media screen and (max-width: 600px){
   .mySwiperDesk {
@@ -64,6 +73,14 @@
   }
 
   .homeCategoryScroll{
+    .SwiperDesk{
+      display: none;
+    }
+    .SwiperMob{
+      display: block;
+    }
+  }
+  .topMachine{
     .SwiperDesk{
       display: none;
     }
