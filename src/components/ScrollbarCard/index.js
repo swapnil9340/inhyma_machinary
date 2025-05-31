@@ -76,8 +76,8 @@ export default function CategoryCarousel({
               prevEl: ".custom-prev",
             }}
           >
-            {categories.map((cat) => (
-              <SwiperSlide>
+            {categories.map((cat ,index) => (
+              <SwiperSlide key={index}>
                 <Card
                   elevation={0}
                   key={cat.value}
@@ -132,8 +132,8 @@ export default function CategoryCarousel({
               prevEl: ".custom-prev",
             }}
           >
-            {categories.map((cat) => (
-              <SwiperSlide>
+            {categories.map((cat ,index) => (
+              <SwiperSlide key={index}>
                 <Card
                   elevation={0}
                   key={cat.value}
