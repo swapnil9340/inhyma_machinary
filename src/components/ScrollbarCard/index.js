@@ -1,96 +1,181 @@
-import { Box, Typography, Card, CardContent, IconButton } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { Box, Typography, Card, CardContent } from "@mui/material";
+import { useRef } from "react";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Autoplay, Navigation } from 'swiper/modules';
+import 'swiper/css/navigation';
+import { FaCircleChevronRight } from "react-icons/fa6";
+import { FaCircleChevronLeft } from "react-icons/fa6";
+import { delay } from "framer-motion";
 
-export default function CategoryCarousel({ selected , setSelected, categories}) {
-    const scrollRef = useRef(null);
+export default function CategoryCarousel({
+  selected,
+  setSelected,
+  categories,
+}) {
+  const scrollRef = useRef(null);
 
-    const scroll = (direction) => {
-        const scrollContainer = scrollRef.current;
-        const scrollAmount = 220; // depends on card width
-        if (scrollContainer) {
-            scrollContainer.scrollBy({
-                left: direction === "right" ? scrollAmount : -scrollAmount,
-                behavior: "smooth",
-            });
-        }
-    };
-
-    return (
-        <Box>
-            <Typography variant="h5" fontWeight={600} textAlign="center" >
-                <Box component="span" sx={{ borderLeft: "4px solid #f44336", pl: 1 ,fontSize:"1.4rem" }}>
-                    Product Categories
-                </Box>
-            </Typography>
-            <Box sx={{ position: "relative", px: 2, py: 4 }}>
-                <IconButton
-                    onClick={() => scroll("left")}
-                    sx={{
-                        position: "absolute",
-                        top: "50%",
-                        left: 0,
-                        transform: "translateY(-50%)",
-                        zIndex: 1,
-                        bgcolor: "#fff",
-                        boxShadow: 2,
-                    }}
-                >
-                    <ChevronLeftIcon />
-                </IconButton>
-
-                <IconButton
-                    onClick={() => scroll("right")}
-                    sx={{
-                        position: "absolute",
-                        top: "50%",
-                        right: 0,
-                        transform: "translateY(-50%)",
-                        zIndex: 1,
-                        bgcolor: "#fff",
-                        boxShadow: 2,
-                    }}
-                >
-                    <ChevronRightIcon />
-                </IconButton>
-
-                {/* Scrollable Cards */}
-                <Box
-                    ref={scrollRef}
-                    sx={{
-                        display: "flex",
-                        overflowX: "auto",
-                        gap: 2,
-                        mx: 4,
-                        scrollbarWidth: "none",
-                        "&::-webkit-scrollbar": { display: "none" },
-                    }}
-                >
-                    {categories.map((cat) => (
-                        <Card
-                        elevation={0}
-                            key={cat.value}
-                            onClick={() => setSelected(cat)}
-                            sx={{
-                                minWidth: 200,
-                                flexShrink: 0,
-                                cursor: "pointer",
-                                textAlign: "center",
-                                  bgcolor: selected?.name === cat?.name ? "#216ACC" : " #E7F4FF",
-                                //   boxShadow: selected === cat?.name ? 4 : 1,
-                                transition: "0.3s",
-                            }}
-                        >
-                            <CardContent sx={{ bgcolor: selected?.name === cat?.name ? "#216ACC" : " #E7F4FF", color: selected?.name === cat?.name && "white", display: 'flex', alignItems: 'center', gap: "20px", paddingBottom: '10px !important' }}>
-                                <Image src={cat?.image} alt={cat.label} height={50} width={50} style={{ width: "50px", height: "50px" }} />
-                                <Typography fontWeight={500} fontSize={"14px"}>{cat?.name}</Typography>
-                            </CardContent>
-                        </Card>
-                    ))}
-                </Box>
-            </Box>
+  return (
+    <Box className="homeCategoryScroll">
+      <Typography variant="h5" fontWeight={600} textAlign="center">
+        <Box
+          component="span"
+          sx={{ borderLeft: "4px solid #f44336", pl: 1, fontSize: "1.4rem" }}
+        >
+          Product Categories
         </Box>
-    );
+      </Typography>
+      <Box sx={{ position: "relative", px: 2, py: 4 }}>
+        <Box
+          ref={scrollRef}
+          sx={{
+            display: "flex",
+            gap: 2,
+            px: 4,
+            scrollbarWidth: "none",
+            "&::-webkit-scrollbar": { display: "none" },
+          }}
+        >
+          <div
+            className="custom-next"
+            style={{
+              position: "absolute",
+              top: "40%",
+              cursor: "pointer",
+              right: "0.5%",
+              zIndex: 10,
+              filter: "drop-shadow(2px 2px #c3c3c3)",
+            }}
+          >
+            <FaCircleChevronRight size={30} fill="#2157a4" />
+          </div>
+          <div
+            className="custom-prev"
+            style={{
+              position: "absolute",
+              top: "40%",
+              cursor: "pointer",
+              zIndex: 10,
+              left: "0.5%",
+              filter: "drop-shadow(2px 2px #c3c3c3)",
+            }}
+          >
+            <FaCircleChevronLeft size={30} fill="#2157a4" />
+          </div>
+          {/* mobile */}
+          <Swiper
+            speed={1100}
+            slidesPerView={4}
+            spaceBetween={40}
+            loop={true}
+            modules={[Navigation, Autoplay]}
+            className="SwiperDesk"
+            navigation={{
+              nextEl: ".custom-next",
+              prevEl: ".custom-prev",
+            }}
+          >
+            {categories.map((cat) => (
+              <SwiperSlide>
+                <Card
+                  elevation={0}
+                  key={cat.value}
+                  onClick={() => setSelected(cat)}
+                  sx={{
+                    minWidth: 200,
+                    flexShrink: 0,
+                    cursor: "pointer",
+                    textAlign: "center",
+                    bgcolor:
+                      selected?.name === cat?.name ? "#216ACC" : " #fff",
+                    transition: "0.3s",
+                  }}
+                >
+                  <CardContent
+                    sx={{
+                      bgcolor:
+                        selected?.name === cat?.name ? "#216ACC" : " #fff",
+                      color: selected?.name === cat?.name && "white",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "20px",
+                      paddingBottom: "10px !important",
+                    }}
+                  >
+                    <Image
+                      src={cat?.image}
+                      alt={cat.label}
+                      height={50}
+                      width={50}
+                      style={{ width: "50px", height: "50px" }}
+                    />
+                    <Typography fontWeight={500} fontSize={"14px"}>
+                      {cat?.name}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+           
+           {/* desktop */}
+          <Swiper
+            speed={1100}
+            slidesPerView={1}
+            spaceBetween={40}
+            loop={true}
+            modules={[Navigation, Autoplay]}
+            className="SwiperMob"
+            navigation={{
+              nextEl: ".custom-next",
+              prevEl: ".custom-prev",
+            }}
+          >
+            {categories.map((cat) => (
+              <SwiperSlide>
+                <Card
+                  elevation={0}
+                  key={cat.value}
+                  onClick={() => setSelected(cat)}
+                  sx={{
+                    minWidth: 200,
+                    flexShrink: 0,
+                    cursor: "pointer",
+                    textAlign: "center",
+                    bgcolor:
+                      selected?.name === cat?.name ? "#216ACC" : " #fff",
+                    transition: "0.3s",
+                  }}
+                >
+                  <CardContent
+                    sx={{
+                      bgcolor:
+                        selected?.name === cat?.name ? "#216ACC" : " #fff",
+                      color: selected?.name === cat?.name && "white",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "20px",
+                      paddingBottom: "10px !important",
+                    }}
+                  >
+                    <Image
+                      src={cat?.image}
+                      alt={cat.label}
+                      height={50}
+                      width={50}
+                      style={{ width: "50px", height: "50px" }}
+                    />
+                    <Typography fontWeight={500} fontSize={"14px"}>
+                      {cat?.name}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </Box>
+      </Box>
+    </Box>
+  );
 }

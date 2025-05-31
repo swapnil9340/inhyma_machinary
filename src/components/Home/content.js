@@ -36,6 +36,7 @@ const Content = () => {
             color: 'text.secondary',
             mb: 2,
             lineHeight: 1.8,
+            textAlign : {xs : "justify" ,md: "center"}
           }}
         >
           INHYMA Solutions LLP is a leading manufacturer, importer, and exporter of packaging machines and industrial material handling equipment. With over 13 years of experience, we provide 150+ high-performance solutions tailored for diverse industries,
@@ -48,6 +49,7 @@ const Content = () => {
             color: 'text.secondary',
             mb: 4,
             lineHeight: 1.8,
+            textAlign : {xs : "justify" ,md: "center"}
           }}
         >
           Our mission is to empower manufacturers through cutting-edge automation, reliable machinery, and exceptional customer service - globally.

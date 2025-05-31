@@ -66,6 +66,9 @@ const IndustriesServed = () => {
                                         boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
                                         transform: "translateY(-4px)",
                                     },
+                                    "& svg" : {
+                                        height : {xs:"35px" ,md:"60px"}
+                                    }
                                 }}
                             >
                                 <Box sx={{ display: "flex", justifyContent: "center" }}>

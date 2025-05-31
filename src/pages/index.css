@@ -35,6 +35,15 @@
   display: none !important;
 }
 
+.homeCategoryScroll{
+  .SwiperDesk{
+    display: block;
+  }
+  .SwiperMob{
+    display: none;
+  }
+}
+
 
 @media screen and (max-width: 600px){
   .mySwiperDesk {
@@ -51,6 +60,15 @@
         &>div{
           width: 80%;
         }
+    }
+  }
+
+  .homeCategoryScroll{
+    .SwiperDesk{
+      display: none;
+    }
+    .SwiperMob{
+      display: block;
     }
   }
 

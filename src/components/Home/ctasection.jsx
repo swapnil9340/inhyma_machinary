@@ -53,6 +53,7 @@ const CTASection = () => {
               backgroundColor: "#fff",
               color: "#0C4DA2",
               fontWeight: "bold",
+              fontSize : {xs:"12px" ,md: "14px"},
               "&:hover": {
                 backgroundColor: "#e3f2fd",
               },
