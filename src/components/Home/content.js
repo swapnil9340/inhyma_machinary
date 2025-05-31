@@ -22,10 +22,10 @@ const Content = () => {
             fontWeight: 'bold',
             mb: 2,
             color: 'text.primary',
-            fontSize : "1.4rem" ,
+            fontSize : {xs:"1.2rem" , md:"1.6rem"},
           }}
         >
-          <Box component="span" sx={{ color: 'red', mr: 1 }}>|</Box>
+          <Box component="span" sx={{ color: 'red', mr: 1 ,borderLeft: "4px solid #f44336" }}></Box>
           Complete Packaging & Automation Solutions Under One Roof
         </Typography>
 

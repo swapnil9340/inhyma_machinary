@@ -29,7 +29,7 @@ const ProductCard = ({ allProducts ,loading }) => {
     <Box className="topMachine" sx={{ backgroundColor: "#E7F4FF", py: 6 }}>
       <Container maxWidth="xl">
         <Typography variant="h5" fontWeight={600} textAlign="center">
-          <Box component="span" sx={{ borderLeft: "4px solid #f44336", pl: 1 }}>
+          <Box component="span" sx={{ borderLeft: "4px solid #f44336", pl: 1 , fontSize : {xs:"1.2rem" , md:"1.6rem"}, fontWeight: 'bold', }}>
             Top Performing Machines
           </Box>
         </Typography>

@@ -21,7 +21,7 @@ export default function CategoryCarousel({
       <Typography variant="h5" fontWeight={600} textAlign="center">
         <Box
           component="span"
-          sx={{ borderLeft: "4px solid #f44336", pl: 1, fontSize: "1.4rem" }}
+          sx={{ borderLeft: "4px solid #f44336", pl: 1,  fontWeight: 'bold',  fontSize : {xs:"1.2rem" , md:"1.6rem"},}}
         >
           Product Categories
         </Box>

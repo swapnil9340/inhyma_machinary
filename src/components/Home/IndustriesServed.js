@@ -36,11 +36,11 @@ const IndustriesServed = () => {
                 <Typography
                     variant="h5"
                     fontWeight={600}
-                    sx={{ mb: {xs:4 , md : 0}, display: "flex", alignItems: "center" ,color : "#606872" }}
+                    sx={{ mb: {xs:4 , md : 0}, display: "flex", alignItems: "center"  }}
                 >
                     <Box
                         component="span"
-                        sx={{ borderLeft: "4px solid #f44336", pl: 2, width: "13rem" }}
+                        sx={{ borderLeft: "4px solid #f44336", pl: 2, width: "13rem" , fontSize : {xs:"1.2rem" , md:"1.6rem"}, fontWeight: 'bold' }}
                     >
                         Serving 6+ Key Industries
                     </Box>

@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
@@ -16,11 +16,11 @@ const GlobalPresenceSection = () => {
     return (
         <section style={{ background: "#E7F4FF", padding: "60px 20px" }}>
             <div style={{ maxWidth: "1200px", margin: "0 auto", textAlign: "center" }}>
-                <h2 style={{ fontSize: "24px", fontWeight: "600", color: "#333" }}>
+                <Typography component={'h2'}  sx={{ fontSize : {xs:"1.2rem" , md:"1.6rem"}, fontWeight: 'bold'  }}>
                     <span style={{ borderLeft: "4px solid #f44336", paddingLeft: "12px" }}>
                         A Global Brand with Local Access
                     </span>
-                </h2>
+                </Typography>
 
                 <Box sx={{ marginTop: "40px", display: {xs:"block",md:"flex"}, gap: "32%" }}>
                     <div style={{ fontSize: "18px", fontWeight: "500", color: "#555", display: "flex", alignItems: "center", justifyContent: "center", gap: "10px", marginBottom: "20px" }}>

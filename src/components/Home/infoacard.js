@@ -45,8 +45,7 @@ const WhyTrustSection = () => {
           </Box>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Typography variant="h5" fontWeight={600} mb={2}>
-            <span style={{ color: "#f05423", fontWeight: 700 }}>|</span>{" "}
+          <Typography variant="h5" fontWeight={600} mb={2} sx={{ fontSize : {xs:"1.2rem" , md:"1.6rem"},  fontWeight: 'bold',borderLeft: "4px solid #f44336" ,paddingLeft : "12px"}}>
             Why Businesses Trust INHYMA
           </Typography>
           <Stack spacing={2}>
