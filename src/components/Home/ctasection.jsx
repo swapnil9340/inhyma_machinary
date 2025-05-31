@@ -64,6 +64,7 @@ const CTASection = () => {
           <Button
             variant="outlined"
             sx={{
+              fontSize : {xs:"12px" ,md: "14px"},
               borderColor: "#fff",
               color: "#fff",
               fontWeight: "bold",

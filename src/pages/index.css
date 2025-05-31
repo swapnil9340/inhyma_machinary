@@ -53,6 +53,15 @@
   }
 }
 
+.homeTestimonial{
+  .SwiperDesk{
+    display: block;
+  }
+  .SwiperMob{
+    display: none;
+  }
+}
+
 
 @media screen and (max-width: 600px){
   .mySwiperDesk {
@@ -81,6 +90,15 @@
     }
   }
   .topMachine{
+    .SwiperDesk{
+      display: none;
+    }
+    .SwiperMob{
+      display: block;
+    }
+  }
+
+  .homeTestimonial{
     .SwiperDesk{
       display: none;
     }

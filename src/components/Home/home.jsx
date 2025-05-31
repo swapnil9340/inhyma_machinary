@@ -47,7 +47,7 @@ const Home = () => {
         <ProductCard loading={loading} allProducts={allProducts}></ProductCard>
         <IndustriesServed></IndustriesServed>
         <GlobalPresenceSection></GlobalPresenceSection>
-        <TestimonialCard></TestimonialCard>
+        <TestimonialCard loading={loading} ></TestimonialCard>
         <CTASection></CTASection>
     </>
 }
