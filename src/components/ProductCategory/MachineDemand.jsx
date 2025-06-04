@@ -7,7 +7,7 @@ export default function MachineDemand({ allProducts, loading }) {
     const router = useRouter()
 
     const handleNavigate = (item) => {
-        router.push(`/product_description/${item._id}`)
+        router.push(`/product-details/${item._id}`)
     }
 
     return (

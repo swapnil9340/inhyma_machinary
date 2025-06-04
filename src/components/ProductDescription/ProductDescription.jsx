@@ -8,7 +8,6 @@ const ProductDescription = ({details ,products}) => {
 
    const randomFour = [...products].sort(() => 0.5 - Math.random()).slice(0, 4);
 
-   console.log("details" ,details)
 
   return (
     <>

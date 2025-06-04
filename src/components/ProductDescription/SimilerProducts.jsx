@@ -2,32 +2,7 @@ import React from 'react';
 import { Grid, Card, CardContent, CardMedia, Typography, Button, Container, Box } from '@mui/material';
 import { useRouter } from 'next/router';
 
-const machines = [
-    {
-        title: 'Scissor Lift',
-        description:
-            'The Scissor Lift is a versatile and reliable lifting solution designed for safe elevation of personnel and materials in industrial, construction, and warehouse applications.',
-        image: '/ïnhyma header image 1.png',
-    },
-    {
-        title: 'Mobile Floore Crane',
-        description:
-            'The Mobile Floor Crane is a versatile and heavy-duty lifting solution designed for material handling, loading, & unloading operations in warehouses, workshops, factories...',
-        image: '/ïnhyma header image 1.png',
-    },
-    {
-        title: 'Semi Automatic Capping Machine',
-        description:
-            'A high-precision and efficient solution for sealing bottles and containers with screw caps. Designed for small to medium-scale production.',
-        image: '/ïnhyma header image 1.png',
-    },
-    {
-        title: 'Automatic Strapping Machine',
-        description:
-            'A high-speed, fully automatic solution designed for securing cartons, packages and bundles efficiently using PP strapping.',
-        image: '/ïnhyma header image 1.png',
-    },
-];
+
 
 
 
@@ -36,7 +11,7 @@ export default function SimilerProducts({ productsData }) {
     const router = useRouter()
 
     const handleNavigate = (item) => {
-        router.push(`/product_description/${item._id}`)
+        router.push(`/product-details/${item._id}`)
     }
 
     return (

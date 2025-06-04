@@ -7,7 +7,7 @@ const ProductCategoryPage = () => {
     const [loading , setLoading] = useState(false);
     const [allCategories, setAllCategories] = useState([]);
     const [allProducts, setAllProducts] = useState([]);
-
+const [filteredCards, setFilteredCards] = useState([]);
     const getAllCategory = async () => {
         try {
             setLoading(true);
@@ -17,6 +17,7 @@ const ProductCategoryPage = () => {
             ]);
             setAllCategories(categoryRes?.data)
             setAllProducts(productRes?.data)
+            setFilteredCards(productRes?.data)
         } catch (error) {
             console.log(error)
         }finally{
@@ -29,7 +30,7 @@ const ProductCategoryPage = () => {
     }, [])
 
     return (
-        <ProductCategory allCategories={allCategories} allProducts={allProducts} loading={loading} />
+        <ProductCategory allCategories={allCategories} allProducts={allProducts} loading={loading}  filteredCards={filteredCards} setFilteredCards={setFilteredCards} />
     )
 }
 

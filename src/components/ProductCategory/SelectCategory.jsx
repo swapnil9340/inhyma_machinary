@@ -4,25 +4,32 @@ import { Container, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 
 
-const SelectCategory = ({ allProducts, allCategories ,loading }) => {
+const SelectCategory = ({ allProducts, allCategories ,loading ,filteredCards, setFilteredCards}) => {
   const [selectedCategory, setSelectedCategory] = useState({});
-  const [filteredCards, setFilteredCards] = useState([]);
+  
 
 
-  useEffect(() => {
-    if (allCategories.length) {
-      setSelectedCategory({ [allCategories[0].name]: true })
-    }
-  }, [JSON.stringify(allCategories)])
+  // useEffect(() => {
+  //   if (allCategories.length) {
+  //     setSelectedCategory({ [allCategories[0].name]: true })
+  //   }
+  // }, [JSON.stringify(allCategories)])
 
-  console.log(allProducts)
-  useEffect(() => {
-    if (Object.keys(selectedCategory).length) {
-      const result = allProducts.filter((product) => Object.keys(selectedCategory).includes(product.category) && selectedCategory[product.category] === true);
-      setFilteredCards(result);
-    }
 
-  }, [JSON.stringify(selectedCategory)])
+ useEffect(() => {
+  const selectedKeys = Object.keys(selectedCategory).filter(
+    (key) => selectedCategory[key] === true
+  );
+
+  if (selectedKeys.length > 0) {
+    const result = allProducts.filter((product) =>
+      selectedKeys.includes(product.category)
+    );
+    setFilteredCards(result);
+  } else {
+    setFilteredCards(allProducts);
+  }
+}, [selectedCategory, allProducts]);
 
   return (
     <>
