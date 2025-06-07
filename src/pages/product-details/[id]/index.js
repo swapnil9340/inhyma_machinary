@@ -1,59 +1,56 @@
+// pages/product-details/[id].js
 import ProductDescription from "@/components/ProductDescription/ProductDescription";
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import axiosInstance from "@/utils/axiosInstance";
-import { Box } from "@mui/material";
 import SeoHead from "@/components/SeoHead/SeoHead";
-import CircularProgress from '@mui/material/CircularProgress';
-const ProductDescriptionPage = () => {
-  const [productDetails, setProductDetails] = useState(null);
-  const [products, setProducts] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const { query } = useRouter();
+import { Box, CircularProgress } from "@mui/material";
+import axiosInstance from "@/utils/axiosInstance";
 
-  const { id } = query;
-  console.log("id", id);
-
-  const getProductDetail = async () => {
-    try {
-      setLoading(true);
-      const [productDetails, products] = await Promise.all([
-        axiosInstance.get("/product", { params: { id } }),
-        axiosInstance.get("/getProducts"),
-      ]);
-      setProductDetails(productDetails.data);
-      setProducts(products.data);
-    } catch {
-      (error) => {
-        console.log("error in product detail");
-      };
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    if (id) {
-      getProductDetail();
-    }
-  }, [id]);
-
-  if (loading) {
-    return <Box sx={{display:"flex" , justifyContent:"center"}}> <CircularProgress /></Box>;
+const ProductDescriptionPage = ({ productDetails, products }) => {
+  if (!productDetails || !products) {
+    return (
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <CircularProgress />
+      </Box>
+    );
   }
-  //   title, description, image, url
 
   return (
     <>
       <SeoHead
         title={productDetails.metaTitle}
         description={productDetails.metaDescription}
-        image={productDetails.images[0].url}
-        url={'https://inhyma-machinary-git-master-swapnil9340s-projects.vercel.app/product-details/'+`${productDetails._id}`}
-      ></SeoHead>
+        image={productDetails.images?.[0]?.url}
+        url={`https://inhyma-machinary-git-master-swapnil9340s-projects.vercel.app/product-details/${productDetails._id}`}
+      />
       <ProductDescription details={productDetails} products={products} />
     </>
   );
 };
 
 export default ProductDescriptionPage;
+
+
+export async function getServerSideProps(context) {
+  const { id } = context.params;
+
+  try {
+    const [productDetailsRes, productsRes] = await Promise.all([
+      axiosInstance.get("/product", { params: { id } }),
+      axiosInstance.get("/getProducts"),
+    ]);
+
+    return {
+      props: {
+        productDetails: productDetailsRes.data,
+        products: productsRes.data,
+      },
+    };
+  } catch (error) {
+    console.error("SSR error fetching product details:", error);
+    return {
+      props: {
+        productDetails: null,
+        products: null,
+      },
+    };
+  }
+}
