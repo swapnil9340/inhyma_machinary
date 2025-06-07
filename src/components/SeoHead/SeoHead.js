@@ -2,10 +2,10 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 const SeoHead = ({ title, description, image, url }) => {
+     const router = useRouter();
   const defaultTitle = "Default Website Title";
   const defaultDescription = "This is the default description of the website.";
   const defaultImage = "/default-og-image.jpg"; // Place a fallback image in /public
-  const defaultUrl = "https://yourdomain.com";
   const canonicalUrl = url || `${baseUrl}${router.asPath.split("?")[0]}`;
   return (
     <Head>

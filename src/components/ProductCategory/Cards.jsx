@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, Grid, Typography, Button, Box } from '@mui/material';
+import { Card, CardContent, CardMedia, Grid, Typography, Button, Box, CircularProgress } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay, Navigation } from 'swiper/modules';
@@ -173,7 +173,7 @@ const Cards = ({ filteredCards, loading }) => {
       ) : (
         <Box sx={{ width: "100%" }} >
           <Typography sx={{ textAlign: "center" }}>
-            Loading Products...
+           <Box sx={{display:"flex" , justifyContent:"center"}}> <CircularProgress /></Box>;
           </Typography>
         </Box>
       )

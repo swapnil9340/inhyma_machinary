@@ -2,6 +2,7 @@ import { Label } from "@mui/icons-material";
 import {
   Box,
   Checkbox,
+  CircularProgress,
   FormControlLabel,
   Grid,
   Input,
@@ -66,7 +67,7 @@ const ChooseCategory = ({ selectedCategory, setSelectedCategory, allCategories ,
               </Box>
                 }
               )) : (
-                   <Typography component={'span'} sx={{ fontSize: "14px", color: "#2157a4" }}>Loading...</Typography>
+                   <Typography component={'span'} sx={{ fontSize: "14px", color: "#2157a4" }}> <Box sx={{display:"flex" , justifyContent:"center"}}> <CircularProgress /></Box></Typography>
               )
             }
           </Box>

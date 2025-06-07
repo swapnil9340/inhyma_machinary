@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import axiosInstance from "@/utils/axiosInstance";
 import { Box } from "@mui/material";
 import SeoHead from "@/components/SeoHead/SeoHead";
-
+import CircularProgress from '@mui/material/CircularProgress';
 const ProductDescriptionPage = () => {
   const [productDetails, setProductDetails] = useState(null);
   const [products, setProducts] = useState(null);
@@ -39,7 +39,7 @@ const ProductDescriptionPage = () => {
   }, [id]);
 
   if (loading) {
-    return <Box>Loading...</Box>;
+    return <Box sx={{display:"flex" , justifyContent:"center"}}> <CircularProgress /></Box>;
   }
   //   title, description, image, url
 

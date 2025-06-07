@@ -9,7 +9,7 @@ import {
 import { useRef } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-
+import CircularProgress from '@mui/material/CircularProgress';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay, Navigation } from 'swiper/modules';
@@ -274,7 +274,7 @@ const ProductCard = ({ allProducts ,loading }) => {
 
         </Box>
       </Box>) : (
-        <Box sx={{textAlign : 'center'}}>Loading...</Box>
+        <Box sx={{textAlign : 'center'}}> <CircularProgress /></Box>
       )
      }  
       </Container>

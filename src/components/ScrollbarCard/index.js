@@ -1,4 +1,4 @@
-import { Box, Typography, Card, CardContent } from "@mui/material";
+import { Box, Typography, Card, CardContent, CircularProgress } from "@mui/material";
 import { useRef } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -177,7 +177,7 @@ export default function CategoryCarousel({
           </Swiper>
         </Box>
          ) : (
-          <Box sx={{textAlign : 'center'}}>Loading...</Box>
+          <Box sx={{display:"flex" , justifyContent:"center"}}> <CircularProgress /></Box>
          )
        }
       </Box>

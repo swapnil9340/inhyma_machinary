@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Card, CardContent, CardMedia, Typography, Button, Container, Box } from '@mui/material';
+import { Grid, Card, CardContent, CardMedia, Typography, Button, Container, Box, CircularProgress } from '@mui/material';
 import { useRouter } from 'next/router';
 
 export default function MachineDemand({ allProducts, loading }) {
@@ -76,7 +76,7 @@ export default function MachineDemand({ allProducts, loading }) {
                         ) : (
                             <Box sx={{ width: "100%" }} >
                                 <Typography sx={{ textAlign: "center" }}>
-                                    Loading...
+                                 <Box sx={{display:"flex" , justifyContent:"center"}}> <CircularProgress /></Box>;
                                 </Typography>
                             </Box>
                         )
