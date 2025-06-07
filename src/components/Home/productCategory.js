@@ -2,12 +2,12 @@ import { Box, Typography, Card, CardContent, Grid, CardMedia, Button, Container 
 import { useEffect, useState } from "react";
 import ScrollBarCard from "../ScrollbarCard"
 import Image from "next/image";
-
+import { useRouter } from "next/router";
 
 const ProductCategoriesSection = ({ allProducts, allCategories ,loading}) => {
     const [selected, setSelected] = useState([]);
     const [products , setProducts] = useState([]);
-
+ const router = useRouter();
 
 
     const filterProducts = ()=>{
@@ -28,8 +28,9 @@ const ProductCategoriesSection = ({ allProducts, allCategories ,loading}) => {
   console.log("filters" , products)
 
 
-  console.log("selected" ,selected)
-    // const products = allProducts[selected];
+ const handleNavigate = (item) => {
+    router.push(`/product-details/${item._id}`);
+  };
 
     return (
         <Box sx={{ backgroundColor: "#E7F4FF", py: 5 }}>
@@ -72,6 +73,7 @@ const ProductCategoriesSection = ({ allProducts, allCategories ,loading}) => {
                                             backgroundColor: '#08306b',
                                         },
                                     }}
+                                    onClick={() => handleNavigate(product)}
                                 >
                                     View Product
                                 </Button>
