@@ -15,7 +15,7 @@ const WhoWeAre = () => {
                 <Grid size={{xs:12 ,md:6}} >
                 <Typography
                         variant="h2"
-                        sx={{ color: "#243E60", fontSize: "32px", marginBottom: "20px" ,textAlign :"center" ,display :{xs:"block" ,md:"none"} }}
+                        sx={{ color: "#243E60", fontSize: "2px", marginBottom: "10px" ,textAlign :"center" ,display :{xs:"block" ,md:"none"} }}
                     >
                         Who We Are
                     </Typography>
@@ -33,7 +33,7 @@ const WhoWeAre = () => {
                <Grid size={{xs:12 ,md:5}} >
                     <Typography
                         variant="h2"
-                        sx={{ color: "#243E60", fontSize: "48px", marginBottom: "50px" ,display :{xs:"none" ,md:"block"} }}
+                        sx={{ color: "#243E60", fontSize: "25px", marginBottom: "20px" ,display :{xs:"none" ,md:"block"} }}
                     >
                         Who We Are
                     </Typography>

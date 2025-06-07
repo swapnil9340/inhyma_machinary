@@ -4,10 +4,10 @@ import { Box, Typography, Button, Stack } from '@mui/material';
 export default function ExplorePackaging() {
   return (
     <Box sx={{ py: 6, px: 4, textAlign: 'center' }}>
-      <Typography variant="h5" sx={{color : "#243E60" , fontSize: {xs:"28px"  , md:"48px"}}} gutterBottom>
+      <Typography variant="h5" sx={{color : "#243E60" , fontSize: {xs:"20px"  , md:"30px"}}} gutterBottom>
         Let’s Build the Future of Packaging Together
       </Typography>
-      <Typography  sx={{color : "#000000" ,fontSize: {xs:"20px"  , md:"30px"}}} mb={4}>
+      <Typography  sx={{color : "#000000" ,fontSize: {xs:"16px"  , md:"25px"}}} mb={4}>
         Explore our complete line of packaging and handling solutions or connect with our team for a consultation.
       </Typography>
 

@@ -2,7 +2,8 @@ import { Grid, Typography, Container, Box } from "@mui/material";
 import Image from "next/image";
 import vacuumMachine from "../../../public/vacuumMachine.png"
 
-export default function ListingGrid() {
+export default function ListingGrid({details}) {
+  console.log(details)
   return (
      <Container maxWidth="xl" sx={{ py: 5 }}>
           {/* Section Title */}
@@ -40,19 +41,20 @@ export default function ListingGrid() {
           </Grid>
     
           {/* Content */}
-          <Grid container spacing={4} sx={{ placeItems: "center" }}>
+          <Grid container spacing={4} sx={{ placeItems: "center" , height:"360px" }}>
             {/* Left Side: Image + Description */}
             <Grid item size={{ xs: 12, md: 6 }} sx={{ placeItems: "center" }}>
-              <Box mb={2}>
+              <Box mb={2} sx={{ width:"50%" , height:"100%" }}>
                 <Image
-                  src={vacuumMachine}
+                  src={details.images[0].url}
                   alt="Household Vacuum Sealer"
-                  width={300}
-                  height={200}
-                  style={{ maxWidth: "100%", height: "auto" }}
+                  width={100}
+                  height={100}
+                  quality={100}
+                  style={{ width: "100%", height: "100%" }}
                 />
-                <Typography variant="h6" color="#2157a4" gutterBottom>
-                  Household Vacuum Sealer
+                {/* <Typography variant="h6" color="#2157a4" gutterBottom>
+                 {details.name }
                 </Typography>
     
                 <Typography
@@ -64,18 +66,13 @@ export default function ListingGrid() {
                     width: "300px",
                   }}
                 >
-                  Household vacuum sealer’s ability of vacuum exhausting is very
-                  well. It is applicable to the vacuum packaging of some kinds of
-                  plastic bags, and has the advantage of small size, simple
-                  component, easy operating. Food packed by this machine can extend
-                  its fresh protecting time. It protects the food in refrigerator
-                  from corrosion, water evaporation and split.
-                </Typography>
+                 {details.description}
+                </Typography> */}
               </Box>
             </Grid>
     
             {/* Right Side: Specifications */}
-            <Grid item container size={12} spacing={0}  sx={{ background: "#2157a4", p: 1 ,display:{md:"none"} }}>
+            {/* <Grid item container size={12} spacing={0}  sx={{ background: "#2157a4", p: 1 ,display:{md:"none"} }}>
             <Grid item size={{ xs: 12, md: 6 }} >
               <Typography
                 variant="subtitle1"
@@ -86,24 +83,12 @@ export default function ListingGrid() {
                 Specifications
               </Typography>
             </Grid>
-            </Grid>
+            </Grid> */}
     
             <Grid item size={{ xs: 12, md: 6 }} sx={{ placeItems: "center" }}>
               <Box sx={{display:"flex" ,flexDirection:"column" , gap :"10px"}}>
                 <Typography variant="body1" color="text.secondary" mb={1}>
-                  <strong>Vacuum Capacity:</strong> 0.035 Mpa
-                </Typography>
-                <Typography variant="body1" color="text.secondary" mb={1}>
-                  <strong>Width Of Sealing:</strong> 40-300mm
-                </Typography>
-                <Typography variant="body1" color="text.secondary" mb={1}>
-                  <strong>Power Source:</strong> AC 220V/50-60Hz
-                </Typography>
-                <Typography variant="body1" color="text.secondary" mb={1}>
-                  <strong>Sealing Time:</strong> Number Display, And Auto Control
-                </Typography>
-                <Typography variant="body1" color="text.secondary">
-                  <strong>Weight:</strong> 2.5 Kg
+                  {details.specification}
                 </Typography>
               </Box>
             </Grid>

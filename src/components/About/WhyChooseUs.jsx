@@ -35,7 +35,7 @@ export default function WhyChooseUs() {
         <Grid item size={{xs:12  ,md:6}} >
           <Typography
             variant="h4"
-            sx={{ fontSize: { xs: "24px", md: "48px" }, color: "#243E60" }}
+            sx={{ fontSize: { xs: "20px", md: "25px" }, color: "#243E60" }}
             gutterBottom
           >
             Why Choose INHYMA Solutions LLP?
@@ -71,7 +71,7 @@ export default function WhyChooseUs() {
                   layout="fill"
                 />
                 </Box>
-                <Typography sx={{ color: "#606872", fontSize: {xs:"20px" ,md:"24px"} }}>    
+                <Typography sx={{ color: "#606872", fontSize: {xs:"16px" ,md:"20px"} }}>    
                   {feature}
                 </Typography>
               </Box>

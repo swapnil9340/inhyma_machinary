@@ -12,8 +12,8 @@ const ProductDescription = ({details ,products}) => {
   return (
     <>
       <ProductDescriptionBanner details={details}/>
-      <ListingGrid/>
-      <IndustrialExcellence/>
+      <ListingGrid details={details}/>
+      <IndustrialExcellence details={details}/>
       <SimilerProducts productsData={randomFour}/>
       </>
   )

@@ -15,10 +15,10 @@ export default function OurJourney() {
 
       <Grid container spacing={4} alignItems="center" justifyContent={"space-between"} sx={{ width: "90%" }}>
         <Grid item  size={{xs:12 , md:6}} sx={{textAlign :{xs:"center" ,md:"left"}}}  >
-          <Typography variant="h6" color="text.primary" sx={{ fontSize: {xs:"26px"  , md:"48px"} }}>
+          <Typography variant="h6" color="text.primary" sx={{ fontSize: {xs:"22px"  , md:"30px"} }}>
             From Darsh Enterprise to
           </Typography>
-          <Typography variant="h5" fontWeight="bold" color="primary" sx={{ fontSize: {xs:"26px"  , md:"48px"} }}>
+          <Typography variant="h5" fontWeight="bold" color="primary" sx={{ fontSize: {xs:"20px"  , md:"30px"} }}>
             INHYMA – Our Journey
           </Typography>
         </Grid>
@@ -35,7 +35,7 @@ export default function OurJourney() {
             }}
           >
             {milestones.map((item, index) => {
-              return <Typography component={"li"} sx={{ fontSize: {xs : "24px" , md:"32px"}, color: "#606872" }}><span style={{fontWeight:600}}>{item.year}:</span> {item.detail}</Typography>
+              return <Typography component={"li"} sx={{ fontSize: {xs : "20px" , md:"25px"}, color: "#606872" }}><span style={{fontWeight:600}}>{item.year}:</span> {item.detail}</Typography>
 
             })}
           </Box>

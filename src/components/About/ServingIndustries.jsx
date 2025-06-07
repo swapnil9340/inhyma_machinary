@@ -29,12 +29,12 @@ export default function ServingIndustries() {
   return (
     <Box sx={{ display: "grid", placeItems: "center" }}>
       <Box sx={{ px: {xs:2 ,md:4}, py: 6, width: "90%" }}>
-        <Typography variant="h5" sx={{ color: "#243E60", fontSize: {xs:"30px" , md:"48px"} }}>
+        <Typography variant="h5" sx={{ color: "#243E60", fontSize: {xs:"20px" , md:"30px"} }}>
           Serving Industries Worldwide
         </Typography>
         <Typography
           variant="subtitle1"
-          sx={{ color: "#243E60", fontSize: {xs:"24px" , md:"32px"}  }}
+          sx={{ color: "#243E60", fontSize: {xs:"16px" , md:"25px"}  }}
           gutterBottom
         >
           We proudly serve clients across:

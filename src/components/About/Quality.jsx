@@ -13,9 +13,9 @@ const logos = [
 
 const Quality = () => {
   return (
-    <Box sx={{display : "grid" ,placeItems :"center" ,mt:{md:10} }}>
+    <Box sx={{display : "grid" ,placeItems :"center"   }}>
     <Box sx={{ py: 5, px: 2, width:"90%" }}>
-      <Typography variant="h5" sx={{fontSize: {xs:"28px"  , md:"48px"} , color :"#243E60" ,textAlign :{xs:"center" ,md:"left"}}}  gutterBottom>
+      <Typography variant="h5" sx={{fontSize: {xs:"20px"  , md:"25px"} , color :"#243E60" ,textAlign :{xs:"center" ,md:"left"}}}  gutterBottom>
         Quality You Can Rely On
       </Typography>
 

@@ -39,7 +39,7 @@ export const Vision = () => {
                                         <Box>
                                             <Typography
                                                 variant="h2"
-                                                sx={{ color: "#243E60", fontSize: {xs:"32px" ,md:"48px"} ,marginBottom : {xs:"10px" ,md:"20px"} }}
+                                                sx={{ color: "#243E60", fontSize: {xs:"20px" ,md:"25px"} ,marginBottom : {xs:"10px" ,md:"20px"} }}
                                             >
                                                 {card.title}
                                             </Typography>
