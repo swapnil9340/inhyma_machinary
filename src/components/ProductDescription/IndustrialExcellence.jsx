@@ -13,7 +13,7 @@ export default function IndustrialExcellence({details}) {
 
         <Grid item xs={12}>
           <Typography variant="body1" sx={{color : "#000000"}}>
-           {details.metaDescription}
+           {details.description}
           </Typography>
         </Grid>
 

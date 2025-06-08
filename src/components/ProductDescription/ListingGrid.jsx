@@ -41,7 +41,7 @@ export default function ListingGrid({details}) {
           </Grid>
     
           {/* Content */}
-          <Grid container spacing={4} sx={{ placeItems: "center" , height:"360px" }}>
+          <Grid container spacing={4} sx={{ placeItems: "center" }}>
             {/* Left Side: Image + Description */}
             <Grid item size={{ xs: 12, md: 6 }} sx={{ placeItems: "center" }}>
               <Box mb={2} sx={{ width:"50%" , height:"100%" }}>
