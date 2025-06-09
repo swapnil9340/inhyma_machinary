@@ -44,7 +44,7 @@ const Header = () => {
     >
       <Box sx={headerStyles.wrapper}>
         {/* Show AddressBar only on desktop */}
-        {!isMobile && <AddressBar />}
+        {/* {!isMobile && <AddressBar />} */}
 
         <AppBar position="static" elevation={0} sx={{ bgcolor: "#fff", boxShadow: "none" }}>
           <Toolbar sx={headerStyles.mainHeader}>

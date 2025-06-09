@@ -8,6 +8,36 @@ import { FaCircleChevronRight } from "react-icons/fa6";
 import { FaCircleChevronLeft } from "react-icons/fa6";
 
 const TestimonialCard = ({ loading }) => {
+
+
+  const testimonials = [
+  {
+    name: "Rohit Malhotra",
+    text: "Excellent build quality and smooth operation. Perfect for my packaging line. Highly recommended!",
+    role: "Production Manager"
+  },
+  {
+    name: "Sneha Kulkarni",
+    text: "Great value for money. Machines are easy to operate and maintain. Very satisfied!",
+    role: "Factory Owner"
+  },
+  {
+    name: "Amit Verma",
+    text: "Timely delivery and outstanding customer support. The flow wrap machine exceeded our expectations!",
+    role: "Operations Head"
+  },
+  {
+    name: "Deepika Nair",
+    text: "Robust design with consistent performance. Made our production process faster and more efficient.",
+    role: "Packaging Supervisor"
+  },
+  {
+    name: "Karan Ahuja",
+    text: "Compact and powerful equipment. Works flawlessly with various packaging materials. Would buy again!",
+    role: "Procurement Lead"
+  }
+];
+
   return (
     <Box className="homeTestimonial" sx={{ py: 6 }}>
       <Container maxWidth="xl">
@@ -73,87 +103,79 @@ const TestimonialCard = ({ loading }) => {
                   }}
                   style={{overflow : "visible"}}
                 >
-                  {[...Array(6)].map((_, idx) => (
-                    <SwiperSlide key={idx} >
-                      <Box
-                        elevation={0}
-                        key={idx}
-                        sx={{
-                          bgcolor: "#fff",
-                          borderRadius: 2,
-                          boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-                          p: 3,
-                          position: "relative",
-                        }}
-                      >
-                        {/* Quote Icon Circle */}
-                        <Box
-                          sx={{
-                            position: "absolute",
-                            top: -14,
-                            left: 20,
-                            width: 40,
-                            height: 40,
-                            bgcolor: "#0C4DA2",
-                            color: "#fff",
-                            borderRadius: "50%",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            fontSize: 24,
-                            fontWeight: "bold",
-                          }}
-                        >
-                          “
-                        </Box>
-    
-                        {/* Stars */}
-                        <Box sx={{ mt: 3, mb: 1 }}>
-                          {Array.from({ length: 5 }).map((_, i) => (
-                            <Typography
-                              key={i}
-                              component="span"
-                              sx={{ color: "#FF6B6B", fontSize: 20 }}
-                            >
-                              ★
-                            </Typography>
-                          ))}
-                        </Box>
-    
-                        {/* Testimonial Text */}
-                        <Typography
-                          variant="body2"
-                          color="text.secondary"
-                          sx={{ lineHeight: 1.6, mb: 3 }}
-                        >
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                          sed do eiusmod tempor incididunt ut labore et dolore magna
-                          aliqua.
-                        </Typography>
-    
-                        {/* Profile */}
-                        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                          <Avatar
-                            src="/images/user-avatar.jpg"
-                            alt="Justus Menke"
-                            sx={{ width: 40, height: 40 }}
-                          />
-                          <Box>
-                            <Typography
-                              variant="subtitle2"
-                              fontWeight={600}
-                              color="text.primary"
-                            >
-                              Justus Menke
-                            </Typography>
-                            <Typography variant="caption" color="text.secondary">
-                              CEO Eronaman
-                            </Typography>
-                          </Box>
-                        </Box>
-                      </Box>
-                    </SwiperSlide>
-                  ))}
+                  {testimonials.map((testimonial, idx) => (
+    <SwiperSlide key={idx}>
+      <Box
+        sx={{
+          bgcolor: "#fff",
+          borderRadius: 2,
+          boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+          p: 3,
+          position: "relative",
+        }}
+      >
+        <Box
+          sx={{
+            position: "absolute",
+            top: -14,
+            left: 20,
+            width: 40,
+            height: 40,
+            bgcolor: "#0C4DA2",
+            color: "#fff",
+            borderRadius: "50%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: 24,
+            fontWeight: "bold",
+          }}
+        >
+          “
+        </Box>
+
+        <Box sx={{ mt: 3, mb: 1 }}>
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Typography
+              key={i}
+              component="span"
+              sx={{ color: "#FF6B6B", fontSize: 20 }}
+            >
+              ★
+            </Typography>
+          ))}
+        </Box>
+
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          sx={{ lineHeight: 1.6, mb: 3 }}
+        >
+          {testimonial.text}
+        </Typography>
+
+        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+          <Avatar
+            src="/images/user-avatar.jpg"
+            alt={testimonial.name}
+            sx={{ width: 40, height: 40 }}
+          />
+          <Box>
+            <Typography
+              variant="subtitle2"
+              fontWeight={600}
+              color="text.primary"
+            >
+              {testimonial.name}
+            </Typography>
+            <Typography variant="caption" color="text.secondary">
+              {testimonial.role}
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+    </SwiperSlide>
+  ))}
                 </Swiper>
     
                 {/* mobile */}
@@ -169,7 +191,79 @@ const TestimonialCard = ({ loading }) => {
                     prevEl: ".testimonial-custom-prev",
                   }}
                 >
-                  {[...Array(6)].map(( _, idx)=>(
+                   {testimonials.map((testimonial, idx) => (
+    <SwiperSlide key={idx}>
+      <Box
+        sx={{
+          bgcolor: "#fff",
+          borderRadius: 2,
+          boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+          p: 3,
+          position: "relative",
+        }}
+      >
+        <Box
+          sx={{
+            position: "absolute",
+            top: -14,
+            left: 20,
+            width: 40,
+            height: 40,
+            bgcolor: "#0C4DA2",
+            color: "#fff",
+            borderRadius: "50%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: 24,
+            fontWeight: "bold",
+          }}
+        >
+          “
+        </Box>
+
+        <Box sx={{ mt: 3, mb: 1 }}>
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Typography
+              key={i}
+              component="span"
+              sx={{ color: "#FF6B6B", fontSize: 20 }}
+            >
+              ★
+            </Typography>
+          ))}
+        </Box>
+
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          sx={{ lineHeight: 1.6, mb: 3 }}
+        >
+          {testimonial.text}
+        </Typography>
+
+        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+          <Avatar
+            src="/images/user-avatar.jpg"
+            alt={testimonial.name}
+            sx={{ width: 40, height: 40 }}
+          />
+          <Box>
+            <Typography
+              variant="subtitle2"
+              fontWeight={600}
+              color="text.primary"
+            >
+              {testimonial.name}
+            </Typography>
+            <Typography variant="caption" color="text.secondary">
+              {testimonial.role}
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+    </SwiperSlide>
+  ))} {[...Array(6)].map(( _, idx)=>(
                       <SwiperSlide
                         key={idx}
                         style={{ display: "flex", justifyContent: "center" ,paddingTop : "14px" }}
