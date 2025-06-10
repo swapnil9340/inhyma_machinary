@@ -90,7 +90,7 @@ const TestimonialCard = ({ loading }) => {
                 </div>
     
                 {/* desktop */}
-                <Swiper
+                {/* <Swiper
                   speed={1100}
                   slidesPerView={4}
                   spaceBetween={40}
@@ -107,6 +107,7 @@ const TestimonialCard = ({ loading }) => {
     <SwiperSlide key={idx}>
       <Box
         sx={{
+          minHeight:"280px",
           bgcolor: "#fff",
           borderRadius: 2,
           boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
@@ -176,25 +177,38 @@ const TestimonialCard = ({ loading }) => {
       </Box>
     </SwiperSlide>
   ))}
-                </Swiper>
-    
-                {/* mobile */}
-                <Swiper
-                  speed={1100}
-                  slidesPerView={1}
-                  spaceBetween={40}
-                  loop={true}
-                  modules={[Navigation, Autoplay]}
-                  className="SwiperMob"
-                  navigation={{
-                    nextEl: ".testimonial-custom-next",
-                    prevEl: ".testimonial-custom-prev",
-                  }}
-                >
-                   {testimonials.map((testimonial, idx) => (
+                </Swiper> */}
+    <Swiper
+  speed={1100}
+  spaceBetween={40}
+  loop={true}
+  modules={[Navigation, Autoplay]}
+  className="SwiperResponsive"
+  navigation={{
+    nextEl: ".testimonial-custom-next",
+    prevEl: ".testimonial-custom-prev",
+  }}
+  breakpoints={{
+    0: {
+      slidesPerView: 1,
+    },
+    600: {
+      slidesPerView: 2,
+    },
+    900: {
+      slidesPerView: 3,
+    },
+    1200: {
+      slidesPerView: 4,
+    },
+  }}
+  style={{ overflow: "visible" }}
+>
+  {testimonials.map((testimonial, idx) => (
     <SwiperSlide key={idx}>
       <Box
         sx={{
+          minHeight: "280px",
           bgcolor: "#fff",
           borderRadius: 2,
           boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
@@ -263,96 +277,10 @@ const TestimonialCard = ({ loading }) => {
         </Box>
       </Box>
     </SwiperSlide>
-  ))} {[...Array(6)].map(( _, idx)=>(
-                      <SwiperSlide
-                        key={idx}
-                        style={{ display: "flex", justifyContent: "center" ,paddingTop : "14px" }}
-                      >
-                        <Box
-                          elevation={10}
-                          key={idx}
-                          sx={{
-                            minWidth: 320,
-                            maxWidth: 340,
-                            bgcolor: "#fff",
-                            borderRadius: 2,
-                            boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-                            p: 3,
-                            position: "relative",
-                          }}
-                        >
-                          {/* Quote Icon Circle */}
-                          <Box
-                            sx={{
-                              position: "absolute",
-                              top: -14,
-                              left: 20,
-                              width: 40,
-                              height: 40,
-                              bgcolor: "#0C4DA2",
-                              color: "#fff",
-                              borderRadius: "50%",
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              fontSize: 24,
-                              fontWeight: "bold",
-                            }}
-                          >
-                            “
-                          </Box>
-    
-                          {/* Stars */}
-                          <Box sx={{ mt: 3, mb: 1 }}>
-                            {Array.from({ length: 5 }).map((_, i) => (
-                              <Typography
-                                key={i}
-                                component="span"
-                                sx={{ color: "#FF6B6B", fontSize: 20 }}
-                              >
-                                ★
-                              </Typography>
-                            ))}
-                          </Box>
-    
-                          {/* Testimonial Text */}
-                          <Typography
-                            variant="body2"
-                            color="text.secondary"
-                            sx={{ lineHeight: 1.6, mb: 3 }}
-                          >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore
-                            magna aliqua.
-                          </Typography>
-    
-                          {/* Profile */}
-                          <Box
-                            sx={{ display: "flex", alignItems: "center", gap: 2 }}
-                          >
-                            <Avatar
-                              src="/images/user-avatar.jpg"
-                              alt="Justus Menke"
-                              sx={{ width: 40, height: 40 }}
-                            />
-                            <Box>
-                              <Typography
-                                variant="subtitle2"
-                                fontWeight={600}
-                                color="text.primary"
-                              >
-                                Justus Menke
-                              </Typography>
-                              <Typography variant="caption" color="text.secondary">
-                                CEO Eronaman
-                              </Typography>
-                            </Box>
-                          </Box>
-                        </Box>
-                      </SwiperSlide>
-                    )
-                  )}
-                </Swiper>
+  ))}
+</Swiper>
+
+               
               </Box>):(
                 <Box sx={{textAlign : "center"}}>Loading...</Box>
               )

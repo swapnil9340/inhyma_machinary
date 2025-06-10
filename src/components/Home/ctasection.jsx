@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Typography,
@@ -6,16 +6,29 @@ import {
   Button,
   useMediaQuery,
   useTheme,
+  Modal,
+  IconButton,
 } from "@mui/material";
-
+import ContactForm from "../ContactUs/ContactForm"; // adjust path if needed
+import CloseIcon from '@mui/icons-material/Close'; 
+import { useRouter } from 'next/router';
 
 const CTASection = () => {
-
+    const router = useRouter()
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
+  const [open, setOpen] = useState(false);
 
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const hide = true;
+  const handleNavigate = ()=>{
+          router.push(`/contact-us`)
+        }
   return (
+    <>
+      
     <Box
       sx={{
         background: "linear-gradient(90deg, #0C4DA2, #167DFF)",
@@ -58,6 +71,7 @@ const CTASection = () => {
                 backgroundColor: "#e3f2fd",
               },
             }}
+            onClick={handleOpen}
           >
             Talk To An Expert
           </Button>
@@ -73,12 +87,47 @@ const CTASection = () => {
                 color: "#0C4DA2",
               },
             }}
+             onClick={handleNavigate}
           >
             Request A Free Quote
           </Button>
         </Grid>
       </Grid>
     </Box>
+    <Modal open={open} onClose={handleClose}>
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            bgcolor: "background.paper",
+            boxShadow: 24,
+            borderRadius: 2,
+
+            width: { xs: "90%", sm: 500 },
+            height:{xs:"90%", sm:"500"}
+          }}
+        >
+            {/* Close Button */}
+          <IconButton
+            onClick={handleClose}
+            sx={{
+              position: "absolute",
+              top: 12,
+              right: 12,
+              bgcolor: "#f0f0f0",
+              "&:hover": { bgcolor: "#e0e0e0" },
+              boxShadow: 1,
+            }}
+            size="small"
+          >
+            <CloseIcon />
+          </IconButton>
+          <ContactForm onClose={handleClose} hide={hide} />
+        </Box>
+      </Modal>
+    </>
   )
 }
 export default CTASection

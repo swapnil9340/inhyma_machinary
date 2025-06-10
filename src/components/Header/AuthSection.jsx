@@ -2,12 +2,13 @@ import { useState } from "react";
 import { Box, Typography, Modal, IconButton } from "@mui/material";
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import ContactForm from "../ContactUs/ContactForm"; // adjust path if needed
-
+import CloseIcon from '@mui/icons-material/Close'; // Import CloseIcon
 const AuthSection = () => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const hide = true;
 
   return (
     <>
@@ -30,11 +31,27 @@ const AuthSection = () => {
             bgcolor: "background.paper",
             boxShadow: 24,
             borderRadius: 2,
-            p: 4,
-            width: { xs: "90%", sm: 800 },
+
+            width: { xs: "90%", sm: 500 },
+            height:{xs:"90%", sm:"500"}
           }}
         >
-          <ContactForm onClose={handleClose} />
+            {/* Close Button */}
+          <IconButton
+            onClick={handleClose}
+            sx={{
+              position: "absolute",
+              top: 12,
+              right: 12,
+              bgcolor: "#f0f0f0",
+              "&:hover": { bgcolor: "#e0e0e0" },
+              boxShadow: 1,
+            }}
+            size="small"
+          >
+            <CloseIcon />
+          </IconButton>
+          <ContactForm onClose={handleClose} hide={hide} />
         </Box>
       </Modal>
     </>

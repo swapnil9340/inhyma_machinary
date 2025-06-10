@@ -24,7 +24,7 @@ const Footer = () => {
     // Data for better maintainability
     const companyInfo = {
         logo: "/INHYMA_FINAL_LOGO_C2C 1 (1).png",
-        description: "Leading provider of packaging machinery solutions for industries worldwide.",
+        description: "Leading provider of innovative and reliable packaging machinery solutions for diverse industries worldwide, empowering businesses with efficiency and quality.",
         socialLinks: [
             { icon: <FacebookIcon />, url: "#", label: "Facebook" },
             { icon: <InstagramIcon />, url: "#", label: "Instagram" },
@@ -40,7 +40,7 @@ const Footer = () => {
                 { name: "Product", url: "/product_category" },
                 { name: "Blogs", url: "/blogs" },
                 { name: "Contact Us", url: "/contact-us" },
-                 { name: "Abouts", url: "/about" },
+                 { name: "About us", url: "/about" },
             ],
         },
         // {
@@ -52,15 +52,15 @@ const Footer = () => {
         //         { name: "Printing Machines", url: "#" },
         //     ],
         // },
-        {
-            title: "Packaging Solutions",
-            items: [
-                { name: "Strapping Machines", url: "#" },
-                { name: "Stretch Wrappers", url: "#" },
-                { name: "Vertical Packaging", url: "#" },
-                { name: "Flow Wrap Machines", url: "#" },
-            ],
-        },
+        // {
+        //     title: "Packaging Solutions",
+        //     items: [
+        //         { name: "Strapping Machines", url: "#" },
+        //         { name: "Stretch Wrappers", url: "#" },
+        //         { name: "Vertical Packaging", url: "#" },
+        //         { name: "Flow Wrap Machines", url: "#" },
+        //     ],
+        // },
     ];
 
     const contactInfo = [
@@ -210,10 +210,11 @@ const Footer = () => {
         // </Box>
         <Box component="footer" sx={{ bgcolor: "#E7F4FF", pt: 4, pb: 2 }}>
   <Box sx={{ px: { xs: 2, sm: 4, md: 8 }, mx: "auto" }}>
-    <Grid container spacing={6}>
+    <Grid container spacing={4} >
       
       {/* Company Info */}
-      <Grid item xs={12} md={4}>
+      <Grid item size={{ xs: 12, sm: 12, md:6 }}
+>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
           <Image
             src={companyInfo.logo}
@@ -222,9 +223,12 @@ const Footer = () => {
             height={120}
             priority
           />
-          <Typography variant="body2" color="text.secondary">
+          <Box paddingRight={{ xs: 0, sm: 4 }}>
+                <Typography variant="body2" color="text.secondary">
             {companyInfo.description}
           </Typography>
+          </Box>
+      
           <Stack direction="row" spacing={1}>
             {companyInfo.socialLinks.map((social, index) => (
               <IconButton
@@ -246,10 +250,8 @@ const Footer = () => {
       </Grid>
 
       {/* Product Categories */}
-      <Grid item xs={12} md={4} >
-        <Typography variant="p" fontWeight={600} gutterBottom>
-          Our Solutions
-        </Typography>
+      <Grid item size={{ xs: 12, sm: 12, md:2 }} >
+       
         <Grid container spacing={2} >
           {productCategories.map((category, index) => (
             <Grid item xs={12} sm={6} key={index}sx={{width:"200px"}}>
@@ -279,11 +281,11 @@ const Footer = () => {
       </Grid>
 
       {/* Contact Info */}
-      <Grid item xs={12} md={4}>
+      <Grid item size={{ xs: 12, sm: 12, md:2 }}>
         <Typography variant="p" fontWeight={600} gutterBottom>
           Contact Us
         </Typography>
-        <Stack spacing={2}>
+        <Stack spacing={1} marginTop={2}  >
           {contactInfo.map((contact, index) => (
             <Stack
               key={index}
@@ -330,6 +332,18 @@ const Footer = () => {
     >
       © {new Date().getFullYear()} INHYMA Solutions LLP. All rights reserved.
     </Typography>
+       <Typography
+      variant="body2"
+      color="primary.contrastText"
+      textAlign="center"
+      
+    >
+   <Link href="https://vyomedge.com/"    variant="body2"
+      color="primary.contrastText"  underline="hover">
+Developed by Vyomedge
+</Link>
+</Typography>
+
   </Box>
 </Box>
     );

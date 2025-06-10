@@ -11,7 +11,7 @@ import {
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-export default function ContactForm() {
+export default function ContactForm({hide}) {
   const [country, setCountry] = useState("notSelected");
   const [product, setProduct] = useState("notSelected");
 
@@ -65,7 +65,7 @@ export default function ContactForm() {
             />
           </Grid>
 
-          <Grid item size={{ xs: 12 }}>
+          <Grid item size={{ xs: 12 }} sx={{ display: hide ? "none" : "block" }}>
             <InputLabel sx={{ mb: 1 }}>Company Name</InputLabel>
             <Box
               component={"input"}

@@ -1,16 +1,25 @@
-import React from 'react';
-import { Box, Grid, Typography, Button } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Grid, Typography, Button, Modal, IconButton } from '@mui/material';
 import Image from 'next/image';
 import rightArrow from "../../../public/rightArrow.svg"
 import { useRouter } from 'next/router';
-
+import ContactForm from "../ContactUs/ContactForm"; // adjust path if needed
+import CloseIcon from '@mui/icons-material/Close'; 
 const Banner = () => {
     const router = useRouter()
+     const [open, setOpen] = useState(false);
+    
+      const handleOpen = () => setOpen(true);
+      const handleClose = () => setOpen(false);
+      const hide = true;
     
       const handleNavigate = ()=>{
           router.push(`/product_category`)
         }
+        
     return (
+        <>
+         
         <Box
             sx={{
                 // height: "300px",
@@ -63,7 +72,7 @@ const Banner = () => {
                         India’s Trusted Provider of Packaging Machinery and
                         Material Handling Equipment for Over 13 Years.
                         </Typography>
-                        <Box 
+                        {/* <Box 
                         sx={{
                             display:"flex",
                             gap:{xs:"1px" ,md:"14px"},
@@ -110,7 +119,70 @@ const Banner = () => {
                         >
                             Request a Quote
                         </Button>
-                        </Box>
+                        </Box> */}
+                        <Box
+  sx={{
+    display: "flex",
+    gap: { xs: 1, md: 2 },
+    justifyContent: { xs: "center", md: "flex-start" },
+    mt: 2,
+  }}
+>
+  {/* Explore Product Button */}
+  <Button
+    variant="contained"
+    color="primary"
+    sx={{
+      bgcolor: "#1955A6",
+      borderRadius: 0,
+      fontSize: "18px",
+      scale: { xs: "0.8", md: "1" },
+      textTransform: "none",
+      boxShadow: "none",
+      '&:hover': {
+        bgcolor: 'primary.dark',
+      },
+      minWidth: 160,
+      py: 1.2,
+    }}
+    onClick={handleNavigate}
+  >
+    Explore Product
+  </Button>
+
+  {/* Request a Quote Button */}
+  <Button
+    variant="contained"
+    color="primary"
+    endIcon={
+      <Image
+        src={rightArrow}
+        alt="arrow"
+        width={24}
+        height={24}
+        style={{ marginLeft: 4 }}
+      />
+    }
+    sx={{
+      bgcolor: '#fff',
+      color: "#1955A6",
+      fontSize: "18px",
+      borderRadius: 0,
+      scale: { xs: "0.8", md: "1" },
+      border: "2px solid #1955A6",
+      textTransform: "none",
+      boxShadow: "none",
+      minWidth: 180,
+      py: 1.2,
+      '&:hover': {
+        bgcolor: "#fcfcfc",
+      },
+    }}
+           onClick={handleOpen}
+  >
+    Request a Quote
+  </Button>
+</Box>
                     </Box>
                    
                 </Grid>
@@ -148,6 +220,40 @@ const Banner = () => {
 
             </Grid>
         </Box>
+           <Modal open={open} onClose={handleClose}>
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                    bgcolor: "background.paper",
+                    boxShadow: 24,
+                    borderRadius: 2,
+        
+                    width: { xs: "90%", sm: 500 },
+                    height:{xs:"90%", sm:"500"}
+                  }}
+                >
+                    {/* Close Button */}
+                  <IconButton
+                    onClick={handleClose}
+                    sx={{
+                      position: "absolute",
+                      top: 12,
+                      right: 12,
+                      bgcolor: "#f0f0f0",
+                      "&:hover": { bgcolor: "#e0e0e0" },
+                      boxShadow: 1,
+                    }}
+                    size="small"
+                  >
+                    <CloseIcon />
+                  </IconButton>
+                  <ContactForm onClose={handleClose} hide={hide} />
+                </Box>
+              </Modal>
+        </>
     );
 };
 
