@@ -71,7 +71,7 @@ export default function WhyChooseUs() {
                   layout="fill"
                 />
                 </Box>
-                <Typography sx={{ color: "#606872", fontSize: {xs:"16px" ,md:"20px"} }}>    
+                <Typography sx={{ color: "#606872", fontSize: {xs:"16px" ,md:"16px"} }}>    
                   {feature}
                 </Typography>
               </Box>

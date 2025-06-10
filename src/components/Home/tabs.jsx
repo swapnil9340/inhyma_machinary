@@ -90,10 +90,10 @@ const NavbarWithDropdownTabs = () => {
           }}
         >
           <Tab label="Home" onClick={() => handleNavigate("/")} />
-          <Tab label="Blogs" onClick={() => handleNavigate("/blog")}/>
           <Tab label="Product" onClick={() => handleNavigate("/product_category")}/>
           <Tab label="Contact Us" onClick={() => handleNavigate("/contact-us")} />
              <Tab label="About Us" onClick={() => handleNavigate("/about")} />
+          <Tab label="Blogs" onClick={() => handleNavigate("/blog")}/>
         </Tabs>
 
         {/* Resources Menu */}

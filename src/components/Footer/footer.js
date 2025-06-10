@@ -34,12 +34,13 @@ const Footer = () => {
 
     const productCategories = [
         {
-            title: "Sealing Solutions",
+            title: "Our Links",
             items: [
-                { name: "Vacuum Sealing Machines", url: "#" },
-                { name: "Induction Sealers", url: "#" },
-                { name: "L Sealers & Tunnels", url: "#" },
-                { name: "Carton Sealers", url: "#" },
+                { name: "Home", url: "/" },
+                { name: "Product", url: "/product_category" },
+                { name: "Blogs", url: "/blogs" },
+                { name: "Contact Us", url: "/contact-us" },
+                 { name: "Abouts", url: "/about" },
             ],
         },
         // {
@@ -245,13 +246,13 @@ const Footer = () => {
       </Grid>
 
       {/* Product Categories */}
-      <Grid item xs={12} md={4}>
-        <Typography variant="h6" fontWeight={600} gutterBottom>
+      <Grid item xs={12} md={4} >
+        <Typography variant="p" fontWeight={600} gutterBottom>
           Our Solutions
         </Typography>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} >
           {productCategories.map((category, index) => (
-            <Grid item xs={12} sm={6} key={index}>
+            <Grid item xs={12} sm={6} key={index}sx={{width:"200px"}}>
               <Typography variant="subtitle2" fontWeight={600} mb={1}>
                 {category.title}
               </Typography>
@@ -279,7 +280,7 @@ const Footer = () => {
 
       {/* Contact Info */}
       <Grid item xs={12} md={4}>
-        <Typography variant="h6" fontWeight={600} gutterBottom>
+        <Typography variant="p" fontWeight={600} gutterBottom>
           Contact Us
         </Typography>
         <Stack spacing={2}>
