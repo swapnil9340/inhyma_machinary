@@ -1,5 +1,12 @@
 import React from 'react';
-import { Box, Grid, Typography, List, ListItem, ListItemText } from '@mui/material';
+import {
+  Box,
+  Grid,
+  Typography,
+  List,
+  ListItem,
+  ListItemText,
+} from '@mui/material';
 
 const milestones = [
   { year: '2011', detail: 'Inception as Darsh Enterprise' },
@@ -11,34 +18,66 @@ const milestones = [
 
 export default function OurJourney() {
   return (
-    <Box sx={{ backgroundColor: '#eaf4fc', py: 6, px:{xs : 2 , md: 4} ,mt:10, display: "grid", placeItems: "center" }}>
-
-      <Grid container spacing={4} alignItems="center" justifyContent={"space-between"} sx={{ width: "90%" }}>
-        <Grid item  size={{xs:12 , md:6}} sx={{textAlign :{xs:"center" ,md:"left" , display:"grid"}}}  >
-          <Typography variant="p" color="text.primary" sx={{ fontSize: {xs:"22px"  , md:"20px"} }}>
+    <Box
+      sx={{
+        backgroundColor: '#eaf4fc',
+        py: { xs: 6, md: 8 },
+        px: { xs: 2, md: 4 },
+        mt: 10,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      <Grid
+        container
+        spacing={6}
+        sx={{ width: '90%', maxWidth: '1200px' }}
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Grid item xs={12} md={6} sx={{ textAlign: { xs: 'center', md: 'left' } }}>
+          <Typography sx={{ fontSize: { xs: '20px', md: '22px' }, color: '#243E60' }}>
             From Darsh Enterprise to
           </Typography>
-          <Typography variant="p" fontWeight="bold" color="primary" sx={{ fontSize: {xs:"20px"  , md:"25px"} }}>
+          <Typography
+            sx={{
+              fontSize: { xs: '24px', md: '28px' },
+              fontWeight: 700,
+              color: '#1955A6',
+              mt: 1,
+            }}
+          >
             INHYMA – Our Journey
           </Typography>
         </Grid>
 
-        <Grid item size={{xs:12 , md:6}}>
-          <Typography sx={{ color: "#243E60", fontSize: {xs:"22px"  , md:"32px"} }} mb={2}>
-            Use a horizontal timeline or animated cards:
-          </Typography>
-          <Box
+        <Grid item xs={12} md={6}>
+          <Typography
             sx={{
-              '& li::marker': {
-                color: '##606872',
-              }
+              color: '#243E60',
+              fontSize: { xs: '20px', md: '26px' },
+              mb: 2,
+              fontWeight: 600,
+              textAlign: { xs: 'center', md: 'left' },
             }}
           >
-            {milestones.map((item, index) => {
-              return <Typography component={"li"} sx={{ fontSize: {xs : "20px" , md:"20px"}, color: "#606872" }}><span style={{fontWeight:600}}>{item.year}:</span> {item.detail}</Typography>
+            Key Milestones
+          </Typography>
 
-            })}
-          </Box>
+          <List sx={{ listStyleType: 'disc', pl: 3 }}>
+            {milestones.map((item, index) => (
+              <ListItem key={index} sx={{ display: 'list-item', py: 0.5 }}>
+                <ListItemText
+                  primary={
+                    <Typography sx={{ color: '#606872', fontSize: '16px' }}>
+                      <strong>{item.year}:</strong> {item.detail}
+                    </Typography>
+                  }
+                />
+              </ListItem>
+            ))}
+          </List>
         </Grid>
       </Grid>
     </Box>
