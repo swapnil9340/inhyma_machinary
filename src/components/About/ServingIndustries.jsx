@@ -9,7 +9,7 @@ import {
 import tickIcon from "../../../public/tick.svg";
 import img1 from "../../../public/About_4.png";
 import Image from "next/image";
-
+import { useRouter } from 'next/router';
 const features = [
   "150+ Products Across 13 Categories",
   "Global Supply & Logistics Network",
@@ -20,6 +20,9 @@ const features = [
 ];
 
 export default function WhyChooseUs() {
+   const router = useRouter();
+
+
   return (
     <Box
       sx={{
@@ -102,6 +105,7 @@ export default function WhyChooseUs() {
 
           <Button
             variant="contained"
+onClick={()=>router.push('/product')}
             sx={{
               mt: 3,
               backgroundColor: "#1955A6",
@@ -110,6 +114,7 @@ export default function WhyChooseUs() {
               py: 1,
               textTransform: "capitalize",
             }}
+           
           >
             Explore Our Product Range
           </Button>

@@ -38,7 +38,7 @@ const SelectCategory = ({ allProducts, allCategories ,loading ,filteredCards, se
           <Grid size={{ xs: 12, md: 3 }} sx={{ width: "100%" }} >
             <ChooseCategory allCategories={allCategories} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} loading={loading} />
           </Grid>
-          <Grid size={{ xs: 12, md: 8 }} >
+          <Grid size={{ xs: 12, md: 8 }} sx={{justifyContent:"center"}}>
             <Cards filteredCards={filteredCards} loading={loading} />
           </Grid>
         </Grid>

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import ProductCard from "./ProductCard";
 
-const ProductCategoriesSection = ({ allProducts, allCategories ,loading}) => {
+const ProductCategoriesSection = ({ allProducts=[], allCategories=[] ,loading}) => {
     const [selected, setSelected] = useState([]);
     const [products , setProducts] = useState([]);
  const router = useRouter();

@@ -37,7 +37,7 @@ const Footer = () => {
             title: "Our Links",
             items: [
                 { name: "Home", url: "/" },
-                { name: "Product", url: "/product_category" },
+                { name: "Product", url: "/product" },
                 { name: "Blogs", url: "/blogs" },
                 { name: "Contact Us", url: "/contact-us" },
                  { name: "About us", url: "/about" },

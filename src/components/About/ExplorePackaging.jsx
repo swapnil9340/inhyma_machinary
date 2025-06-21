@@ -1,7 +1,9 @@
 import React from 'react';
 import { Box, Typography, Button, Stack } from '@mui/material';
-
+import { useRouter } from 'next/router';
 export default function ExplorePackaging() {
+  const router = useRouter();
+  
   return (
     <Box
       sx={{
@@ -38,13 +40,13 @@ export default function ExplorePackaging() {
           justifyContent="center"
           flexWrap="wrap"
         >
-          <Button variant="contained" sx={{ bgcolor: '#1955A6', color: '#fff', px: 4 }}>
+          <Button onClick={()=>router.push('/product')} variant="contained" sx={{ bgcolor: '#1955A6', color: '#fff', px: 4 }}>
             Explore Products
           </Button>
-          <Button variant="contained" sx={{ bgcolor: '#1955A6', color: '#fff', px: 4 }}>
+          <Button onClick={()=>router.push('/')} variant="contained" sx={{ bgcolor: '#1955A6', color: '#fff', px: 4 }}>
             View Solutions
           </Button>
-          <Button variant="contained" sx={{ bgcolor: '#1955A6', color: '#fff', px: 4 }}>
+          <Button  onClick={()=>router.push('/contact-us')} variant="contained" sx={{ bgcolor: '#1955A6', color: '#fff', px: 4 }}>
             Contact Our Team
           </Button>
         </Stack>

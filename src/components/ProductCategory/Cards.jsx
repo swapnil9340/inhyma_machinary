@@ -44,7 +44,7 @@ const Cards = ({ filteredCards, loading }) => {
 
   return (
     <Container maxWidth="xl">
-      <Grid container spacing={3}>
+      <Grid container spacing={3} sx={{justifyContent:"center"}}>
         {filteredCards.slice(0, visibleCount).map((prod) => (
           <Grid item xs={12} sm={6} md={4} key={prod._id}>
             <Card

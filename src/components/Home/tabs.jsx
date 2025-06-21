@@ -1,129 +1,88 @@
-import React, { useEffect, useState } from 'react';
-import {
-  AppBar,
-  Toolbar,
-  Tabs,
-  Tab,
-  Box,
-  Menu,
-  MenuItem,
-} from '@mui/material';
-import { useRouter } from 'next/router';
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import { Box } from '@mui/material';
 import { usePathname } from 'next/navigation';
 
-const NavbarWithDropdownTabs = () => {
-  const [value, setValue] = useState(0);
+const navItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Product', href: '/product' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Contact Us', href: '/contact-us' },
+  { label: 'Blogs', href: '/blog' },
+];
+
+const Navbar = () => {
   const pathname = usePathname();
-  const router = useRouter()
-  const [anchorElResources, setAnchorElResources] = useState(null);
-  const [anchorElProducts, setAnchorElProducts] = useState(null);
 
-  const handleTabChange = (event, newValue) => {
-    setValue(newValue);
+  const isActive = (href) => {
+    if (href === '/') return pathname === '/';
+    return pathname.startsWith(href);
   };
-
-  const handleResourcesClick = (event) => {
-    setAnchorElResources(event.currentTarget);
-  };
-
-  const handleProductsClick = (event) => {
-    setAnchorElProducts(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorElResources(null);
-    setAnchorElProducts(null);
-  };
-
-  const handleNavigate = (navprops) => {
-    router.push(navprops)
-  }
-
-
-  useEffect(() => {
-    const url = pathname
-
-    if (url?.includes("product_category")) setValue(2)
-    else if (url?.includes("contact-us")) setValue(3)
-    else if (url?.includes("blog")) setValue(1)
-    else setValue(0)
-
-
-  }, [pathname]);
 
   return (
-    <AppBar
-      position="static"
-      color="default"
-      elevation={0}
+    <Box
+      component="nav"
       sx={{
-        minHeight: "50px",
-        backgroundColor: '#fff',
-        borderBottom: '1px solid #e0e0e0',
+        width: '100%',
+        px: { xs: 3, md: 8 },
+        py: 2,
+        backgroundColor: '#ffffff',
+        borderBottom: '1px solid #f1f1f1',
+        position: 'sticky',
+        top: 0,
+        zIndex: 1100,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: { xs: 2, md: 4 },
+        flexWrap: 'wrap',
       }}
     >
-      <Toolbar sx={{ justifyContent: 'center', minHeight: '50px', height: '50px' ,padding :0 }}>
-        <Tabs
-          value={value}
-          onChange={handleTabChange}
-          textColor="inherit"
-          centered
-          TabIndicatorProps={{ style: { display: 'none' } }} 
-          sx={{
-            minHeight: '50px',
-            height: '50px',
-            '& .MuiTab-root': {
-              minHeight: '50px',
-              height: '50px',
-              textTransform: 'none',
-              fontWeight: 500,
-              fontSize: '14px',
-              paddingX: 2,
-              borderRadius: 1,
-              '&.Mui-selected': {
-                backgroundColor: '#f0f0f0', 
+      {navItems.map((item) => {
+        const active = isActive(item.href);
+        return (
+          <Box
+            key={item.label}
+            sx={{
+              position: 'relative',
+              '&:hover .underline': {
+                width: '100%',
               },
-              '&:hover': {
-                backgroundColor: '#f9f9f9', 
-              },
-            },
-          }}
-        >
-          <Tab label="Home" onClick={() => handleNavigate("/")} />
-          <Tab label="Product" onClick={() => handleNavigate("/product_category")}/>
-          <Tab label="Contact Us" onClick={() => handleNavigate("/contact-us")} />
-             <Tab label="About Us" onClick={() => handleNavigate("/about")} />
-          <Tab label="Blogs" onClick={() => handleNavigate("/blog")}/>
-        </Tabs>
-
-        {/* Resources Menu */}
-        <Menu
-          anchorEl={anchorElResources}
-          open={Boolean(anchorElResources)}
-          onClose={handleClose}
-          anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-          transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-        >
-          <MenuItem onClick={() => handleNavigate("/blog")}>Blog</MenuItem>
-          <MenuItem onClick={handleClose}>Guides</MenuItem>
-          <MenuItem onClick={handleClose}>Help Center</MenuItem>
-        </Menu>
-
-        {/* Product Categories Menu */}
-        <Menu
-          anchorEl={anchorElProducts}
-          open={Boolean(anchorElProducts)}
-          onClose={handleClose}
-          anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-          transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-        >
-          <MenuItem onClick={() => handleNavigate("/product_category")}>Electronics</MenuItem>
-          <MenuItem onClick={handleClose}>Industrial</MenuItem>
-          <MenuItem onClick={handleClose}>Construction</MenuItem>
-        </Menu>
-      </Toolbar>
-    </AppBar>
+            }}
+          >
+            <Link
+              href={item.href}
+              style={{
+                padding: '6px 0',
+                fontWeight: 500,
+                fontSize: '16px',
+                color: active ? '#1976d2' : '#444',
+                textDecoration: 'none',
+                transition: 'color 0.3s ease',
+              }}
+            >
+              {item.label}
+            </Link>
+            <Box
+              className="underline"
+              sx={{
+                position: 'absolute',
+                bottom: '-2px',
+                left: 0,
+                height: '2px',
+                width: active ? '100%' : '0%',
+                backgroundColor: '#1976d2',
+                transition: 'width 0.3s ease',
+                borderRadius: '1px',
+              }}
+            />
+          </Box>
+        );
+      })}
+    </Box>
   );
 };
 
-export default NavbarWithDropdownTabs;
+export default Navbar;

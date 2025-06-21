@@ -1,54 +1,61 @@
-import axiosInstance from "@/utils/axiosInstance"
-import Banner from "./banner"
-import Content from "./content"
-import CTASection from "./ctasection"
-import GlobalPresenceSection from "./GlobalPresenceSection"
-import IndustriesServed from "./IndustriesServed"
-import WhyTrustSection from "./infoacard"
-import ProductCard from "./ProductCard"
-import ProductCategories from "./productCategory"
-import TestimonialCard from "./TestimonialCard"
-import { useEffect, useState } from "react"
+// pages/index.js (or /pages/home.js)
 
-const Home = () => {
+import axiosInstance from "@/utils/axiosInstance";
+import Banner from "./banner";
+import Content from "./content";
+import CTASection from "./ctasection";
+import GlobalPresenceSection from "./GlobalPresenceSection";
+import IndustriesServed from "./IndustriesServed";
+import WhyTrustSection from "./infoacard";
+import ProductCard from "./ProductCard";
+import ProductCategories from "./productCategory";
+import TestimonialCard from "./TestimonialCard";
 
-    const [allCategories, setAllCategories] = useState([]);
-    const [allProducts, setAllProducts] = useState([]);
-    const [loading , setLoading] = useState(true)
+const Home = ({ allCategories, allProducts }) => {
+  const loading = false; // Data is available at build time
 
-    const getAllCategory = async () => {
-        try {
-            const [categoryRes, productRes] = await Promise.all([
-                axiosInstance.get("/category"),
-                axiosInstance.get("/getProducts") // <- change this to your actual second API
-            ]);
-            setAllCategories(categoryRes?.data)
-            setAllProducts(productRes?.data)
-        } catch (error) {
-            console.log(error)
-        }finally{
-            setLoading(false)
-        }
-    }
-
-
-    useEffect(() => {
-        getAllCategory();
-
-    }, [])
-
-
-
-    return <>
-        <Banner></Banner>
-        <Content></Content>
-        <ProductCategories loading={loading}  allProducts={allProducts} allCategories={allCategories}></ProductCategories>
-        <WhyTrustSection></WhyTrustSection>
-        <ProductCard loading={loading} allProducts={allProducts}></ProductCard>
-        <IndustriesServed></IndustriesServed>
-        <GlobalPresenceSection></GlobalPresenceSection>
-        <TestimonialCard loading={loading} ></TestimonialCard>
-        <CTASection></CTASection>
+  return (
+    <>
+      <Banner />
+      <Content />
+      <ProductCategories
+        loading={loading}
+        allProducts={allProducts}
+        allCategories={allCategories}
+      />
+      <WhyTrustSection />
+      <ProductCard loading={loading} allProducts={allProducts} />
+      <IndustriesServed />
+      <GlobalPresenceSection />
+      <TestimonialCard loading={loading} />
+      <CTASection />
     </>
+  );
+};
+
+export default Home;
+
+export async function getStaticProps() {
+  try {
+    const [categoryRes, productRes] = await Promise.all([
+      axiosInstance.get("/category"),
+      axiosInstance.get("/getProducts"),
+    ]);
+
+    return {
+      props: {
+        allCategories: categoryRes?.data || [],
+        allProducts: productRes?.data || [],
+      },
+      revalidate: 60, // Rebuild the page in background every 60 seconds (optional)
+    };
+  } catch (error) {
+    console.error("Static generation fetch error:", error);
+    return {
+      props: {
+        allCategories: [],
+        allProducts: [],
+      },
+    };
+  }
 }
-export default Home

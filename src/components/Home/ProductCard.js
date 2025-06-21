@@ -18,6 +18,7 @@ import { FaCircleChevronRight } from "react-icons/fa6";
 import { FaCircleChevronLeft } from "react-icons/fa6";
 
 const ProductCard = ({ allProducts ,loading }) => {
+  console.log(allProducts)
   const scrollRef = useRef(null);
   const router = useRouter();
 
@@ -92,7 +93,7 @@ const ProductCard = ({ allProducts ,loading }) => {
               prevEl: ".custom-prev-1",
             }}
           >
-            {allProducts.slice(0, 10).map((item, index) => (
+            {allProducts?.slice(0, 10).map((item, index) => (
               <SwiperSlide key={index}>
                 <Card
                   key={index}
@@ -188,7 +189,7 @@ const ProductCard = ({ allProducts ,loading }) => {
               prevEl: ".custom-prev-1",
             }}
           >
-            {allProducts.slice(0, 10).map((item, index) => (
+            {allProducts?.slice(0, 10).map((item, index) => (
               <SwiperSlide key={index} style={{display : "flex" , justifyContent : "center"}}>
                 <Card
                   key={index}
