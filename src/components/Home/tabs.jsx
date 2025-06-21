@@ -32,7 +32,7 @@ const Navbar = () => {
         borderBottom: '1px solid #f1f1f1',
         position: 'sticky',
         top: 0,
-        zIndex: 1100,
+        // zIndex: 1,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
