@@ -8,7 +8,7 @@ export const layoutStyles = {
       flex: 1,
       paddingTop: {
         xs: '60px',   // smaller padding for xs screens (like mobile)
-        sm: '95px',   // default padding for small and up
+        sm: '65px',   // default padding for small and up
       },
       backgroundColor: '#f9f9f9',
     },

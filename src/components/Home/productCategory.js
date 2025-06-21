@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import ScrollBarCard from "../ScrollbarCard"
 import Image from "next/image";
 import { useRouter } from "next/router";
+import ProductCard from "./ProductCard";
 
 const ProductCategoriesSection = ({ allProducts, allCategories ,loading}) => {
     const [selected, setSelected] = useState([]);
@@ -37,7 +38,8 @@ const ProductCategoriesSection = ({ allProducts, allCategories ,loading}) => {
              <Container maxWidth="xl">
             <ScrollBarCard selected={selected} setSelected={setSelected} categories={allCategories} loading={loading}></ScrollBarCard>
            
-            <Grid container spacing={2} justifyContent="flex-start">
+        
+            {/* <Grid container spacing={2} justifyContent="flex-start">
                 {products.map((product, i) => (
                     <Grid item size={{xs:6 ,md : 2}} key={i}>
                         <Card
@@ -97,7 +99,8 @@ const ProductCategoriesSection = ({ allProducts, allCategories ,loading}) => {
                         </Card>
                     </Grid>
                 ))}
-            </Grid>
+            </Grid> */}
+            <ProductCard allProducts ={products}loading={false}></ProductCard>
             </Container>
         </Box>
     );
