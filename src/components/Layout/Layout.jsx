@@ -7,18 +7,18 @@ import NavbarWithDropdownTabs from "../Home/tabs";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-import { Inter } from 'next/font/google';
+// import { Inter } from 'next/font/google';
 
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
-});
+// const inter = Inter({
+//   subsets: ['latin'],
+//   weight: ['400', '500', '600', '700'],
+//   display: 'swap',
+// });
 
 
 const Layout = ({ children }) => {
   return (
-    <Box sx={layoutStyles.wrapper} className={inter.className}>
+    <Box sx={layoutStyles.wrapper} >
       <Header />
       <Box component="main" sx={layoutStyles.main} >
         <NavbarWithDropdownTabs ></NavbarWithDropdownTabs>
