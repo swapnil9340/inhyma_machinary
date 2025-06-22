@@ -6,7 +6,6 @@ import {
     IconButton,
     useMediaQuery,
     useTheme,
-    Link,
     Divider,
 } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
@@ -16,7 +15,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Image from "next/image";
-
+import Link from "next/link";
 const Footer = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -38,7 +37,7 @@ const Footer = () => {
             items: [
                 { name: "Home", url: "/" },
                 { name: "Product", url: "/product" },
-                { name: "Blogs", url: "/blogs" },
+                { name: "Blogs", url: "/blog" },
                 { name: "Contact Us", url: "/contact-us" },
                  { name: "About us", url: "/about" },
             ],
@@ -216,6 +215,7 @@ const Footer = () => {
       <Grid item size={{ xs: 12, sm: 12, md:6 }}
 >
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+       <Link href={'/'}>
           <Image
             src={companyInfo.logo}
             alt="INHYMA Solutions LLP"
@@ -223,6 +223,7 @@ const Footer = () => {
             height={120}
             priority
           />
+       </Link>
           <Box paddingRight={{ xs: 0, sm: 4 }}>
                 <Typography variant="body2" color="text.secondary">
             {companyInfo.description}
