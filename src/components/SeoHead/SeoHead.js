@@ -1,7 +1,10 @@
 // components/SeoHead.js
 import Head from "next/head";
+import { useRouter } from 'next/router';
 
 const SeoHead = ({ title, description, image, url, keywords }) => {
+  const router = useRouter();
+
   const defaultTitle = "Inhyma | Innovating the Future with Smart Solutions";
   const defaultDescription =
     "Welcome to Inhyma – your destination for cutting-edge technology, innovative products, and transformative ideas. Discover how we can power your future.";
@@ -9,7 +12,8 @@ const SeoHead = ({ title, description, image, url, keywords }) => {
     "https://res.cloudinary.com/dfw6t8scb/image/upload/v1750506720/hn7stb3ezmc523uni6k4ijai6_s1p5qk.png";
   const defaultKeywords = "Inhyma, smart solutions, industrial automation, machinery, innovation, AI technology, engineering products, future tech";
 
-  const canonicalUrl = url || `https://www.inhyma.com/`;
+  const baseUrl = "https://www.inhyma.com";
+  const canonicalUrl = url || `${baseUrl}${router.asPath}`;
 
   return (
     <Head>

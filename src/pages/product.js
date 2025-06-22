@@ -13,6 +13,8 @@ const ProductCategoryPage = ({ allCategories, allProducts }) => {
   title="Our Products | Inhyma – Smart, Innovative, Scalable"
   description="Discover Inhyma’s range of innovative and tech-driven products tailored to transform your business and enhance productivity."
   keywords="Inhyma products, smart tech products, tech solutions, digital innovation"
+  url={'https://www.inhyma.com/product'}
+  
 />
     <ProductCategory
       allCategories={allCategories}

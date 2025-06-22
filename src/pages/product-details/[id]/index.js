@@ -19,7 +19,7 @@ const ProductDescriptionPage = ({ productDetails, products }) => {
         title={productDetails.metaTitle}
         description={productDetails.metaDescription}
         image={productDetails.images?.[0]?.url}
-        url={`https://inhyma-machinary-git-master-swapnil9340s-projects.vercel.app/product-details/${productDetails._id}`}
+        url={`https://www.inhyma.com/product-details/${productDetails._id}`}
       />
       <ProductDescription details={productDetails} products={products} />
     </>
