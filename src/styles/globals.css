@@ -27,6 +27,72 @@ body {
   /* color: var(--foreground); */
   font-family: 'Inter';
 }
+:root {
+  --nprogress-color: #1955A6;
+  --nprogress-opacity: 0.85;
+  --nprogress-glow: 0 0 12px rgba(25, 85, 166, 0.3);
+  --nprogress-height: 3px;
+}
+/* 
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nprogress-height);
+  background: linear-gradient(
+    to right,
+    rgba(25, 85, 166, 0.8),
+    rgba(25, 85, 166, 1),
+    rgba(25, 85, 166, 0.8)
+  );
+  backdrop-filter: blur(6px);
+  box-shadow: var(--nprogress-glow);
+  z-index: 99999;
+  border-radius: 0 4px 4px 0;
+  animation: barFlow 2s ease-in-out infinite alternate;
+  transform-origin: left;
+}
+
+@keyframes barFlow {
+  0% {
+    transform: scaleX(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scaleX(1.04);
+    opacity: 1;
+  }
+}
+
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0;
+  width: 80px;
+  height: 100%;
+  background: var(--nprogress-color);
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(25, 85, 166, 0.6);
+  transform: rotate(3deg) translateY(-3px);
+  animation: pulseGlow 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: rotate(2.5deg) translateY(-2px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: rotate(3.5deg) translateY(-4px);
+    opacity: 1;
+  }
+} */
+
 
 
 #nprogress {
@@ -37,35 +103,13 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  height: 2.5px;
+  height: 3px;
   width: 100%;
-  z-index: 999999999;
-  background: linear-gradient(90deg, rgba(25, 85, 166, 0.25), rgba(25, 85, 166, 0.9));
-  backdrop-filter: blur(14px);
-  box-shadow: 0 0 8px rgba(25, 85, 166, 0.3);
-  border-radius: 0 8px 8px 0;
-  animation: fadeBar 1.6s ease-in-out infinite alternate;
-}
-
-@keyframes fadeBar {
-  0% { opacity: 0.4; transform: scaleY(1); }
-  100% { opacity: 1; transform: scaleY(1.05); }
+  background-color: #1955A6; /* Inhyma blue */
+  z-index: 9999;
+  transition: width 0.3s ease, opacity 0.3s ease;
 }
 
 #nprogress .peg {
-  display: block;
-  position: absolute;
-  right: 0;
-  width: 60px;
-  height: 100%;
-  border-radius: 6px;
-  background: radial-gradient(circle, #ffffffaa, #1955a6);
-  box-shadow: 0 0 10px rgba(25, 85, 166, 0.4);
-  transform: rotate(2.5deg) translateY(-2px);
-  animation: glowSlide 1s ease-in-out infinite alternate;
-}
-
-@keyframes glowSlide {
-  0% { transform: rotate(2deg) translateY(-2px); }
-  100% { transform: rotate(3.5deg) translateY(-4px); }
+  display: none;
 }
