@@ -22,19 +22,31 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useRouter } from 'next/router';
 
-
-
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Product", href: "/product" },
+  { label: "About Us", href: "/about" },
+  { label: "Contact Us", href: "/contact-us" },
+  { label: "Blogs", href: "/blog" },
+];
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const router = useRouter()
-   const handleNavigate = (navprops)=>{
-    router.push(navprops)
-  }
+  const pathname = usePathname();
+  const handleNavigate = (href) => {
+    router.push(href);
+  };
+
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
   };
+
+  const isActive = (href) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <motion.div
@@ -71,39 +83,103 @@ const Header = () => {
       </Box>
 
       {/* Mobile Drawer */}
-      <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
-        <Box
-          sx={{
-            width: 280,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            height: "100%",
-          }}
-          role="presentation"
-          onClick={toggleDrawer(false)}
-          onKeyDown={toggleDrawer(false)}
-        >
-          <Box>
-            <List>
-              <ListItem>
-                <SearchBar />
-              </ListItem>
-              <Divider />
-              <ListItem>
-                <AuthSection />
-              </ListItem>
-            </List>
-          </Box>
+       <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
+  <motion.div
+    initial={{ x: -280 }}
+    animate={{ x: 0 }}
+    exit={{ x: -280 }}
+    transition={{ type: "tween", duration: 0.4 }}
+  >
+    <Box
+      sx={{
+        width: 280,
+        display: "flex",
+        flexDirection: "column",
+        height: "100vh", // Full height to ensure footer sticks
+        backgroundColor: "#fff",
+      }}
+      role="presentation"
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
+    >
+      {/* Scrollable main section */}
+      <Box sx={{ flex: 1, overflowY: "auto" }}>
+        <List sx={{ py: 0 }}>
+          <ListItem sx={{ justifyContent: "center", py: 2 }}>
+            <Image
+              src="/INHYMA_FINAL_LOGO_C2C 1 (1).png"
+              alt="Inhyma Logo"
+              height={40}
+              width={140}
+              style={{ objectFit: "contain", cursor: "pointer" }}
+              onClick={() => handleNavigate("/")}
+            />
+          </ListItem>
 
-          {/* AddressBar at bottom of drawer on mobile */}
-          <Box sx={{ px: 1, py: 1, borderTop: "1px solid #eee" }}>
-            <AddressBar />
-          </Box>
-        </Box>
-      </Drawer>
+          {/* Soft gradient line */}
+          <Box
+            sx={{
+              height: "2px",
+              background: "linear-gradient(to right, #d1d1d1, #f5f5f5, transparent)",
+              mx: 3,
+              mb: 1,
+              borderRadius: 2,
+            }}
+          />
+
+          {navItems.map((item) => (
+            <ListItem
+              key={item.label}
+              sx={{
+                px: 3,
+                py: 1.2,
+                backgroundColor: isActive(item.href) ? "#F2F7FD" : "transparent",
+                borderLeft: isActive(item.href) ? "4px solid #1955A6" : "4px solid transparent",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  backgroundColor: "#f8f8f8",
+                },
+              }}
+            >
+              <Link
+                href={item.href}
+                style={{
+                  textDecoration: "none",
+                  color: isActive(item.href) ? "#1955A6" : "#333",
+                  fontWeight: 500,
+                  width: "100%",
+                  display: "block",
+                }}
+              >
+                {item.label}
+              </Link>
+            </ListItem>
+          ))}
+
+          <Divider sx={{ my: 2 }} />
+          <ListItem>{/* Optional Auth/Search here */}</ListItem>
+        </List>
+      </Box>
+
+      {/* Sticky bottom AddressBar */}
+      <Box
+        sx={{
+          px: 1,
+          py: 1,
+          borderTop: "1px solid #eee",
+          backgroundColor: "#fff",
+        }}
+      >
+        <AddressBar />
+      </Box>
+    </Box>
+  </motion.div>
+</Drawer>
+
     </motion.div>
   );
 };
 
 export default Header;
+
+

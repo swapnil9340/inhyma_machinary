@@ -1,27 +1,21 @@
-import { Box } from "@mui/material";
+'use client';
+
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import Header from "../Header/header";
-// import Footer from "../Footer/Footer";
 import { layoutStyles } from "./Layout.styles";
 import Footer from "../Footer/footer";
 import NavbarWithDropdownTabs from "../Home/tabs";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-// import { Inter } from 'next/font/google';
-
-// const inter = Inter({
-//   subsets: ['latin'],
-//   weight: ['400', '500', '600', '700'],
-//   display: 'swap',
-// });
-
-
 const Layout = ({ children }) => {
+  const theme = useTheme();
+  const showNavbar = useMediaQuery('(min-width:899px)');
+
   return (
-    <Box sx={layoutStyles.wrapper} >
+    <Box sx={layoutStyles.wrapper}>
       <Header />
-      <Box component="main" sx={layoutStyles.main} >
-        <NavbarWithDropdownTabs ></NavbarWithDropdownTabs>
+      <Box component="main" sx={layoutStyles.main}>
+        {showNavbar && <NavbarWithDropdownTabs />}
         {children}
       </Box>
       <Footer />
