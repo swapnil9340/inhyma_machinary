@@ -1,6 +1,5 @@
 import Blog from "@/components/Blog/Blog";
 import SeoHead from "@/components/SeoHead/SeoHead";
-
 const BlogPage = ()=>{
     return (
        <>

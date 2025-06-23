@@ -9,31 +9,9 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 
-const posts = [
-  {
-    id: 1,
-    title: "How to Choose the Right Packaging Machine for Your Industry",
-    description:
-      "Choosing the wrong machine can cost you time and money. This guide walks you through key selection criteria by industry and budget.",
-    image: "/FP1.png",
-  },
-  {
-    id: 2,
-    title: "How to Choose the Right Packaging Machine for Your Industry",
-    description:
-      "Choosing the wrong machine can cost you time and money. This guide walks you through key selection criteria by industry and budget.",
-      image: "/FP2.png",
-    
-  },
-  {
-    id: 3,
-    title: "How to Choose the Right Packaging Machine for Your Industry",
-    description:
-      "Choosing the wrong machine can cost you time and money. This guide walks you through key selection criteria by industry and budget.",
-      image: "/FP3.png",
 
-  },
-];
+import posts from "@/components/blog.json";
+import Link from "next/link";
 
 export default function FeaturedPosts() {
   return (
@@ -67,20 +45,22 @@ export default function FeaturedPosts() {
                   >
                     {post.title}
                   </Typography>
-                  <Typography
+                  {/* <Typography
                     variant="body2"
                     color="#606872"
                     sx={{ mt: 1, mb: 2 }}
                   >
                     {post.description}
-                  </Typography>
-                  <Button
-                    variant="contained"
-                    size="small"
-                    sx={{ backgroundColor: "#2157a4" }}
-                  >
-                    Read More
-                  </Button>
+                  </Typography> */}
+                   <Link href={`/blog/${post.slug}`} passHref>
+                    <Button
+                      variant="contained"
+                      size="small"
+                      sx={{ backgroundColor: "#2157a4" }}
+                    >
+                      Read More
+                    </Button>
+                    </Link>
                 </CardContent>
               </Card>
             </Grid>

@@ -5,45 +5,49 @@ import {
   Button,
   Grid,
   InputLabel,
-  Select,
-  MenuItem,
 } from "@mui/material";
+import { useForm } from "react-hook-form";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-export default function ContactForm({hide}) {
-  const [country, setCountry] = useState("notSelected");
-  const [product, setProduct] = useState("notSelected");
 
-  const handleChange = (event, field) => {
-    field === "country"
-      ? setCountry(event.target.value)
-      : setProduct(event.target.value);
+export default function ContactForm({ hide }) {
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
+  const [success, setSuccess] = useState(false);
+
+  const onSubmit = async (data) => {
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (res.ok) {
+        setSuccess(true);
+        reset();
+      }
+    } catch (error) {
+      console.error("Form submit error:", error);
+    }
   };
 
   return (
-    <Box
-      p={4}
-      bgcolor="#E5F0FF"
-      maxWidth="600px"
-      margin="auto"
-      borderRadius={2}
-    >
-      <Typography
-        variant="h5"
-        fontWeight="bold"
-        mb={1}
-        sx={{ color: "#53657D" }}
-      >
+    <Box p={4} bgcolor="#E5F0FF" maxWidth="600px" margin="auto" borderRadius={2}>
+      <Typography variant="h5" fontWeight="bold" mb={1} sx={{ color: "#53657D" }}>
         Send Us a Message
       </Typography>
 
       <Typography variant="body2" mb={4} sx={{ color: "#53657D" }}>
-        Please fill in the form below and our team will get in touch within 24
-        hours.
+        Please fill in the form below and our team will get in touch within 24 hours.
       </Typography>
 
-      <form>
+      {success && (
+        <Typography variant="body2" sx={{ color: "green", mb: 2 }}>
+          Your message has been sent successfully!
+        </Typography>
+      )}
+
+      <form onSubmit={handleSubmit(onSubmit)}>
         <Grid container spacing={2}>
           <Grid item size={{ xs: 12 }}>
             <InputLabel sx={{ mb: 1 }}>Full Name</InputLabel>
@@ -52,16 +56,7 @@ export default function ContactForm({hide}) {
               className="form-control"
               placeholder="Full Name (required)"
               required
-              sx={{
-                ":hover": {
-                  borderColor: "#000",
-                },
-                ":focus": {
-                  borderColor: "#1976d2",
-                  boxShadow: "none",
-                  borderWidth: "2px",
-                },
-              }}
+              {...register("fullName", { required: true })}
             />
           </Grid>
 
@@ -71,17 +66,7 @@ export default function ContactForm({hide}) {
               component={"input"}
               className="form-control"
               placeholder="Company Name"
-              required
-              sx={{
-                ":hover": {
-                  borderColor: "#000",
-                },
-                ":focus": {
-                  borderColor: "#1976d2",
-                  boxShadow: "none",
-                  borderWidth: "2px",
-                },
-              }}
+              {...register("companyName")}
             />
           </Grid>
 
@@ -93,16 +78,7 @@ export default function ContactForm({hide}) {
               className="form-control"
               placeholder="Email (required)"
               required
-              sx={{
-                ":hover": {
-                  borderColor: "#000",
-                },
-                ":focus": {
-                  borderColor: "#1976d2",
-                  boxShadow: "none",
-                  borderWidth: "2px",
-                },
-              }}
+              {...register("email", { required: true })}
             />
           </Grid>
 
@@ -113,74 +89,8 @@ export default function ContactForm({hide}) {
               className="form-control"
               placeholder="Phone (required)"
               required
-              sx={{
-                ":hover": {
-                  borderColor: "#000",
-                },
-                ":focus": {
-                  borderColor: "#1976d2",
-                  boxShadow: "none",
-                  borderWidth: "2px",
-                },
-              }}
+              {...register("phone", { required: true })}
             />
-          </Grid>
-
-          <Grid item size={{ xs: 6 }}>
-            <InputLabel sx={{ mb: 1 }}>Country</InputLabel>
-
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              fullWidth
-              value={country}
-              defaultValue={" "}
-              onChange={(e) => handleChange(e, "country")}
-              IconComponent={ExpandMoreIcon}
-              sx={{
-                background: "#fff",
-                height: "37px",
-                color: country === "notSelected" ? "gray" : "#000",
-                "& fieldSet": {
-                  borderColor: "#dee2e6",
-                },
-              }}
-            >
-              <MenuItem value={"notSelected"} hidden>
-                Select Country{" "}
-              </MenuItem>
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
-            </Select>
-          </Grid>
-          <Grid item size={{ xs: 6 }}>
-            <InputLabel sx={{ mb: 1 }}>Product</InputLabel>
-
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              fullWidth
-              value={product}
-              defaultValue={"notSelected"}
-              onChange={(e) => handleChange(e, "product")}
-              IconComponent={ExpandMoreIcon}
-              sx={{
-                background: "#fff",
-                height: "37px",
-                color: product === "notSelected" ? "gray" : "#000",
-                "& fieldSet": {
-                  borderColor: "#dee2e6",
-                },
-              }}
-            >
-              <MenuItem value={"notSelected"} hidden>
-                Select Product{" "}
-              </MenuItem>
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
-            </Select>
           </Grid>
 
           <Grid item size={{ xs: 12 }}>
@@ -188,20 +98,15 @@ export default function ContactForm({hide}) {
             <TextField
               multiline
               fullWidth
-              id="exampleFormControlTextarea1"
               rows="3"
               placeholder="Message"
               sx={{ background: "#fff" }}
-            ></TextField>
+              {...register("message")}
+            />
           </Grid>
 
           <Grid item xs={12}>
-            <Button
-              type="submit"
-              variant="contained"
-              fullWidth
-              sx={{ bgcolor: "#1955a6" }}
-            >
+            <Button type="submit" variant="contained" fullWidth sx={{ bgcolor: "#1955a6" }}>
               Submit Enquiry
             </Button>
           </Grid>

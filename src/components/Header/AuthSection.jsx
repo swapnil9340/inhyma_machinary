@@ -33,7 +33,7 @@ const AuthSection = () => {
             borderRadius: 2,
 
             width: { xs: "90%", sm: 500 },
-            height:{xs:"90%", sm:"500"}
+            // height:{xs:"90%", sm:"500"}
           }}
         >
             {/* Close Button */}
