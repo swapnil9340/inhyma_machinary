@@ -26,8 +26,6 @@ const ProductCategoriesSection = ({ allProducts=[], allCategories=[] ,loading}) 
   useEffect(()=>{
         filterProducts();
   } , [JSON.stringify(selected)])
-  console.log("filters" , products)
-
 
  const handleNavigate = (item) => {
     router.push(`/product-details/${item._id}`);

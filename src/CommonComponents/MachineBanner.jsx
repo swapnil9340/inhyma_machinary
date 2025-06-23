@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image'; 
 
-const MachineBanner = ({bannerContent}) => {
+const   MachineBanner = ({bannerContent}) => {
   const {  heading1  ,heading2,img1 ,img2} = bannerContent;
   return (
     <div
@@ -24,9 +24,9 @@ const MachineBanner = ({bannerContent}) => {
 
         {/* Center Text */}
         <div className="text-center md:text-left md:w-3/5 text-blue-700">
-          <h2 className="text-blue-700 text-xl md:text-2xl font-semibold ">
+          <h1 className="text-blue-700 text-xl md:text-2xl font-semibold ">
            {heading1.subHeading1}
-          </h2>
+          </h1>
           <p className="text-gray-600 mt-2 text-sm md:text-base">
           {heading2}
           </p>

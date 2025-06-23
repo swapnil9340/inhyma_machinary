@@ -3,7 +3,6 @@ import Image from "next/image";
 import vacuumMachine from "../../../public/vacuumMachine.png"
 
 export default function ListingGrid({details}) {
-  console.log(details)
   return (
      <Container maxWidth="xl" sx={{ py: 5 }}>
           {/* Section Title */}

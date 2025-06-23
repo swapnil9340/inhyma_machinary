@@ -18,7 +18,6 @@ import { FaCircleChevronRight } from "react-icons/fa6";
 import { FaCircleChevronLeft } from "react-icons/fa6";
 
 const ProductCard = ({ allProducts ,loading }) => {
-  console.log(allProducts)
   const scrollRef = useRef(null);
   const router = useRouter();
 

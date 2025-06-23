@@ -28,7 +28,7 @@ const CommonBanner = ({ bannerContent }) => {
         }}
       >
         <Typography
-          variant="h4"
+          variant="h1"
           sx={{ color: backgroundImg ? "#fff" : "#53657D", fontSize: "5vmin" }}
         >
           {heading1}

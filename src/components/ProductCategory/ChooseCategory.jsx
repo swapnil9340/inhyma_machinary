@@ -12,10 +12,8 @@ import {
 import { GoSearch } from "react-icons/go";
 
 const ChooseCategory = ({ selectedCategory, setSelectedCategory, allCategories ,loading }) => {
-  console.log("selectedCategory", selectedCategory)
-
+ 
   const handleSelect = (status, category) => {
-    console.log("status", status)
     setSelectedCategory((prev) => {
       return {
         ...prev,

@@ -40,7 +40,7 @@ const Banner = () => {
                     <Box sx={{ display:"grid", textAlign: { xs: 'center', md: 'left' } ,marginLeft:{md:"100px"} }}>
                         <Box sx={{display :"flex" ,alignItems :"center" ,justifyContent :'space-between'}}>
                           <Box textAlign={'left'}>
-                        <Typography variant="h4" sx={{ fontWeight: 'bold', color:"#243E60" ,fontSize : {xs:"36px",md:"48px"}}}>
+                        <Typography variant="h1" sx={{ fontWeight: 'bold', color:"#243E60" ,fontSize : {xs:"36px",md:"48px"}}}>
                             Innovate<span style={{color:"red"}}>.</span>
                         </Typography>
                         <Typography variant="h4" sx={{ fontWeight: 'bold', color:"#243E60" ,fontSize : {xs:"36px",md:"48px"}}}>
