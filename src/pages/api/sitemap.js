@@ -1,6 +1,7 @@
 // pages/api/sitemap.js
 import connectDB from "@/backend/config/db";
 import Product from "@/backend/models/Product";
+import { generatePath, href } from "react-router-dom";
 
 export default async function handler(req, res) {
   await connectDB();
@@ -14,6 +15,8 @@ export default async function handler(req, res) {
     { label: "About Us", href: "/about", priority: 0.8 },
     { label: "Contact Us", href: "/contact-us", priority: 0.8 },
     { label: "Blogs", href: "/blog", priority: 0.7 },
+    {label:"Blogs" , href:'/blog/how-to-choose-right-packaging-machine' , priority: 0.7},
+    {label:"Blogs" , href:'/blog/best-packaging-trends-2025' , priority: 0.7}
   ];
 
   try {
@@ -37,7 +40,7 @@ export default async function handler(req, res) {
     .map(
       (product) => `
   <url>
-    <loc>${baseUrl}/product-details/${product._id}</loc>
+    <loc>${baseUrl}/product/${generatePath(product.name)}</loc>
     <lastmod>${product.updatedAt.toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -4,7 +4,7 @@ import React from 'react'
 const WhoWeAre = () => {
     return (
         <Box
-            sx={{ display: "flex", justifyContent: "center", mt:{xs:5,md:10}}}
+            sx={{ display: "flex", justifyContent: "center", mt:{xs:5,md:5}}}
         >
             <Grid
                 container

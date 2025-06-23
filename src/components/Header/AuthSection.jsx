@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Box, Typography, Modal, IconButton } from "@mui/material";
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import { TbMessageQuestion } from "react-icons/tb";
 import ContactForm from "../ContactUs/ContactForm"; // adjust path if needed
 import CloseIcon from '@mui/icons-material/Close'; // Import CloseIcon
 const AuthSection = () => {
@@ -14,11 +14,8 @@ const AuthSection = () => {
     <>
       <Box sx={{ display: 'flex', alignItems: 'center', ml: 2 }}>
         <IconButton onClick={handleOpen}>
-          <PersonOutlineIcon sx={{ color: "#606872" }} />
+          <TbMessageQuestion color="#1976d2" sx={{ color: "#606872" }} />
         </IconButton>
-        {/* <Typography variant="body2" color="primary" sx={{ cursor: "pointer" }} onClick={handleOpen}>
-          Log In / Sign Up
-        </Typography> */}
       </Box>
 
       <Modal open={open} onClose={handleClose}>

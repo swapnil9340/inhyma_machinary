@@ -31,8 +31,8 @@ const CoreValues = () => {
         background: "#E7F4FF",
         display: "grid",
         placeItems: "center",
-        py: { xs: 4, md: 8 },
-        px: { xs: 2, md: 6 },
+        py: { xs: 4, md: 3 },
+        px: { xs: 2, md: 3 },
         gap: 4,
         mt: 4,
       }}

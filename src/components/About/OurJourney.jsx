@@ -21,9 +21,9 @@ export default function OurJourney() {
     <Box
       sx={{
         backgroundColor: '#eaf4fc',
-        py: { xs: 6, md: 8 },
-        px: { xs: 2, md: 4 },
-        mt: 10,
+        py: { xs: 6, md: 3 },
+        px: { xs: 2, md: 3 },
+      
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',

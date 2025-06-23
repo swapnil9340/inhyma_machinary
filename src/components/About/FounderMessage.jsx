@@ -6,9 +6,9 @@ export default function FoundersMessage() {
     <Box
       sx={{
         backgroundColor: '#eaf4fc',
-        py: { xs: 5, md: 8 },
-        px: { xs: 2, md: 4 },
-        mt: 6,
+        py: { xs: 5, md: 3 },
+        px: { xs: 2, md: 3 },
+        mt: 3,
         display: 'grid',
         placeItems: 'center',
         textAlign: 'center',

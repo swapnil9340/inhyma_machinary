@@ -7,8 +7,8 @@ export default function ExplorePackaging() {
   return (
     <Box
       sx={{
-        py: { xs: 5, md: 8 },
-        px: { xs: 2, md: 4 },
+        py: { xs: 5, md: 3 },
+        px: { xs: 2, md: 3 },
         textAlign: 'center',
         display: 'grid',
         placeItems: 'center',

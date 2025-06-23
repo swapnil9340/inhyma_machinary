@@ -51,9 +51,19 @@ const CommonBanner = ({ bannerContent }) => {
           >
 
             {buttons.map((btn)=>{
+                const handleClick = () => {
+    if (btn.type === "call") {
+      window.location.href = `tel:${btn.value}`;
+    }
+    if (btn.type === "scroll") {
+      const element = document.getElementById(btn.value);
+      if (element) element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
                return <Button
                 key={btn}
                 variant="contained"
+                onClick={handleClick}
                 sx={{ bgcolor: "#1955A6", color: "#fff", px: 4 ,borderRadius : 0, textTransform : "capitalize" }}
               >
                 {btn.btnName }

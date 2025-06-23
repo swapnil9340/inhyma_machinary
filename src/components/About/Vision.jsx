@@ -19,7 +19,7 @@ const cardDetails = [
 
 export const Vision = () => {
   return (
-    <Box sx={{ display: "flex", justifyContent: "center", mt: { xs: 6, md: 10 }, mb: { xs: 6, md: 10 } }}>
+    <Box sx={{ display: "flex", justifyContent: "center", mt: { xs: 6, md: 5 }, mb: { xs: 6, md: 5 } }}>
       <Grid container spacing={4} sx={{ width: "90%", maxWidth: "1200px" }}>
         {cardDetails.map((card, index) => (
           <Grid item xs={12} md={6} key={index}>
