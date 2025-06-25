@@ -5,6 +5,7 @@ import SelectCategory from "./SelectCategory";
 
 
 const ProductCategory = ({allCategories ,allProducts ,loading , filteredCards, setFilteredCards}) => { 
+  
   return (
     <>
       <ProductCategoryBanner />

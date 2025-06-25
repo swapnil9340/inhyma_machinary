@@ -4,42 +4,40 @@ import { Container, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 
 
-const SelectCategory = ({ allProducts, allCategories ,loading ,filteredCards, setFilteredCards}) => {
+const SelectCategory = ({ allProducts, allCategories, loading, setloading, filteredCards, setFilteredCards }) => {
   const [selectedCategory, setSelectedCategory] = useState({});
+const [productloading , setproductloading] = useState(false)
+useEffect(() => {
+  setproductloading(true)
+  const selectedKeys = Object.keys(selectedCategory)
+    .filter((key) => selectedCategory[key] === true)
+    .map((key) => key.toLowerCase());
+
+  const result =
+    selectedKeys.length > 0
+      ? allProducts.filter((product) =>
+          selectedKeys.includes(
+            product.category?.toLowerCase?.() || ''
+          )
+        )
+      : allProducts;
+
+ setproductloading(false)
+  setFilteredCards(result);
   
-
-
-  // useEffect(() => {
-  //   if (allCategories.length) {
-  //     setSelectedCategory({ [allCategories[0].name]: true })
-  //   }
-  // }, [JSON.stringify(allCategories)])
-
-
- useEffect(() => {
-  const selectedKeys = Object.keys(selectedCategory).filter(
-    (key) => selectedCategory[key] === true
-  );
-
-  if (selectedKeys.length > 0) {
-    const result = allProducts.filter((product) =>
-      selectedKeys.includes(product.category)
-    );
-    setFilteredCards(result);
-  } else {
-    setFilteredCards(allProducts);
-  }
 }, [selectedCategory, allProducts]);
+
+  // console.log(filteredCards, "lllllllllllllllllllllllllll" , allProducts)
 
   return (
     <>
       <Container maxWidth="xl">
         <Grid container sx={{ padding: "20px 0" }} spacing={4}>
           <Grid size={{ xs: 12, md: 3 }} sx={{ width: "100%" }} >
-            <ChooseCategory allCategories={allCategories} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} loading={loading} />
+            <ChooseCategory setloading={setloading} allCategories={allCategories} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} loading={loading} />
           </Grid>
-          <Grid size={{ xs: 12, md: 8 }} sx={{justifyContent:"center"}}>
-            <Cards filteredCards={filteredCards} loading={loading} />
+          <Grid size={{ xs: 12, md: 8 }} sx={{ justifyContent: "center" }}>
+            <Cards filteredCards={filteredCards} loading={productloading} />
           </Grid>
         </Grid>
       </Container>

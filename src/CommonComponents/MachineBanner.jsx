@@ -35,7 +35,7 @@ const   MachineBanner = ({bannerContent}) => {
         {/* Right Machine Image */}
         <div className="w-full md:w-1/5 flex justify-center">
           <Image
-            src={'/product1.jfif'}
+            src={'/product2.jfif'}
             alt="Right Machine"
             width={150}
             height={100}

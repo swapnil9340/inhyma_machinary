@@ -11,15 +11,17 @@ import {
 } from "@mui/material";
 import { GoSearch } from "react-icons/go";
 
-const ChooseCategory = ({ selectedCategory, setSelectedCategory, allCategories ,loading }) => {
+const ChooseCategory = ({ selectedCategory,  setloading ,setSelectedCategory, allCategories ,loading }) => {
  
   const handleSelect = (status, category) => {
+
     setSelectedCategory((prev) => {
       return {
         ...prev,
         [category]: status
       }
     })
+    //  setloading(false)
   }
   return (
     <Box sx={{ height: "fit-content", bgcolor: "#EBF4FF" }}>
@@ -60,7 +62,8 @@ const ChooseCategory = ({ selectedCategory, setSelectedCategory, allCategories ,
                 <Checkbox
                   checked={selectedCategory[cat?.name] === true}
                   sx={{ paddingTop: 0 }}
-                  onChange={(e) => handleSelect(e.target.checked, cat?.name)} />
+                   onChange={(e) => handleSelect(e.target.checked, cat?.name)}
+                   />
                 <Typography component={'span'} sx={{ fontSize: "14px", color: "#2157a4" }}>{cat?.name}</Typography>
               </Box>
                 }
