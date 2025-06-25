@@ -34,7 +34,7 @@ const Content = () => {
           variant="body1"
           sx={{
             color: 'text.secondary',
-            mb: 2,
+        
             lineHeight: 1.8,
             textAlign : {xs : "justify" ,md: "center"}
           }}
@@ -47,7 +47,7 @@ const Content = () => {
           variant="body1"
           sx={{
             color: 'text.secondary',
-            mb: 4,
+            mb: 1,
             lineHeight: 1.8,
             textAlign : {xs : "justify" ,md: "center"}
           }}

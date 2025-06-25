@@ -61,9 +61,13 @@
     display: none;
   }
 }
-
-
+  .aboutusgrid{
+    display: contents !important;
+  }
 @media screen and (max-width: 600px){
+  .aboutusgrid{
+    display: flex !important;
+  }
   .mySwiperDesk {
     display: none !important;
   }

@@ -14,7 +14,7 @@ const Banner = () => {
       const hide = true;
     
       const handleNavigate = ()=>{
-          router.push(`/product_category`)
+          router.push(`/product`)
         }
         
     return (

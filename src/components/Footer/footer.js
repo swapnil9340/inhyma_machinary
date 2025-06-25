@@ -14,8 +14,10 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import YouTubeIcon from '@mui/icons-material/YouTube';
 import Image from "next/image";
 import Link from "next/link";
+import XIcon from '@mui/icons-material/X';
 const Footer = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -26,9 +28,10 @@ const Footer = () => {
     description:
       "Leading provider of innovative and reliable packaging machinery solutions for diverse industries worldwide, empowering businesses with efficiency and quality.",
     socialLinks: [
-      { icon: <FacebookIcon />, url: "#", label: "Facebook" },
-      { icon: <InstagramIcon />, url: "#", label: "Instagram" },
-      { icon: <LinkedInIcon />, url: "#", label: "LinkedIn" },
+      { icon: <FacebookIcon />, url: "https://www.facebook.com/profile.php?id=61574955902850", label: "Facebook" },
+      { icon: <InstagramIcon />, url: "https://www.instagram.com/inhyma.solutions/", label: "Instagram" },
+      { icon: <YouTubeIcon />, url: "https://www.youtube.com/@Inhymasolutions", label: "YouTube" },
+      { icon: <XIcon />, url: "https://x.com/inhymasolutions", label: "" },
     ],
   };
 
