@@ -6,14 +6,26 @@ export default function ListingGrid({details}) {
 
 
     const specificationString = details?.specification || "";
+     const isStructured =
+    specificationString.includes("\t") || specificationString.includes(":");
 
-  const parsedSpecs = specificationString
-    .trim()
-    .split("\n")
-    .map((line) => {
-      const [key, ...rest] = line.split("\t");
-      return { key: key.trim(), value: rest.join(" ").trim() };
-    });
+  const parsedSpecs = isStructured
+    ? specificationString
+        .trim()
+        .split("\n")
+        .map((line) => {
+          let separator = "\t";
+          if (!line.includes("\t") && line.includes(":")) separator = ":";
+          const [key, ...rest] = line.split(separator);
+          return {
+            key: key?.trim(),
+            value: rest.join(" ").trim(),
+          };
+        })
+        .filter((item) => item.key && item.value)
+    : [];
+
+
 
   return (
      <Container maxWidth="xl" sx={{ py: 5 }}>
