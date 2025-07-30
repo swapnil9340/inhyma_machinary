@@ -3,12 +3,12 @@ import Image from "next/image";
 import React from "react";
 
 const CommonBanner = ({ bannerContent }) => {
-  const { heading1, heading2, backgroundImg ,buttons } = bannerContent;
+  const { heading1, heading2, backgroundImg, buttons } = bannerContent;
   return (
     <Box
       sx={{
         position: "relative",
-        py: {xs:5 , md : 10},
+        py: { xs: 5, md: 10 },
         px: 2,
         display: "grid",
         placeItems: "center",
@@ -50,23 +50,23 @@ const CommonBanner = ({ bannerContent }) => {
             flexWrap="wrap"
           >
 
-            {buttons.map((btn)=>{
-                const handleClick = () => {
-    if (btn.type === "call") {
-      window.location.href = `tel:${btn.value}`;
-    }
-    if (btn.type === "scroll") {
-      const element = document.getElementById(btn.value);
-      if (element) element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-               return <Button
+            {buttons.map((btn) => {
+              const handleClick = () => {
+                if (btn.type === "call") {
+                  window.location.href = `tel:${btn.value}`;
+                }
+                if (btn.type === "scroll") {
+                  const element = document.getElementById(btn.value);
+                  if (element) element.scrollIntoView({ behavior: "smooth" });
+                }
+              };
+              return <Button
                 key={btn}
                 variant="contained"
                 onClick={handleClick}
-                sx={{ bgcolor: "#1955A6", color: "#fff", px: 4 ,borderRadius : 0, textTransform : "capitalize" }}
+                sx={{ bgcolor: "#1955A6", color: "#fff", px: 4, borderRadius: 0, textTransform: "capitalize" }}
               >
-                {btn.btnName }
+                {btn.btnName}
               </Button>
             })}
           </Stack>
@@ -74,15 +74,15 @@ const CommonBanner = ({ bannerContent }) => {
       )}
 
       {backgroundImg && (
-          <Box
-            sx={{
-              width: "100%",
-              height: "100%",
-              background: `linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0))`,
-              zIndex: 2,
-              position: "absolute",
-            }}
-          ></Box>
+        <Box
+          sx={{
+            width: "100%",
+            height: "100%",
+            background: `linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0))`,
+            zIndex: 2,
+            position: "absolute",
+          }}
+        ></Box>
       )}
 
       <Box>

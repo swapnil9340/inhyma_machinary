@@ -19,7 +19,7 @@ export default function SimilerProducts({ productsData }) {
             <Grid container spacing={3} justifyContent="center" sx={{ px: { md: 2 }, py: 4 }}>
                 <Grid item size={{ xs: 12 }} >
                     <Typography variant="h5" align="center" fontWeight={600} sx={{ color: "#53657D", fontSize: { xs: "25px", md: "35px" } }}>
-                        Similer Products
+                        Similar Products
                     </Typography>
                 </Grid>
 

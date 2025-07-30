@@ -3,7 +3,6 @@ import ProductDescription from "@/components/ProductDescription/ProductDescripti
 import SeoHead from "@/components/SeoHead/SeoHead";
 import { Box, CircularProgress } from "@mui/material";
 import axiosInstance from "@/utils/axiosInstance";
-import { parseSlug } from "@/utils/function";
 
 const ProductDescriptionPage = ({ productDetails, products }) => {
   if (!productDetails || !products) {
@@ -13,8 +12,6 @@ const ProductDescriptionPage = ({ productDetails, products }) => {
       </Box>
     );
   }
-  console.log( productDetails, products )
-
   return (
     <>
       <SeoHead
