@@ -7,7 +7,7 @@ const MachinesInfoSection = () => {
     'Pan-India Warehousing',
     'Custom-Built Options',
     'Export-Ready Models',
-    'After-Sales Support & Spares',
+    'After-Sales Support and Spare Parts',
   ];
 
   return (

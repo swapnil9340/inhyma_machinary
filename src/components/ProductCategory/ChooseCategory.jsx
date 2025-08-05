@@ -13,16 +13,9 @@ import { GoSearch } from "react-icons/go";
 
 const ChooseCategory = ({ selectedCategory,  setloading ,setSelectedCategory, allCategories ,loading }) => {
  
-  const handleSelect = (status, category) => {
-
-    setSelectedCategory((prev) => {
-      return {
-        ...prev,
-        [category]: status
-      }
-    })
-    //  setloading(false)
-  }
+const handleSelect = (status, category) => {
+  setSelectedCategory({ [category]: status });
+};
   return (
     <Box sx={{ height: "fit-content", bgcolor: "#EBF4FF" }}>
       <Grid container spacing={3} sx={{ height: "500px" }} >
