@@ -1,6 +1,6 @@
 // pages/index.js (or /pages/home.js)
 
-import axiosInstance from "@/utils/axiosInstance";
+import { getAllCategories, getAllProducts } from "@/lib/data";
 import Banner from "../components/Home/banner";
 import Content from "../components/Home/content";
 import CTASection from "../components/Home/ctasection";
@@ -39,17 +39,17 @@ export default Home;
 // Static Generation at build time
 export async function getStaticProps() {
   try {
-    const [categoryRes, productRes] = await Promise.all([
-      axiosInstance.get("/category"),
-      axiosInstance.get("/getProducts"),
+    const [allCategories, allProducts] = await Promise.all([
+      getAllCategories(),
+      getAllProducts(),
     ]);
 
     return {
       props: {
-        allCategories: categoryRes?.data || [],
-        allProducts: productRes?.data || [],
+        allCategories: allCategories || [],
+        allProducts: allProducts || [],
       },
-      revalidate: 60, // Rebuild the page in background every 60 seconds (optional)
+      revalidate: 60,
     };
   } catch (error) {
     console.error("Static generation fetch error:", error);

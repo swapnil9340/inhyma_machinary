@@ -2,7 +2,7 @@
 
 import ProductCategory from "@/components/ProductCategory/ProductCategory";
 import SeoHead from "@/components/SeoHead/SeoHead";
-import axiosInstance from "@/utils/axiosInstance";
+import { getAllCategories, getAllProducts } from "@/lib/data";
 import React, { useState } from "react";
 
 const ProductCategoryPage = ({ allCategories, allProducts }) => {
@@ -33,17 +33,17 @@ export default ProductCategoryPage;
 // Static data fetch at build time
 export async function getStaticProps() {
   try {
-    const [categoryRes, productRes] = await Promise.all([
-      axiosInstance.get("/category"),
-      axiosInstance.get("/getProducts"),
+    const [allCategories, allProducts] = await Promise.all([
+      getAllCategories(),
+      getAllProducts(),
     ]);
 
     return {
       props: {
-        allCategories: categoryRes?.data || [],
-        allProducts: productRes?.data || [],
+        allCategories: allCategories || [],
+        allProducts: allProducts || [],
       },
-      revalidate: 60, 
+      revalidate: 60,
     };
   } catch (error) {
     console.error("Static props fetch error:", error);

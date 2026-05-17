@@ -15,7 +15,7 @@ const MachinesInfoSection = () => {
 
       <Box sx={{ width: "80%" }}>
         <Grid container spacing={4} alignItems="center" justifyContent={"space-between"}>
-          <Grid item sx={{ xs: 12, md: 6 }} >
+          <Grid sx={{ xs: 12, md: 6 }} >
             <Typography variant="h5" fontWeight={600} gutterBottom sx={{ fontSize : {xs:"25px" ,md:"35px"}, color: "#53657D" }}>
               Popular Machines <br/> in Demand
             </Typography>
@@ -37,7 +37,7 @@ const MachinesInfoSection = () => {
             </Button>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
           <List>
             {features.map((feature, index) => (
               <ListItem key={index} disableGutters sx={{alignItems:"baseline"}}>

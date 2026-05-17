@@ -13,7 +13,7 @@ export default function MachineDemand({ allProducts, loading }) {
     return (
         <Container maxWidth={"xl"}>
             <Grid container spacing={3} justifyContent="center" sx={{ px: { md: 2 }, py: 4 }}>
-                <Grid item size={{ xs: 12 }} >
+                <Grid size={{ xs: 12 }} >
                     <Typography variant="h5" align="center" fontWeight={600} sx={{ color: "#53657D", fontSize: { xs: "25px", md: "35px" } }}>
                         Popular Machines in Demand
                     </Typography>
@@ -23,7 +23,7 @@ export default function MachineDemand({ allProducts, loading }) {
                     {
                         !loading ? (
                             allProducts.length > 0 && allProducts.slice(0, 4).map((machine, idx) => (
-                                <Grid item size={{ xs: 6, sm: 6, md: 3 }} key={idx}>
+                                <Grid size={{ xs: 6, sm: 6, md: 3 }} key={idx}>
                                     <Card sx={{ height: '100%', overflow: "visible", textAlign: 'center', border: '1px solid #C9C9C9', background: "none", display: "flex", flexDirection: "column" }} elevation={0}>
                                         <CardMedia
                                             component="img"

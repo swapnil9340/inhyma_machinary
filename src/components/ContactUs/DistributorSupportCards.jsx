@@ -18,7 +18,7 @@ export default function DistributorSupportCards() {
     <Container maxWidth="xl" sx={{ marginTop: 10 }}>
       <Grid container spacing={6}>
         {/* Card 1 */}
-        <Grid item size={{ xs: 12, md: 6 }}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card
             variant="outlined"
             sx={{
@@ -76,7 +76,7 @@ export default function DistributorSupportCards() {
         </Grid>
 
         {/* Card 2 */}
-        <Grid item size={{ xs: 12, md: 6 }}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card
             variant="outlined"
             sx={{

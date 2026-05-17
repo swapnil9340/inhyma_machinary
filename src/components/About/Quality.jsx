@@ -30,7 +30,7 @@ const Quality = () => {
 
         <Grid container spacing={4} justifyContent={{ xs: "center", md: "flex-start" }}>
           {logos.map((logo, index) => (
-            <Grid item xs={6} sm={4} md={2.4} key={index}>
+            <Grid key={index} size={{ xs: 6, sm: 4, md: 2.4 }}>
               <Box
                 sx={{
                   width: "100%",

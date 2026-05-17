@@ -7,7 +7,7 @@ export default function NewsletterSubscription() {
     <Box sx={{ px: { xs: 2, md: 8 }, py: 6 , bgcolor : "#fff"}}>
       <Grid container spacing={2} alignItems="center" justifyContent="space-between">
         {/* Left Section */}
-        <Grid item size={{ xs: 12, md: 4 }} sx={{ display: 'flex', alignItems: 'center' , justifyContent : "center",gap:2 }}>
+        <Grid size={{ xs: 12, md: 4 }} sx={{ display: 'flex', alignItems: 'center' , justifyContent : "center",gap:2 }}>
         <Box sx={{position :"relative" ,height:{xs:"6vmin" ,md:"4vmin"} ,width :{xs:"6vmin" ,md:"4vmin"}}}>
           <Image src="/mailIcon.svg" layout='fill'/>
         </Box>

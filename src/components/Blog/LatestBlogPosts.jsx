@@ -47,7 +47,7 @@ export default function LatestBlogPosts() {
 
         <Grid container spacing={3} justifyContent="center"  alignItems={'center'} sx={{ mt: 3 ,width: {xs:"100%" ,md:"60%"} }}>
           {blogPosts.map((post) => (
-            <Grid key={post.id} item size={{ xs: 12, sm: 6, md: 4 }}>
+            <Grid key={post.id} size={{ xs: 12, sm: 6, md: 4 }}>
               <Card elevation={0} sx={{ border: "1px solid #e0e0e0" }}>
                 <Image
                   src={post.image}

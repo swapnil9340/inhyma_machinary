@@ -36,7 +36,7 @@ export default function OurJourney() {
         justifyContent="center"
         alignItems="center"
       >
-        <Grid item xs={12} md={6} sx={{ textAlign: { xs: 'center', md: 'left' } }}>
+        <Grid sx={{ textAlign: { xs: 'center', md: 'left' } }} size={{ xs: 12, md: 6 }}>
           <Typography sx={{ fontSize: { xs: '20px', md: '22px' }, color: '#243E60' }}>
             From Darsh Enterprise to
           </Typography>
@@ -52,7 +52,7 @@ export default function OurJourney() {
           </Typography>
         </Grid>
 
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Typography
             sx={{
               color: '#243E60',

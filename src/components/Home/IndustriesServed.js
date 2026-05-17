@@ -48,7 +48,7 @@ const IndustriesServed = () => {
 
                 <Grid container spacing={3} sx={{ width: "75%" }}>
                     {industries.map((industry, index) => (
-                        <Grid item size={{xs:12 , md:4}} key={index}>
+                        <Grid size={{xs:12 , md:4}} key={index}>
                             <Card
                                 elevation={0}
                                 sx={{

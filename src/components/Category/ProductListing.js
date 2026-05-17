@@ -17,7 +17,7 @@ export default function ProductListing() {
 
       {/* Headers */}
       <Grid container spacing={0} mb={2} sx={{ background: "#2157a4", p: 1 }}>
-        <Grid item size={{ xs: 12, md: 6 }} >
+        <Grid size={{ xs: 12, md: 6 }} >
           <Typography
             variant="subtitle1"
             fontWeight="bold"
@@ -27,7 +27,7 @@ export default function ProductListing() {
             VACUUM MACHINE
           </Typography>
         </Grid>
-        <Grid item size={{ xs: 12, md: 6 }} sx={{display : {xs:'none' ,md:"block"}}} >
+        <Grid size={{ xs: 12, md: 6 }} sx={{display : {xs:'none' ,md:"block"}}} >
           <Typography
             variant="subtitle1"
             fontWeight="bold"
@@ -42,7 +42,7 @@ export default function ProductListing() {
       {/* Content */}
       <Grid container spacing={4} sx={{ placeItems: "center" }}>
         {/* Left Side: Image + Description */}
-        <Grid item size={{ xs: 12, md: 6 }} sx={{ placeItems: "center" }}>
+        <Grid size={{ xs: 12, md: 6 }} sx={{ placeItems: "center" }}>
           <Box mb={2}>
             <Image
               src={vacuumMachine}
@@ -75,8 +75,8 @@ export default function ProductListing() {
         </Grid>
 
         {/* Right Side: Specifications */}
-        <Grid item container size={12} spacing={0}  sx={{ background: "#2157a4", p: 1 ,display:{md:"none"} }}>
-        <Grid item size={{ xs: 12, md: 6 }} >
+        <Grid container size={12} spacing={0} sx={{ background: "#2157a4", p: 1 ,display:{md:"none"} }}>
+        <Grid size={{ xs: 12, md: 6 }} >
           <Typography
             variant="subtitle1"
             fontWeight="bold"
@@ -88,7 +88,7 @@ export default function ProductListing() {
         </Grid>
         </Grid>
 
-        <Grid item size={{ xs: 12, md: 6 }} sx={{ placeItems: "center" }}>
+        <Grid size={{ xs: 12, md: 6 }} sx={{ placeItems: "center" }}>
           <Box sx={{display:"flex" ,flexDirection:"column" , gap :"10px"}}>
             <Typography variant="body1" color="text.secondary" mb={1}>
               <strong>Vacuum Capacity:</strong> 0.035 Mpa

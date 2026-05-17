@@ -12,7 +12,7 @@ export default function TrustedClients() {
     <Container maxWidth={"xl"} >
       <Grid container spacing={4} alignItems="center" justifyItems="center">
         {/* Left Side */}
-        <Grid item size={{ xs: 12, md: 6 }} sx={{placeItems :"center"}} >
+        <Grid size={{ xs: 12, md: 6 }} sx={{placeItems :"center"}} >
           <Box>
           <Typography
             variant="h5"

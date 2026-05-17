@@ -41,7 +41,7 @@ export default function ListingGrid({details}) {
     
           {/* Headers */}
           <Grid container spacing={0} mb={2} sx={{ background: "#2157a4", p: 1 }}>
-            <Grid item size={{ xs: 12, md: 6 }} >
+            <Grid size={{ xs: 12, md: 6 }} >
               <Typography
                 variant="subtitle1"
                 fontWeight="bold"
@@ -51,7 +51,7 @@ export default function ListingGrid({details}) {
                 VACUUM MACHINE
               </Typography>
             </Grid>
-            <Grid item size={{ xs: 12, md: 6 }} sx={{display : {xs:'none' ,md:"block"}}} >
+            <Grid size={{ xs: 12, md: 6 }} sx={{display : {xs:'none' ,md:"block"}}} >
               <Typography
                 variant="subtitle1"
                 fontWeight="bold"
@@ -66,7 +66,7 @@ export default function ListingGrid({details}) {
           {/* Content */}
           <Grid container spacing={4} sx={{ placeItems: "center" }}>
             {/* Left Side: Image + Description */}
-            <Grid item size={{ xs: 12, md: 6 }} sx={{ placeItems: "center" }}>
+            <Grid size={{ xs: 12, md: 6 }} sx={{ placeItems: "center" }}>
               <Box mb={2} sx={{ width:"50%" , height:"100%" }}>
                 <Image
                   src={details.images[0].url}
@@ -80,7 +80,7 @@ export default function ListingGrid({details}) {
               </Box>
             </Grid>
     
-             <Grid item xs={12} md={6}>
+             <Grid size={{ xs: 12, md: 6 }}>
           <Box
             sx={{
               height: { xs: "auto", md: "500px" },

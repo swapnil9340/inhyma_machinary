@@ -39,7 +39,7 @@ export const AboutUs = () => {
       <AboutBanner />
       <Box px={{ xs: 2, md: 6 }} bgcolor="#F8FAFC" justifyContent={'center'} display={'flex'} marginTop={'10px'}>
         <Grid container spacing={4} alignItems="center" className='aboutusgrid'>
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Typography variant="h4" fontWeight="bold" color="#1955A6" mb={2}>
               Why Choose Inhyma?
             </Typography>
@@ -57,7 +57,7 @@ export const AboutUs = () => {
             </Typography>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
 
             <Image
               src={'/plant-and-equipment-solutions2.jpg'}
@@ -104,7 +104,7 @@ export const AboutUs = () => {
       <Box px={{ xs: 2, md: 6 }} bgcolor="#F8FAFC" justifyContent={'center'} display={'flex'} marginTop={'10px'}>
         <Grid container spacing={6} alignItems="center">
 
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Stack spacing={4}>
               <Typography variant="h4" fontWeight={600} color="#1955A6">
                 About Us

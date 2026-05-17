@@ -33,7 +33,7 @@ const WhyTrustSection = () => {
   return (
     <Box sx={{ py: 5, backgroundColor: "#f5faff" , justifyContent:"center",display:"flex" }}>
       <Grid container spacing={4} alignItems="center" justifyContent={"space-evenly"} sx={{width:"100%"}}>
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Box sx={{ textAlign: "center" }}>
             <Image
               src="/asian-female-engineer.png"
@@ -44,7 +44,7 @@ const WhyTrustSection = () => {
             />
           </Box>
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Typography variant="h5" fontWeight={600} mb={2} sx={{ fontSize : {xs:"1.2rem" , md:"1.6rem"},  fontWeight: 'bold',borderLeft: "4px solid #f44336" ,paddingLeft : "12px"}}>
             Why Businesses Trust INHYMA
           </Typography>

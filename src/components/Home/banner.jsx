@@ -36,7 +36,7 @@ const Banner = () => {
             <Grid container spacing={2} alignItems="center" >
 
                 {/* Left Side: Content */}
-                <Grid item size={{xs:12 ,md:6}} sx={{order : {xs:2 , md:1}}}>
+                <Grid size={{xs:12 ,md:6}} sx={{order : {xs:2 , md:1}}}>
                     <Box sx={{ display:"grid", textAlign: { xs: 'center', md: 'left' } ,marginLeft:{md:"100px"} }}>
                         <Box sx={{display :"flex" ,alignItems :"center" ,justifyContent :'space-between'}}>
                           <Box textAlign={'left'}>
@@ -190,7 +190,7 @@ const Banner = () => {
 
 
                 {/* Left side */}
-                <Grid item size={6}  sx={{order : {xs:1 , md:2}}}>
+                <Grid size={6} sx={{order : {xs:1 , md:2}}}>
                     <Box
                         sx={{
                             display: {xs:"none" , md:'flex'},

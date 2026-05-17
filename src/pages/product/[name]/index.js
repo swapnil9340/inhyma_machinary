@@ -2,7 +2,7 @@
 import ProductDescription from "@/components/ProductDescription/ProductDescription";
 import SeoHead from "@/components/SeoHead/SeoHead";
 import { Box, CircularProgress } from "@mui/material";
-import axiosInstance from "@/utils/axiosInstance";
+import { getAllProducts, getProductByName } from "@/lib/data";
 
 const ProductDescriptionPage = ({ productDetails, products }) => {
   if (!productDetails || !products) {
@@ -29,18 +29,22 @@ export default ProductDescriptionPage;
 
 
 export async function getServerSideProps(context) {
-  const { id } = context.params;
+  const { name } = context.params;
 
   try {
-    const [productDetailsRes, productsRes] = await Promise.all([
-      axiosInstance.get("/product", { params: { id } }),
-      axiosInstance.get("/getProducts"),
+    const [productDetails, products] = await Promise.all([
+      getProductByName(decodeURIComponent(name)),
+      getAllProducts(),
     ]);
+
+    if (!productDetails) {
+      return { notFound: true };
+    }
 
     return {
       props: {
-        productDetails: productDetailsRes.data,
-        products: productsRes.data,
+        productDetails,
+        products: products || [],
       },
     };
   } catch (error) {

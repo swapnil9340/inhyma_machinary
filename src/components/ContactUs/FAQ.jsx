@@ -11,7 +11,7 @@ export default function FAQ() {
 
       <Grid container spacing={{md:20}}>
         {/* FAQ 1 */}
-        <Grid item size={{ xs: 12, md: 6 }} sx={{width :'100%'}}>
+        <Grid size={{ xs: 12, md: 6 }} sx={{width :'100%'}}>
           <Accordion variant="outlined" sx={{ boxShadow: 'none' ,backgroundColor:"transparent" ,border:"none" }}>
             <AccordionSummary  sx={{ p: 0  ,borderBottom: '1px solid #e0e0e0'}}>
               <Typography fontWeight="bold" color="#1955A6">
@@ -27,7 +27,7 @@ export default function FAQ() {
         </Grid>
 
         {/* FAQ 2 */}
-        <Grid item size={{ xs: 12, md: 6 }} sx={{width :'100%'}}>
+        <Grid size={{ xs: 12, md: 6 }} sx={{width :'100%'}}>
           <Accordion variant="outlined" sx={{ boxShadow: 'none' , backgroundColor:"transparent" ,border:"none" }}>
             <AccordionSummary  sx={{ p: 0 ,borderBottom: '1px solid #e0e0e0' }}>
               <Typography fontWeight="bold" color="#1955A6" >

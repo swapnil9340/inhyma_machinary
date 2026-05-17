@@ -215,7 +215,7 @@ const Footer = () => {
       <Box sx={{ px: { xs: 2, sm: 4, md: 8 }, mx: "auto" }}>
         <Grid container spacing={4}>
           {/* Company Info */}
-          <Grid item size={{ xs: 12, sm: 12, md: 6 }}>
+          <Grid size={{ xs: 12, sm: 12, md: 6 }}>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
               <Link href={"/"}>
                 <Image
@@ -253,10 +253,10 @@ const Footer = () => {
           </Grid>
 
           {/* Product Categories */}
-          <Grid item size={{ xs: 12, sm: 12, md: 2 }}>
+          <Grid size={{ xs: 12, sm: 12, md: 2 }}>
             <Grid container spacing={2}>
               {productCategories.map((category, index) => (
-                <Grid item xs={12} sm={6} key={index} sx={{ width: "200px" }}>
+                <Grid key={index} sx={{ width: "200px" }} size={{ xs: 12, sm: 6 }}>
                   <Typography variant="subtitle2" fontWeight={600} mb={1}>
                     {category.title}
                   </Typography>
@@ -283,7 +283,7 @@ const Footer = () => {
           </Grid>
 
           {/* Contact Info */}
-          <Grid item size={{ xs: 12, sm: 12, md: 2 }}>
+          <Grid size={{ xs: 12, sm: 12, md: 2 }}>
             <Typography variant="p" fontWeight={600} gutterBottom>
               Contact Us
             </Typography>

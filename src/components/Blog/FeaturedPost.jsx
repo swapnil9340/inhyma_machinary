@@ -28,7 +28,7 @@ export default function FeaturedPosts() {
 
         <Grid container spacing={3} justifyContent="center">
           {posts.map((post) => (
-            <Grid key={post.id} item size={{ xs: 12, sm: 6, md: 4 }}>
+            <Grid key={post.id} size={{ xs: 12, sm: 6, md: 4 }}>
               <Card elevation={0}>
                 <Image
                   src={post.image}

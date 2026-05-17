@@ -7,10 +7,10 @@ const Address_Section = () => {
     <>
       <Container maxWidth="xl" sx={{marginTop : {xs:2 ,md:10}}}>
         <Grid container sx={{placeItems:'center'}}>
-          <Grid item size={{xs:12 ,md : 6}}>
+          <Grid size={{xs:12 ,md : 6}}>
             <Address />
           </Grid>
-          <Grid item size={{xs:12 ,md : 6}}>
+          <Grid size={{xs:12 ,md : 6}}>
             <ContactForm />
           </Grid>
         </Grid>

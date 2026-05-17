@@ -49,7 +49,7 @@ export default function ContactForm({ hide }) {
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <Grid container spacing={2}>
-          <Grid item size={{ xs: 12 }}>
+          <Grid size={{ xs: 12 }}>
             <InputLabel sx={{ mb: 1 }}>Full Name</InputLabel>
             <Box
               component={"input"}
@@ -60,7 +60,7 @@ export default function ContactForm({ hide }) {
             />
           </Grid>
 
-          <Grid item size={{ xs: 12 }} sx={{ display: hide ? "none" : "block" }}>
+          <Grid size={{ xs: 12 }} sx={{ display: hide ? "none" : "block" }}>
             <InputLabel sx={{ mb: 1 }}>Company Name</InputLabel>
             <Box
               component={"input"}
@@ -70,7 +70,7 @@ export default function ContactForm({ hide }) {
             />
           </Grid>
 
-          <Grid item size={{ xs: 12 }}>
+          <Grid size={{ xs: 12 }}>
             <InputLabel sx={{ mb: 1 }}>Email</InputLabel>
             <Box
               component={"input"}
@@ -82,7 +82,7 @@ export default function ContactForm({ hide }) {
             />
           </Grid>
 
-          <Grid item size={{ xs: 12 }}>
+          <Grid size={{ xs: 12 }}>
             <InputLabel sx={{ mb: 1 }}>Phone</InputLabel>
             <Box
               component={"input"}
@@ -93,7 +93,7 @@ export default function ContactForm({ hide }) {
             />
           </Grid>
 
-          <Grid item size={{ xs: 12 }}>
+          <Grid size={{ xs: 12 }}>
             <InputLabel sx={{ mb: 1 }}>Message</InputLabel>
             <TextField
               multiline
@@ -105,7 +105,7 @@ export default function ContactForm({ hide }) {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12 }}>
             <Button type="submit" variant="contained" fullWidth sx={{ bgcolor: "#1955a6" }}>
               Submit Enquiry
             </Button>

@@ -41,7 +41,7 @@ const CTASection = () => {
       }}
     >
       <Grid container spacing={3} alignItems="center" justifyContent="space-between">
-        <Grid item xs={12} md={7}>
+        <Grid size={{ xs: 12, md: 7 }}>
           <Typography variant="h5" fontWeight={700} sx={{fontSize : {xs:"1.2rem" , md:"1.6rem"}, fontWeight: 'bold',}}>
             Need Help Choosing the Right Machine?
           </Typography>

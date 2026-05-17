@@ -40,7 +40,7 @@ export default function WhyChooseUs() {
         justifyContent="center"
       >
         {/* Left Text & Features */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Typography
             variant="h4"
             sx={{
@@ -121,7 +121,7 @@ onClick={()=>router.push('/product')}
         </Grid>
 
         {/* Desktop Image */}
-        <Grid item xs={12} md={6} sx={{ display: { xs: "none", md: "block" } }}>
+        <Grid sx={{ display: { xs: "none", md: "block" } }} size={{ xs: 12, md: 6 }}>
           <Box
             sx={{
               position: "relative",
